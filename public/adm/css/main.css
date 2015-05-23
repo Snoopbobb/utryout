@@ -1,0 +1,135 @@
+/*****************************************
+			Global Seettings
+******************************************/
+body {
+	background-color: #3D3838;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	color: #B0BEC5;
+	display: table;
+	font-weight: 300;
+	font-family: 'Roboto';
+}
+
+.btn {
+	margin: 50px 10px;
+	font-size: 20;
+	font-family: arial;
+	text-transform: uppercase;
+	background-color: red;
+	color: white;
+	border: none;
+}
+
+.btn:hover {
+	background-color: #7a7a7a;
+	color: white;
+}
+
+.btn-link, .btn-link:hover {
+	color: white;
+	background-color: transparent;
+}
+
+/******************************************
+				Navigation
+*******************************************/
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {
+	color: white;
+	font-weight: bolder;
+}
+
+.navbar {
+	background-color: red;
+	border: none;
+	margin: 0;
+}
+
+.navbar a:hover{
+	margin-bottom: -5px;
+	border-bottom: 2px solid white;
+}
+
+.active{
+	margin-bottom: -5px;
+	background-color: red;
+	border-bottom: 2px solid white;
+	color: #3D3838;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;				/* Turns on drop menu on hover in Bootstrap */
+	background-color: rgba(0,0,0, .5);
+}
+
+.dropdown:hover a, .dropdown-menu a {
+	color: white;
+}
+
+/*************************************************
+					Content
+**************************************************/
+
+.content {
+	color: white;
+	animation-delay: 500ms;
+	animation-duration: 4s;
+	text-align: center;
+	display: inline-block;
+}
+
+.container {
+	margin: 0;
+	padding-top: 120px;
+	height: 94vh;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%),
+				url('../../img/catcher.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+}
+
+.quote {
+	font-size: 24px;
+}
+
+
+.title {
+	font-size: 96px;
+	margin-bottom: 40px;
+}
+
+.panel, .panel-default, .panel-body {
+	background-color: rgba(0,0,0, .3);
+}
+
+/*************************************************
+					Footer
+**************************************************/
+
+.footer-left {
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+	color: rgba(255, 255, 255, .6);
+}
+
+.footer-right {
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	color: rgba(255, 255, 255, .6);
+}
+
+.footer-left a, .footer-right a {
+	color: rgba(255, 255, 255, .8);
+}
+
+.footer-left h6, .footer-right h6 {
+	font-size: 70%;
+}

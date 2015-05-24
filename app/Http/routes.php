@@ -25,5 +25,6 @@ Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 
 
-Route::get('tryouts', 'TryoutsController@getAll');
+Route::get('tryouts', 'TryoutsController@index');
+Route::get('tryouts/new', 'TryoutsController@create');
 Route::get('tryouts/baseball', 'TryoutsController@getAllBaseball');

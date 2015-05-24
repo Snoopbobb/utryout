@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Tryout;
 
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class TryoutsController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$tryouts = Tryout::all();
+
+		return view('tryouts.index', compact('tryouts'));
 	}
 
 	/**
@@ -24,7 +27,7 @@ class TryoutsController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('new_tryout');
 	}
 
 	/**

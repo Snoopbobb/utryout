@@ -72,6 +72,19 @@ body {
 					Content
 **************************************************/
 
+.container {
+	margin: 0;
+	padding-top: 120px;
+	min-height: 94vh;
+	min-width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%),
+				url('../../img/catcher.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+}
+
 .content {
 	color: white;
 	animation-delay: 500ms;
@@ -80,19 +93,6 @@ body {
 	display: inline-block;
 }
 
-.container {
-	margin: 0;
-	padding-top: 120px;
-	height: 94vh;
-	width: 100%;
-	text-align: center;
-	vertical-align: middle;
-	background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%),
-				url('../../img/catcher.jpg');
-	background-size: cover;
-	background-attachment: fixed;
-	position: relative;
-}
 
 .quote {
 	font-size: 24px;
@@ -106,6 +106,10 @@ body {
 
 .panel, .panel-default, .panel-body {
 	background-color: rgba(0,0,0, .3);
+}
+
+#time {
+	margin-top: 15px;
 }
 
 /*************************************************

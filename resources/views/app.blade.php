@@ -35,11 +35,11 @@
 				<ul class="nav navbar-nav">
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tryouts<span class="caret"></span></a>
 	          			<ul class="dropdown-menu">
-	            			<li><a href="tryouts/baseball">Baseball</a></li>
-	            			<li><a href="tryouts/basketball">Basketball</a></li>
-	            			<li><a href="tryouts/football">Football</a></li>
-	            			<li><a href="tryouts/soccer">Soccer</a></li>
-	            			<li><a href="tryouts/softball">Softball</a></li>
+	            			<li><a href="{{ url('tryouts/baseball') }}">Baseball</a></li>
+	            			<li><a href="{{ url('tryouts/basketball') }}">Basketball</a></li>
+	            			<li><a href="{{ url('tryouts/football') }}">Football</a></li>
+	            			<li><a href="{{ url('tryouts/soccer') }}">Soccer</a></li>
+	            			<li><a href="{{ url('tryouts/softball') }}">Softball</a></li>
 	          			</ul>
 	          		</li>
 					<li><a href="/about" id="about">About</a></li>

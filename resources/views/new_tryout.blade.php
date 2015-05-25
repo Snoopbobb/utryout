@@ -47,11 +47,27 @@
 								<input type="email" class="form-control" name="contact_email">
 							</div>
 						</div>
+							{{--****************************** Make sport a dropdown ****************************************************** --}}
+						<div class="form-group">
+							<label class="col-md-4 control-label">Sport</label>
+							<div class="col-md-6">
+								<select id="form-state" class="form-control" name="sport">
+									<option value="" selected disabled>Sport</option>
+									<option value="baseball">Baseball</option>
+									<option value="basketball">Basketball</option>
+									<option value="football">Football</option>
+									<option value="football">Hockey</option>
+									<option value="football">Lacrosse</option>
+									<option value="soccer">Soccer</option>
+									<option value="softball">Softball</option>
+								</select>
+							</div>
+						</div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">Age</label>
 							<div class="col-md-6">
-									<select id="form-state" class="form-control" name="state">
+								<select id="form-state" class="form-control" name="age">
 									<option value="" selected disabled>Age</option>
 									<option value="5">5 and under</option>
 									<option value="6">6 and under</option>
@@ -73,13 +89,17 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-md-4 control-label">Tryout date and time</label>
+							<label class="col-md-4 control-label">Tryout Date</label>
 							<div class="col-md-6">
 								<input type="date" class="form-control" name="date">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-4 control-label">Tryout Time</label>
+							<div class="col-md-6">
 								<input type="time" class="form-control" id="time" name="time">
 							</div>
 						</div>
-
 						<div class="form-group">
 							<label class="col-md-4 control-label">Location</label>
 							<div class="col-md-6">
@@ -157,7 +177,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Description</label>
 							<div class="col-md-6">
-								<input type="textarear" class="form-control" name="description" placeholder="List any other tryout details">
+								<textarea class="form-control" name="description" placeholder="List any other tryout details"></textarea>
 							</div>
 						</div>	
 

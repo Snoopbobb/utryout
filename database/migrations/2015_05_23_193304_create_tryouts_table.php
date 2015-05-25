@@ -20,6 +20,7 @@ class CreateTryoutsTable extends Migration {
 			$table->string('website')->nullable();
 			$table->string('contact_name');
 			$table->string('contact_email');
+			$table->string('sport');
 			$table->integer('age');
 			$table->date('date');
 			$table->time('time');

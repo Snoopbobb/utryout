@@ -8,6 +8,7 @@ class Tryout extends Model {
 		'organization',
 		'contact_name',
 		'contact_email',
+		'sport',
 		'age',
 		'date',
 		'time',

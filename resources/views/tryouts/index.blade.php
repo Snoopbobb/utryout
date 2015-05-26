@@ -1,20 +1,14 @@
 @extends('app')
 
 @section('content')
-	<h1>Tryouts</h1>
+	<div class="container">
+			<h1>Tryouts</h1>
 
-	@foreach ($tryouts as $tryout)
-		<h3>Organization: {{ $tryout->organization }}</h3>
-		<h3>Website: {{ $tryout->website }}</h3>
-		<h3>Contact Name: {{ $tryout->contact_name }}</h3>
-		<h3>Contact Email: {{ $tryout->contact_email }}</h3>
-		<h3>Age Group: {{ $tryout->age }} and under</h3>
-		<h3>Date: {{ $tryout->date }}</h3>
-		<h3>Time: {{ $tryout->time }}</h3>
-		<h3>Location: {{ $tryout->location }}</h3>
-		<h3>City: {{ $tryout->city }}</h3>
-		<h3>State: {{ $tryout->state }}</h3>
-		<p>Additional Information: {{ $tryout->description }}</p>
-	@endforeach
-
+			@foreach ($tryouts as $tryout)
+				<div class="tryout">
+					<span class="sport">{{ $tryout->sport }}</span> <h3>{{ $tryout->organization }} | {{ $tryout->age }} and under | {{ date('D F d, Y', strtotime($tryout->date)) }}, {{ date('g:i A', strtotime($tryout->time)) }} | {{ $tryout->city }}, {{ $tryout->state }}</h3>
+					<a href="/tryouts/{{ $tryout->id }}">Additional Information</a>
+				</div>
+			@endforeach
+	</div>
 @endsection

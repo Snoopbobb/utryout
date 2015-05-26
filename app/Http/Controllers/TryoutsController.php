@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Tryout;
 
-use Illuminate\Http\Request;
+use Request;
 
 class TryoutsController extends Controller {
 
@@ -27,7 +27,7 @@ class TryoutsController extends Controller {
 	 */
 	public function create()
 	{
-		return view('new_tryout');
+		return view('tryouts.create');
 	}
 
 	/**
@@ -37,7 +37,11 @@ class TryoutsController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		$input = Request::all();
+
+		Tryout::create($input);
+
+		return redirect('tryouts');
 	}
 
 	/**

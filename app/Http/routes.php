@@ -20,11 +20,12 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-
+// Static Pages Routes
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 
-
+// Tryout Pages Routes
 Route::get('tryouts', 'TryoutsController@index');
-Route::get('tryouts/new', 'TryoutsController@create');
+Route::post('tryouts', 'TryoutsController@store');
+Route::get('tryouts/create', 'TryoutsController@create');
 Route::get('tryouts/baseball', 'TryoutsController@getAllBaseball');

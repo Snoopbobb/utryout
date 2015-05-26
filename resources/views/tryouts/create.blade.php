@@ -17,9 +17,10 @@
 							</ul>
 						</div>
 					@endif
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tryouts') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
+						<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+						
 						<div class="form-group">
 							<label class="col-md-4 control-label">Organization</label>
 							<div class="col-md-6">

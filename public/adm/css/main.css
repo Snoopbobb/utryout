@@ -91,6 +91,7 @@ body {
 	animation-duration: 4s;
 	text-align: center;
 	display: inline-block;
+	position: relative;
 }
 
 
@@ -107,6 +108,39 @@ body {
 .panel, .panel-default, .panel-body {
 	background-color: rgba(0,0,0, .3);
 }
+
+/*************************************************
+					Tryout
+**************************************************/
+
+.tryout {
+	background-color: rgba(0, 0, 0, .7);
+	border-radius: 10px;
+	color: white;
+	width: 80%;
+	margin: 20px auto;
+	padding-right: 100px;
+	text-align: right;
+}
+
+.tryout h3 {
+	margin: 0;
+}
+
+.tryout a {
+	font-weight: bolder;
+	color: red;
+}
+
+.sport {
+	margin: 0;
+	color: red;
+	font-weight: bolder;
+	font-size: 200%;
+	font-family: Arial;
+	text-transform: uppercase;
+}
+
 
 /*************************************************
 					Footer

@@ -4,9 +4,42 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Tryout;
 
+use Auth;
+
 use Request;
 
 class TryoutsController extends Controller {
+
+	/****************************************************************************************
+									 Filters Tryouts by state
+	****************************************************************************************/
+	public function showState($sport, $state){
+		$tryouts = Tryout::all()->where('sport', $sport)->where('state', strtoupper($state));
+
+		return view('tryouts.index', compact('tryouts', 'sport', 'state'));			
+	}
+
+
+	/****************************************************************************************
+									 Profile Page for User
+	****************************************************************************************/
+	public function profile(){
+		if(Auth::user()){
+			$user_id = Auth::user()->id;
+			
+			$tryouts = Tryout::all()->where('user_id', $user_id);
+
+
+			return view('tryouts.profile', compact('tryouts'));
+			
+		} else {
+
+			return redirect('auth/login');
+
+		}
+		
+
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -15,10 +48,11 @@ class TryoutsController extends Controller {
 	 */
 	public function index()
 	{
-		$tryouts = Tryout::all();
+		$tryouts = Tryout::orderBy('date')->get();
 
 		return view('tryouts.index', compact('tryouts'));
 	}
+
 
 	/**
 	 * Show the form for creating a new resource.
@@ -26,8 +60,14 @@ class TryoutsController extends Controller {
 	 * @return Response
 	 */
 	public function create()
-	{
-		return view('tryouts.create');
+	{	if(Auth::user()){
+
+			return view('tryouts.create');
+
+		} else {
+
+			return redirect('auth/login');
+		}
 	}
 
 	/**
@@ -50,10 +90,13 @@ class TryoutsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($sport)
 	{
-		//
+		$tryouts = Tryout::all()->where('sport', $sport);
+
+		return view('tryouts.index', compact('tryouts', 'sport'));
 	}
+
 
 	/**
 	 * Show the form for editing the specified resource.

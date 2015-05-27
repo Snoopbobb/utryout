@@ -51,6 +51,10 @@
 	          		</li>
 					<li><a href="/about" id="about">About</a></li>
 					<li><a href="/contact" id="contact">Contact</a></li>
+					@if(Auth::user())
+						<li><a href="{{ url('tryouts/create') }}" id="create">Post Tryout</a></li>
+						<li><a href="/profile" id="profile">Profile</a></li>
+					@endif
           		</ul>			
 				
 

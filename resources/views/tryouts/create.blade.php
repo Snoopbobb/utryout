@@ -20,7 +20,7 @@
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tryouts') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-						
+
 						<div class="form-group">
 							<label class="col-md-4 control-label">Organization</label>
 							<div class="col-md-6">
@@ -66,25 +66,44 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Age</label>
-							<div class="col-md-6">
-								<select id="form-state" class="form-control" name="age">
+							<label class="col-md-4 control-label">Age Range</label>
+							<div class="col-md-2">
+								<select id="form-state" class="form-control" name="age1">
 									<option value="" selected disabled>Age</option>
-									<option value="5">5 and under</option>
-									<option value="6">6 and under</option>
-									<option value="7">7 and under</option>
-									<option value="8">8 and under</option>
-									<option value="9">9 and under</option>
-									<option value="10">10 and under</option>
-									<option value="11">11 and under</option>
-									<option value="12">12 and under</option>
-									<option value="13">13 and under</option>
-									<option value="14">14 and under</option>
-									<option value="15">15 and under</option>
-									<option value="16">16 and under</option>
-									<option value="17">17 and under</option>
-									<option value="18">18 and under</option>
-									<option value="18">18 and up</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+								</select>
+								<p>-</p>
+								<select id="form-state" class="form-control" name="age2">
+									<option value="" selected disabled>Age</option>
+									<option value="under">Under</option>
+									<option value="up">Up</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
 								</select>
 							</div>
 						</div>

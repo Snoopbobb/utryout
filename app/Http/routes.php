@@ -13,7 +13,11 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('home', function(){
+	return redirect('profile');
+});
+
+Route::get('profile', 'TryoutsController@profile');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -28,4 +32,5 @@ Route::get('contact', 'PagesController@contact');
 Route::get('tryouts', 'TryoutsController@index');
 Route::post('tryouts', 'TryoutsController@store');
 Route::get('tryouts/create', 'TryoutsController@create');
-Route::get('tryouts/baseball', 'TryoutsController@getAllBaseball');
+Route::get('tryouts/{sport}', 'TryoutsController@show');
+Route::get('tryouts/{sport}/{state}', 'TryoutsController@showState');

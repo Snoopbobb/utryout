@@ -47,12 +47,12 @@ body {
 	margin: 0;
 }
 
-.navbar a:hover{
+.navbar a:hover {
 	margin-bottom: -5px;
 	border-bottom: 2px solid white;
 }
 
-.active{
+.active {
 	margin-bottom: -5px;
 	background-color: red;
 	border-bottom: 2px solid white;
@@ -119,7 +119,7 @@ body {
 	color: white;
 	width: 80%;
 	margin: 20px auto;
-	padding-right: 100px;
+	padding-right: 10%;
 	text-align: right;
 }
 
@@ -139,6 +139,12 @@ body {
 	font-size: 200%;
 	font-family: Arial;
 	text-transform: uppercase;
+}
+
+.sport > .active {
+  background-color: transparent;
+  border-bottom: none;
+  color: red;
 }
 
 

@@ -33,7 +33,7 @@ class TryoutsController extends Controller {
 	****************************************************************************************/
 	public function showId($sport, $state, $city, $id){
 		$tryouts = Tryout::all()->where('id', intval($id));
-		dd($tryouts);
+		
 		return view('tryouts.show', compact('tryouts', 'sport', 'state', 'city', 'id'));			
 	}
 

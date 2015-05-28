@@ -19,6 +19,24 @@ class TryoutsController extends Controller {
 		return view('tryouts.index', compact('tryouts', 'sport', 'state'));			
 	}
 
+	/****************************************************************************************
+									 Filters Tryouts by city
+	****************************************************************************************/
+	public function showCity($sport, $state, $city){
+		$tryouts = Tryout::all()->where('sport', $sport)->where('state', strtoupper($state))->where('city', ucwords($city));
+
+		return view('tryouts.index', compact('tryouts', 'sport', 'state', 'city'));			
+	}
+
+	/****************************************************************************************
+									 Filters Tryouts by id
+	****************************************************************************************/
+	public function showId($sport, $state, $city, $id){
+		$tryouts = Tryout::all()->where('id', intval($id));
+
+		return view('tryouts.show', compact('tryouts', 'sport', 'state', 'city', 'id'));			
+	}
+
 
 	/****************************************************************************************
 									 Profile Page for User

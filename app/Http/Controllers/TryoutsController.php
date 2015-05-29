@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Tryout;
 use Redirect;
 use Auth;
+use App\Http\Helpers;
 
 use DB;
 

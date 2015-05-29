@@ -32,9 +32,11 @@ class TryoutsController extends Controller {
 									 Filters Tryouts by id
 	****************************************************************************************/
 	public function showId($sport, $state, $city, $id){
-		$tryouts = Tryout::all()->where('id', intval($id));
-		dd($sport, $id);
-		return view('tryouts.show', compact('tryouts', 'sport', 'state', 'city', 'id'));			
+		$tryout = Tryout::all()->where('id', intval($id));
+
+		$tryout = $tryout[0];
+
+		return view('tryouts.show', compact('tryout', 'sport', 'state', 'city', 'id'));			
 	}
 
 

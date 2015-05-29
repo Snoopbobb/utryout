@@ -34,7 +34,7 @@ class TryoutsController extends Controller {
 	public function showId($sport, $state, $city, $id){
 		$id = intval($id);
 
-		$tryouts = Tryout::all()->where('id', $id);
+		$tryouts = Tryout::all()->where('id', 1);
 
 		if (count($tryouts) < 1) {
 			return Redirect::back()->with('message','Sorry, that post was not found. Please check back later.');

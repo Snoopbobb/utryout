@@ -3,7 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Tryout;
-
+use Redirect;
 use Auth;
 
 use Request;
@@ -34,11 +34,13 @@ class TryoutsController extends Controller {
 	public function showId($sport, $state, $city, $id){
 		$id = intval($id);
 
-		$tryout = Tryout::all()->where('id', intval($id));
-		
-		$tryout = $tryout[0];
+		$tryouts = Tryout::all()->where('id', intval($id));
 
-		return view('tryouts.show', compact('tryout', 'sport', 'state', 'city', 'id'));			
+		if (count($tryouts) < 1) {
+			return Redirect::back()->with('message','Sorry, that post was not found. Please check back later.');
+		} 
+
+		return view('tryouts.show', compact('tryouts', 'sport', 'state', 'city', 'id'));			
 	}
 
 

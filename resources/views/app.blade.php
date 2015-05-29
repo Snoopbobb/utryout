@@ -24,7 +24,7 @@
 	<link href="{{ asset('adm/css/main.css') }}" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -78,12 +78,8 @@
 	@yield('content')
 
 	<footer>
-		<div class="footer-left">
-			<h6>Photo Courtesy: <a href="#">Mette McConnell</a></h4>
-		</div>
-		<div class="footer-right">
-			<h6>An <a href="#">AthleTech Software</a> Application &copy;{{ date('Y') }}</h4>
-		</div>
+		<h6>Photo Courtesy: <a href="#">Mette McConnell</a></h4>
+		<h6>An <a href="#">AthleTech Software</a> Application &copy;{{ date('Y') }}</h4>
 	</footer>
 	<!-- Scripts -->
 	<script src="{{ asset('/adm/js/admin.js') }}"></script>

@@ -6,6 +6,8 @@ use App\Tryout;
 use Redirect;
 use Auth;
 
+use DB;
+
 use Request;
 
 class TryoutsController extends Controller {
@@ -33,8 +35,8 @@ class TryoutsController extends Controller {
 	****************************************************************************************/
 	public function showId($sport, $state, $city, $id){
 
-		$tryouts = Tryout::all()->where('id', 2);
-
+		$tryouts = DB::table('tryouts')->where('id', $id)->get();
+		
 		if (count($tryouts) < 1) {
 			return Redirect::back()->with('message','Sorry, that post was not found. Please check back later.');
 		} 

@@ -6,7 +6,7 @@
 	 @foreach ($tryouts as $tryout)
 		<div class="tryout">
 			<h1>{{ ucwords($tryout->organization) }}</h1>
-			<h1><a href="http://{{ ucwords($tryout->website) }}">Visit {{ $tryout->organization }}'s Website</a></h1>
+			<h1><a href="http://{{ ucwords($tryout->website) }}">Visit {{ $tryout->organization }} Website</a></h1>
 			<h1>{{ ucwords($tryout->sport) }}</h1>
 			<h1>{{ $tryout->age1 }} - {{ ucwords($tryout->age2) }}</h1>
 			<h1>{{ date('D F d, Y', strtotime($tryout->date)) }}</h1>

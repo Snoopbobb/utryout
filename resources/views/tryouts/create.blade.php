@@ -17,6 +17,8 @@
 							</ul>
 						</div>
 					@endif
+
+					{{-- {!! Form::open() !!} --}}
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tryouts') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
@@ -24,14 +26,14 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Organization</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="organization" placeholder="Enter Oranization/Team Name">
+								<input type="text" class="form-control" name="organization" placeholder="Enter Organization/Team Name">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">Organization Website</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="website">
+								<input type="text" class="form-control" name="website" placeholder="www.example.com or example.com">
 							</div>
 						</div>
 
@@ -65,47 +67,41 @@
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Age Range</label>
-							<div class="col-md-2">
-								<select id="form-state" class="form-control" name="age1">
-									<option value="" selected disabled>Age</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
-									<option value="10">10</option>
-									<option value="11">11</option>
-									<option value="12">12</option>
-									<option value="13">13</option>
-									<option value="14">14</option>
-									<option value="15">15</option>
-									<option value="16">16</option>
-									<option value="17">17</option>
-									<option value="18">18</option>
-								</select>
-								<p>-</p>
-								<select id="form-state" class="form-control" name="age2">
-									<option value="" selected disabled>Age</option>
-									<option value="under">Under</option>
-									<option value="up">Up</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
-									<option value="10">10</option>
-									<option value="11">11</option>
-									<option value="12">12</option>
-									<option value="13">13</option>
-									<option value="14">14</option>
-									<option value="15">15</option>
-									<option value="16">16</option>
-									<option value="17">17</option>
-									<option value="18">18</option>
-								</select>
+						<div class="form-group age">
+							<p class="col-md-4 control-label">Please Select An Age Group</p>
+							<div class="col-md-7 btn-group">
+								<label for="18" class="btn btn-primary unchecked">18u</label>
+								<input type="checkbox" name="age[]" value="18" id="18" class="hidden">
+								<label for="17" class="btn btn-primary unchecked">17u</label>
+								<input type="checkbox" name="age[]" value="17" id="17" class="hidden">
+								<label for="16" class="btn btn-primary unchecked">16u</label>
+								<input type="checkbox" name="age[]" value="16" id="16" class="hidden">						
+								<label for="15" class="btn btn-primary unchecked">15u</label>
+								<input type="checkbox" name="age[]" value="15" id="15" class="hidden">							
+								<label for="14" class="btn btn-primary unchecked">14u</label>
+								<input type="checkbox" name="age[]" value="14" id="14" class="hidden">
+								<label for="13" class="btn btn-primary unchecked">13u</label>
+								<input type="checkbox" name="age[]" value="13" id="13" class="hidden">
+								<label for="12" class="btn btn-primary unchecked">12u</label>
+								<input type="checkbox" name="age[]" value="12" id="12" class="hidden">
+								<label for="11" class="btn btn-primary unchecked">11u</label>
+								<input type="checkbox" name="age[]" value="11" id="11" class="hidden">						
+								<label for="10" class="btn btn-primary unchecked">10u</label>
+								<input type="checkbox" name="age[]" value="10" id="10" class="hidden">							
+								<label for="9" class="btn btn-primary unchecked">9u</label>
+								<input type="checkbox" name="age[]" value="9" id="9" class="hidden">
+								<label for="8" class="btn btn-primary unchecked">8u</label>
+								<input type="checkbox" name="age[]" value="8" id="8" class="hidden">
+								<label for="7" class="btn btn-primary unchecked">7u</label>
+								<input type="checkbox" name="age[]" value="7" id="7" class="hidden">
+								<label for="6" class="btn btn-primary unchecked">6u</label>
+								<input type="checkbox" name="age[]" value="6" id="6" class="hidden">						
 							</div>
+						</div>
+
+						<div>
+							<a href="#" class="btn btn-primary add" id="add-component">Add Another Age Group</a>
+							<p>Note: Additional charge of $3.00 will be applied</p>
 						</div>
 						
 						<div class="form-group">
@@ -197,7 +193,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Description</label>
 							<div class="col-md-6">
-								<textarea class="form-control" name="description" placeholder="List any other tryout details"></textarea>
+								<textarea class="form-control" name="description" placeholder="List any other details"></textarea>
 							</div>
 						</div>	
 
@@ -209,7 +205,7 @@
 							</div>
 						</div>
 					</form>
-
+					{{-- {!! Form::close() !!} --}}
 				</div>
 			</div>
 		</div>

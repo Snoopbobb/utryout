@@ -19,12 +19,16 @@ elixir(function(mix) {
       'resources/assets/js/jquery.js'
     )
     .copy(
-      'vendor/bower_components/bootstrap/less',
-      'resources/assets/less/bootstrap'
-    )
-    .copy(
       'vendor/bower_components/bootstrap/dist/js/bootstrap.js',
       'resources/assets/js/bootstrap.js'
+    )
+    .copy(
+      'vendor/bower_components/vue/dist/vue.js',
+      'resources/assets/js/vue.js'
+    )
+    .copy(
+      'vendor/bower_components/bootstrap/less',
+      'resources/assets/less/bootstrap'
     )
     .copy(
       'vendor/bower_components/bootstrap/dist/fonts',
@@ -32,13 +36,18 @@ elixir(function(mix) {
     )
 
     .copy(
+      'vendor/bower_components/bootstrap/css/bootstrap.css',
+      'public/adm/css'
+    )
+    .copy(
       'vendor/bower_components/animate.css/',
       'public/adm/css'
     )
 
     .scripts([
         'js/jquery.js',
-        'js/bootstrap.js'
+        'js/bootstrap.js',
+        'js/vue.js'
       ],
       'public/adm/js/admin.js',
       'resources/assets'

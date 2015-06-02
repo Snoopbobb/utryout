@@ -16,10 +16,5 @@ $(function(){
 	 	$("MyComponent").append(".age");
 	 	alert("clicked");
 	 });
-	
-	// Extend Vue to get a reusable constructor
-	var MyComponent = Vue.extend({
-	  template: 'A custom component!'
-	})
 
 });

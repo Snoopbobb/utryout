@@ -18,7 +18,6 @@
 						</div>
 					@endif
 
-					{{-- {!! Form::open() !!} --}}
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tryouts') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
@@ -205,7 +204,6 @@
 							</div>
 						</div>
 					</form>
-					{{-- {!! Form::close() !!} --}}
 				</div>
 			</div>
 		</div>

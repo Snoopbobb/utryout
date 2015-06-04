@@ -70,31 +70,31 @@
 							<p class="col-md-4 control-label">Please Select An Age Group</p>
 							<div class="col-md-7 btn-group">
 								<label for="18" class="btn btn-primary unchecked">18u</label>
-								<input type="checkbox" name="age[]" value="18" id="18" class="hidden">
+								<input type="checkbox" name="age1" value="18" id="18" class="hidden">
 								<label for="17" class="btn btn-primary unchecked">17u</label>
-								<input type="checkbox" name="age[]" value="17" id="17" class="hidden">
+								<input type="checkbox" name="age1" value="17" id="17" class="hidden">
 								<label for="16" class="btn btn-primary unchecked">16u</label>
-								<input type="checkbox" name="age[]" value="16" id="16" class="hidden">						
+								<input type="checkbox" name="age1" value="16" id="16" class="hidden">						
 								<label for="15" class="btn btn-primary unchecked">15u</label>
-								<input type="checkbox" name="age[]" value="15" id="15" class="hidden">							
+								<input type="checkbox" name="age1" value="15" id="15" class="hidden">							
 								<label for="14" class="btn btn-primary unchecked">14u</label>
-								<input type="checkbox" name="age[]" value="14" id="14" class="hidden">
+								<input type="checkbox" name="age1" value="14" id="14" class="hidden">
 								<label for="13" class="btn btn-primary unchecked">13u</label>
-								<input type="checkbox" name="age[]" value="13" id="13" class="hidden">
+								<input type="checkbox" name="age1" value="13" id="13" class="hidden">
 								<label for="12" class="btn btn-primary unchecked">12u</label>
-								<input type="checkbox" name="age[]" value="12" id="12" class="hidden">
+								<input type="checkbox" name="age1" value="12" id="12" class="hidden">
 								<label for="11" class="btn btn-primary unchecked">11u</label>
-								<input type="checkbox" name="age[]" value="11" id="11" class="hidden">						
+								<input type="checkbox" name="age1" value="11" id="11" class="hidden">						
 								<label for="10" class="btn btn-primary unchecked">10u</label>
-								<input type="checkbox" name="age[]" value="10" id="10" class="hidden">							
+								<input type="checkbox" name="age1" value="10" id="10" class="hidden">							
 								<label for="9" class="btn btn-primary unchecked">9u</label>
-								<input type="checkbox" name="age[]" value="9" id="9" class="hidden">
+								<input type="checkbox" name="age1" value="9" id="9" class="hidden">
 								<label for="8" class="btn btn-primary unchecked">8u</label>
-								<input type="checkbox" name="age[]" value="8" id="8" class="hidden">
+								<input type="checkbox" name="age1" value="8" id="8" class="hidden">
 								<label for="7" class="btn btn-primary unchecked">7u</label>
-								<input type="checkbox" name="age[]" value="7" id="7" class="hidden">
+								<input type="checkbox" name="age1" value="7" id="7" class="hidden">
 								<label for="6" class="btn btn-primary unchecked">6u</label>
-								<input type="checkbox" name="age[]" value="6" id="6" class="hidden">						
+								<input type="checkbox" name="age1" value="6" id="6" class="hidden">						
 							</div>
 						</div>
 

@@ -11,6 +11,13 @@ use DB;
 
 class TryoutsController extends Controller {
 
+	protected $request;
+
+   	public function __construct(\Illuminate\Http\Request $request)
+   	{
+    	$this->request = $request;
+   	}
+
 	/****************************************************************************************
 									 Filters Tryouts by state
 	****************************************************************************************/
@@ -99,9 +106,9 @@ class TryoutsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		$input = Request::all();
+		$input = $this->request->all();
 
 		Tryout::create($input);
 

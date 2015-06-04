@@ -4,12 +4,14 @@
 	<div class="container">
 	
 	@if( count($tryouts) > 0 )
-		@if(!empty($sport))
-			<h1>{{ ucwords($sport) }} Tryouts</h1>
-		@else
-			<h1>All Tryouts</h1>
-		@endif
-
+		<div class="seperator">
+			@if(!empty($sport))
+				<h1>{{ ucwords($sport) }} Tryouts</h1>
+			@else
+				<h1>All Tryouts</h1>
+			@endif
+		</div>
+			
 		@foreach ($tryouts as $tryout)
 			<div class="tryout">
 				<span class="sport"><a href="{{ url('/tryouts/') . '/' . $tryout->sport }}">{{ $tryout->sport }}</a></span> <h3>{{ $tryout->organization }} | Ages: {{ $tryout->age1 }} - {{ ucwords($tryout->age2) }} | {{ date('D F d, Y', strtotime($tryout->date)) }}, {{ date('g:i A', strtotime($tryout->time)) }} | {{ $tryout->city }}, {{ $tryout->state }}</h3>

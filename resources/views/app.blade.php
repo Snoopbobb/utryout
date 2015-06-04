@@ -40,6 +40,7 @@
 				<ul class="nav navbar-nav">
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('tryouts') }}">Sports<span class="caret"></span></a>
 	          			<ul class="dropdown-menu">
+	          				<li><a href="{{ url('tryouts') }}">All Tryouts</a></li>
 	            			<li><a href="{{ url('tryouts/baseball') }}">Baseball</a></li>
 	            			<li><a href="{{ url('tryouts/basketball') }}">Basketball</a></li>
 	            			<li><a href="{{ url('tryouts/football') }}">Football</a></li>

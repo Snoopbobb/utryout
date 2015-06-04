@@ -6,10 +6,8 @@ use App\Tryout;
 use Redirect;
 use Auth;
 use App\Http\Helpers;
-
+use Illuminate\Http\Request;
 use DB;
-
-use Request;
 
 class TryoutsController extends Controller {
 
@@ -40,7 +38,7 @@ class TryoutsController extends Controller {
 		
 		if (count($tryouts) < 1) {
 			return Redirect::back()->with('message','Sorry, that post was not found. Please check back later.');
-		} 
+		}
 
 		return view('tryouts.show', compact('tryouts', 'sport', 'state', 'city', 'id'));			
 	}
@@ -132,7 +130,13 @@ class TryoutsController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$tryout = Tryout::findOrFail($id);
+
+		if((Auth::user()->id) === ($tryout->user_id)){
+			return view('tryouts.edit', compact('tryout'));
+		}
+
+		return redirect('profile');
 	}
 
 	/**
@@ -141,9 +145,13 @@ class TryoutsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
-		//
+		$tryout = Tryout::findOrFail($id);
+
+		$tryout->update($request->all());
+
+		return redirect('tryouts/' . $tryout->sport . '/' . $tryout->state . '/' . $tryout->city .'/' . $id);
 	}
 
 	/**

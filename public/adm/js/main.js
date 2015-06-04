@@ -1,20 +1,12 @@
 $(function(){
 
-	 $("a").each(function(){
-               if ($(this).attr("href") == window.location.pathname){
-                       $(this).addClass("active");
-               }
-       });
-
+	// Toggles class for radio buttons on tryouts form
 	 $(".unchecked").click(function(){
 	 	$(".checked").removeClass("checked");
 	 	$(this).toggleClass("checked");
 	 });
 
-	 $("#add-component").click(function(e){
-	 	e.preventDefault();
-	 	$("MyComponent").append(".age");
-	 	alert("clicked");
-	 });
+	 // Adds Class checked to label for radio buttons on tryouts form for editing
+	 $("input:radio:checked").prev('label').addClass("checked");
 
 });

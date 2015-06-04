@@ -4,6 +4,8 @@
 	<div class="container">
 	
 	 @foreach ($tryouts as $tryout)
+	 	{{ $user_id = $tryout->user_id }} 
+	 	{{ $id = $tryout->id }}
 		<div class="tryout">
 			<h1>{{ ucwords($tryout->organization) }}</h1>
 			<h1><a href="http://{{ ucwords($tryout->website) }}">Visit {{ $tryout->organization }} Website</a></h1>
@@ -15,6 +17,7 @@
 			<h1>{{ ucwords($tryout->city) }}, {{ ucwords(stateName($tryout->state)) }}</h1>
 			<h1>{{ ucwords($tryout->contact_name) }}</h1>
 			<h1>{{ $tryout->contact_email }}</h1>
+			
 			@if ($tryout->description)
 				<h1>{{ $tryout->description }}</h1>
 			@else
@@ -22,6 +25,11 @@
 			@endif
 		</div>
 	@endforeach
-
+		
+		@if(Auth::user()->id == $user_id)
+			<div>
+				<a href="/tryouts/{{$id}}/edit" class="btn btn-primary">Edit Post</a>
+			</div>
+		@endif
 	</div>
 @endsection

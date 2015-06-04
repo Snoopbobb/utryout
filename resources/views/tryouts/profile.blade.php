@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h1>Your Posted Tryouts</h1>
+		<h1>{{ Auth::user()->username }}'s Posted Tryouts</h1>
 		@if ( count($tryouts) > 0 )
 			@foreach ($tryouts as $tryout)
 				<div class="tryout">

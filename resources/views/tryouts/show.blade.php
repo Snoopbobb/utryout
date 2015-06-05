@@ -11,7 +11,7 @@
 			</div>
 			<h1><a href="http://{{ ucwords($tryout->website) }}">Visit {{ $tryout->organization }} Website</a></h1>
 			<h1><span class="tryout-title">Sport:</span> {{ ucwords($tryout->sport) }}</h1>
-			<h1><span class="tryout-title">Age:</span> {{ $tryout->age1 . 'U' }}</h1>
+			<h1><span class="tryout-title">Age:</span> {{ $tryout->age . 'U' }}</h1>
 			<h1>{{ $tryout->age2 }}</h1>
 			<h1>{{ $tryout->age3 }}</h1>
 			<h1>{{ $tryout->age4 }}</h1>
@@ -28,7 +28,6 @@
 			@else
 				<h1>No Additional Information Has Been Provided</h1>
 			@endif
-		</div>
 	@endforeach
 		@if(Auth::user())
 			@if(Auth::user()->id == $tryout->user_id)
@@ -37,5 +36,6 @@
 				</div>
 			@endif
 		@endif
+		</div>
 	</div>
 @endsection

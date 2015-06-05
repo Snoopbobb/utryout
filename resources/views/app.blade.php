@@ -50,6 +50,7 @@
 	            			<li><a href="{{ url('tryouts/softball') }}">Softball</a></li>
 	          			</ul>
 	          		</li>
+	          		<li><a href=" {{ url('/search') }}">Search Tryouts</a></li>
 					<li><a href="{{ url('/about') }}" id="about">About</a></li>
 					<li><a href="{{ url('/contact') }}" id="contact">Contact</a></li>
 					@if(Auth::user())

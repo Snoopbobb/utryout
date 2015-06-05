@@ -40,3 +40,5 @@ Route::get('tryouts/{sport}/{state}/{city}', 'TryoutsController@showCity');
 Route::get('tryouts/{sport}/{state}/{city}/{id}', 'TryoutsController@showId');
 Route::get('tryouts/{id}/edit', 'TryoutsController@edit');
 
+Route::get('search', 'SearchController@index');
+

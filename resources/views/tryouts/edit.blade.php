@@ -18,9 +18,7 @@
 						</div>
 					@endif
 					
-					{!! Form::model($tryout, [ 'method' => 'PATCH', 'class' => 'form-horizontal', 'action' => ['TryoutsController@update', $tryout->id]]) !!}
-						{!! Form::hidden('user_id', null, ['value' => 'Auth::user()->id']) !!}
-						{{-- <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"> --}}
+					{!! Form::model($tryout, ['method' => 'PATCH', 'class' => 'form-horizontal', 'action' => ['TryoutsController@update', $tryout->id]]) !!}
 
 						<div class="form-group">
 							{!! Form::label('organization', 'Organization', ['class'=> 'col-md-4 control-label']) !!}
@@ -75,43 +73,43 @@
 
 							<div class="col-md-7 btn-group">
 								{!! Form::label('18', '18u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '18', null, ['class' => 'hidden', 'id' => '18']) !!}
+								{!! Form::radio('age', '18', null, ['class' => 'hidden', 'id' => '18']) !!}
 
 								{!! Form::label('17', '17u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '17', null, ['class' => 'hidden', 'id' => '17']) !!}
+								{!! Form::radio('age', '17', null, ['class' => 'hidden', 'id' => '17']) !!}
 
 								{!! Form::label('16', '16u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '16', null, ['class' => 'hidden', 'id' => '16']) !!}
+								{!! Form::radio('age', '16', null, ['class' => 'hidden', 'id' => '16']) !!}
 
 								{!! Form::label('15', '15u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '15', null, ['class' => 'hidden', 'id' => '15']) !!}
+								{!! Form::radio('age', '15', null, ['class' => 'hidden', 'id' => '15']) !!}
 
 								{!! Form::label('14', '14u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '14', null, ['class' => 'hidden', 'id' => '14']) !!}
+								{!! Form::radio('age', '14', null, ['class' => 'hidden', 'id' => '14']) !!}
 
 								{!! Form::label('13', '13u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '13', null, ['class' => 'hidden', 'id' => '13']) !!}
+								{!! Form::radio('age', '13', null, ['class' => 'hidden', 'id' => '13']) !!}
 
 								{!! Form::label('12', '12u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '12', true, ['class' => 'hidden', 'id' => '12']) !!}						
+								{!! Form::radio('age', '12', null, ['class' => 'hidden', 'id' => '12']) !!}						
 
 								{!! Form::label('11', '11u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '11', null, ['class' => 'hidden', 'id' => '11']) !!}
+								{!! Form::radio('age', '11', null, ['class' => 'hidden', 'id' => '11']) !!}
 
 								{!! Form::label('10', '10u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '10', null, ['class' => 'hidden', 'id' => '10']) !!}
+								{!! Form::radio('age', '10', null, ['class' => 'hidden', 'id' => '10']) !!}
 
 								{!! Form::label('9', '9u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '9', null, ['class' => 'hidden', 'id' => '9']) !!}
+								{!! Form::radio('age', '9', null, ['class' => 'hidden', 'id' => '9']) !!}
 
 								{!! Form::label('8', '8u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '8', null, ['class' => 'hidden', 'id' => '8']) !!}
+								{!! Form::radio('age', '8', null, ['class' => 'hidden', 'id' => '8']) !!}
 
 								{!! Form::label('7', '7u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '7', null, ['class' => 'hidden', 'id' => '7']) !!}
+								{!! Form::radio('age', '7', null, ['class' => 'hidden', 'id' => '7']) !!}
 
 								{!! Form::label('6', '6u', ['class'=> 'btn btn-primary unchecked']) !!}
-								{!! Form::radio('age1', '6', null, ['class' => 'hidden', 'id' => '6']) !!}
+								{!! Form::radio('age', '6', null, ['class' => 'hidden', 'id' => '6']) !!}
 							</div>
 						</div>
 

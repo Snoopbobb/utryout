@@ -17,84 +17,100 @@
 							</ul>
 						</div>
 					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tryouts') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+					{!! Form::open(['class' => 'form-horizontal', 'action' => 'TryoutsController@store']) !!}
+						{!! Form::hidden('user_id', Auth::user()->id) !!} 
+						{{-- <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"> --}}
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Organization</label>
+							{!! Form::label('organization', 'Organization', ['class'=> 'col-md-4 control-label']) !!}
+
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="organization" placeholder="Enter Organization/Team Name">
+								{!! Form::text('organization', null, ['class'=> 'form-control', 'placeholder' => 'Enter Organization/Team Name']) !!}
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Organization Website</label>
+							{!! Form::label('website', 'Organization Website', ['class'=> 'col-md-4 control-label']) !!}
+
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="website" placeholder="www.example.com or example.com">
+								{!! Form::text('website', null, ['class'=> 'form-control', 'placeholder' => 'www.example or example.com']) !!}
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Name of Contact</label>
+							{!! Form::label('contact_name', 'Name of Contact', ['class'=> 'col-md-4 control-label']) !!}
+
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="contact_name">
+								{!! Form::text('contact_name', null, ['class'=> 'form-control']) !!}
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Email of Contact</label>
+							{!! Form::label('contact_email', 'Email of Contact', ['class'=> 'col-md-4 control-label']) !!}
+
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="contact_email">
+								{!! Form::email('contact_email', null, ['class'=> 'form-control']) !!}
 							</div>
 						</div>
 							{{--****************************** Make sport a dropdown ****************************************************** --}}
 						<div class="form-group">
-							<label class="col-md-4 control-label">Sport</label>
+							{!! Form::label('sport', 'Sport', ['class'=> 'col-md-4 control-label']) !!}
+
 							<div class="col-md-6">
-								<select id="form-state" class="form-control" name="sport">
-									<option value="" selected disabled>Sport</option>
-									<option value="baseball">Baseball</option>
-									<option value="basketball">Basketball</option>
-									<option value="football">Football</option>
-									<option value="football">Hockey</option>
-									<option value="football">Lacrosse</option>
-									<option value="soccer">Soccer</option>
-									<option value="softball">Softball</option>
-								</select>
+								{!! Form::select('sport', [
+															'baseball' => 'Baseball',
+															'basketball' => 'Basketball',
+															'football' => 'Football',
+															'hockey' => 'Hockey',
+															'lacrosse' => 'Lacrosse',
+															'soccer' => 'Soccer',
+															'softball' => 'Softball'
+															], null, ['class'=> 'form-control', 'id' => 'form-state'] ) !!}
 							</div>
 						</div>
 
 						<div class="form-group age">
-							<p class="col-md-4 control-label">Please Select An Age Group</p>
+							{!! Form::label('age', 'Please select an age group', ['class'=> 'col-md-4 control-label']) !!}
+
 							<div class="col-md-7 btn-group">
-								<label for="18" class="btn btn-primary unchecked">18u</label>
-								<input type="checkbox" name="age1" value="18" id="18" class="hidden">
-								<label for="17" class="btn btn-primary unchecked">17u</label>
-								<input type="checkbox" name="age1" value="17" id="17" class="hidden">
-								<label for="16" class="btn btn-primary unchecked">16u</label>
-								<input type="checkbox" name="age1" value="16" id="16" class="hidden">						
-								<label for="15" class="btn btn-primary unchecked">15u</label>
-								<input type="checkbox" name="age1" value="15" id="15" class="hidden">							
-								<label for="14" class="btn btn-primary unchecked">14u</label>
-								<input type="checkbox" name="age1" value="14" id="14" class="hidden">
-								<label for="13" class="btn btn-primary unchecked">13u</label>
-								<input type="checkbox" name="age1" value="13" id="13" class="hidden">
-								<label for="12" class="btn btn-primary unchecked">12u</label>
-								<input type="checkbox" name="age1" value="12" id="12" class="hidden">
-								<label for="11" class="btn btn-primary unchecked">11u</label>
-								<input type="checkbox" name="age1" value="11" id="11" class="hidden">						
-								<label for="10" class="btn btn-primary unchecked">10u</label>
-								<input type="checkbox" name="age1" value="10" id="10" class="hidden">							
-								<label for="9" class="btn btn-primary unchecked">9u</label>
-								<input type="checkbox" name="age1" value="9" id="9" class="hidden">
-								<label for="8" class="btn btn-primary unchecked">8u</label>
-								<input type="checkbox" name="age1" value="8" id="8" class="hidden">
-								<label for="7" class="btn btn-primary unchecked">7u</label>
-								<input type="checkbox" name="age1" value="7" id="7" class="hidden">
-								<label for="6" class="btn btn-primary unchecked">6u</label>
-								<input type="checkbox" name="age1" value="6" id="6" class="hidden">						
+								{!! Form::label('18', '18u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '18', null, ['class' => 'hidden', 'id' => '18']) !!}
+
+								{!! Form::label('17', '17u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '17', null, ['class' => 'hidden', 'id' => '17']) !!}
+
+								{!! Form::label('16', '16u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '16', null, ['class' => 'hidden', 'id' => '16']) !!}
+
+								{!! Form::label('15', '15u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '15', null, ['class' => 'hidden', 'id' => '15']) !!}
+
+								{!! Form::label('14', '14u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '14', null, ['class' => 'hidden', 'id' => '14']) !!}
+
+								{!! Form::label('13', '13u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '13', null, ['class' => 'hidden', 'id' => '13']) !!}
+
+								{!! Form::label('12', '12u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '12', null, ['class' => 'hidden', 'id' => '12']) !!}						
+
+								{!! Form::label('11', '11u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '11', null, ['class' => 'hidden', 'id' => '11']) !!}
+
+								{!! Form::label('10', '10u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '10', null, ['class' => 'hidden', 'id' => '10']) !!}
+
+								{!! Form::label('9', '9u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '9', null, ['class' => 'hidden', 'id' => '9']) !!}
+
+								{!! Form::label('8', '8u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '8', null, ['class' => 'hidden', 'id' => '8']) !!}
+
+								{!! Form::label('7', '7u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '7', null, ['class' => 'hidden', 'id' => '7']) !!}
+
+								{!! Form::label('6', '6u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::radio('age', '6', null, ['class' => 'hidden', 'id' => '6']) !!}
 							</div>
 						</div>
 
@@ -104,106 +120,108 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-md-4 control-label">Tryout Date</label>
+							{!! Form::label('date', 'Tryout Date', ['class'=> 'col-md-4 control-label']) !!}
+
 							<div class="col-md-6">
-								<input type="date" class="form-control" name="date">
+								{!! Form::input('date', 'date', null, ['class'=> 'form-control']) !!}
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-4 control-label">Tryout Time</label>
+							{!! Form::label('time', 'Tryout Time', ['class'=> 'col-md-4 control-label']) !!}
+
 							<div class="col-md-6">
-								<input type="time" class="form-control" id="time" name="time">
+								{!! Form::input('time', 'time', null, ['class'=> 'form-control']) !!}
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-4 control-label">Location</label>
+							{!! Form::label('location', 'Location', ['class'=> 'col-md-4 control-label']) !!}
+
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="location" placeholder="Enter park name, cross streets, etc.">
+								{!! Form::text('location', null, ['class'=> 'form-control', 'placeholder' => 'Enter park name, cross streets, etc.']) !!}
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">City</label>
+							{!! Form::label('city', 'City', ['class'=> 'col-md-4 control-label']) !!}
+
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="city">
+								{!! Form::text('city', null, ['class'=> 'form-control']) !!}
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">State</label>
+							{!! Form::label('state', 'State', ['class'=> 'col-md-4 control-label']) !!}
+
 							<div class="col-md-6">
-									<select id="form-state" class="form-control" name="state">
-									<option value="" selected disabled>State</option>
-									<option value="AL">Alabama</option>
-									<option value="AK">Alaska</option>
-									<option value="AZ">Arizona</option>
-									<option value="AR">Arkansas</option>
-									<option value="CA">California</option>
-									<option value="CO">Colorado</option>
-									<option value="CT">Connecticut</option>
-									<option value="DE">Delaware</option>
-									<option value="DC">District Of Columbia</option>
-									<option value="FL">Florida</option>
-									<option value="GA">Georgia</option>
-									<option value="HI">Hawaii</option>
-									<option value="ID">Idaho</option>
-									<option value="IL">Illinois</option>
-									<option value="IN">Indiana</option>
-									<option value="IA">Iowa</option>
-									<option value="KS">Kansas</option>
-									<option value="KY">Kentucky</option>
-									<option value="LA">Louisiana</option>
-									<option value="ME">Maine</option>
-									<option value="MD">Maryland</option>
-									<option value="MA">Massachusetts</option>
-									<option value="MI">Michigan</option>
-									<option value="MN">Minnesota</option>
-									<option value="MS">Mississippi</option>
-									<option value="MO">Missouri</option>
-									<option value="MT">Montana</option>
-									<option value="NE">Nebraska</option>
-									<option value="NV">Nevada</option>
-									<option value="NH">New Hampshire</option>
-									<option value="NJ">New Jersey</option>
-									<option value="NM">New Mexico</option>
-									<option value="NY">New York</option>
-									<option value="NC">North Carolina</option>
-									<option value="ND">North Dakota</option>
-									<option value="OH">Ohio</option>
-									<option value="OK">Oklahoma</option>
-									<option value="OR">Oregon</option>
-									<option value="PA">Pennsylvania</option>
-									<option value="RI">Rhode Island</option>
-									<option value="SC">South Carolina</option>
-									<option value="SD">South Dakota</option>
-									<option value="TN">Tennessee</option>
-									<option value="TX">Texas</option>
-									<option value="UT">Utah</option>
-									<option value="VT">Vermont</option>
-									<option value="VA">Virginia</option>
-									<option value="WA">Washington</option>
-									<option value="WV">West Virginia</option>
-									<option value="WI">Wisconsin</option>
-									<option value="WY">Wyoming</option>
-								</select>
+									{!! Form::select('state', [
+															'AL' => 'Alabama',
+															'AK' => 'Alaska',
+															'AZ' => 'Arizona',
+															'AR' => 'Arkansas',
+															'CA' => 'California',
+															'CO' => 'Colorado',
+															'CT' => 'Connecticut',
+															'DE' => 'Delaware',
+															'DC' => 'District of Columbia',
+															'FL' => 'Florida',
+															'GA' => 'Georgia',
+															'HI' => 'Hawaii',
+															'ID' => 'Idaho',
+															'IL' => 'Illinois',
+															'IN' => 'Indiana',
+															'IA' => 'Iowa',
+															'KS' => 'Kansas',
+															'KY' => 'Kentucky',
+															'LA' => 'Louisiana',
+															'ME' => 'Maine',
+															'MD' => 'Maryland',
+															'MA' => 'Massachusetts',
+															'MI' => 'Michigan',
+															'MN' => 'Minnesota',
+															'MS' => 'Mississippi',
+															'MO' => 'Missouri',
+															'MT' => 'Montana',
+															'NE' => 'Nebraska',
+															'NV' => 'Nevada',
+															'NH' => 'New Hampshire',
+															'NJ' => 'New Jersey',
+															'NM' => 'New Mexico',
+															'NY' => 'New York',
+															'NC' => 'North Carolina',
+															'ND' => 'North Dakota',
+															'OH' => 'Ohio',
+															'OK' => 'Oklahoma',
+															'OR' => 'Oregon',
+															'PA' => 'Pennsylvania',
+															'RI' => 'Rhode Island',
+															'SC' => 'South Carolina',
+															'SD' => 'South Dakota',
+															'TN' => 'Tennessee',
+															'TX' => 'Texas',
+															'UT' => 'Utah',
+															'VT' => 'Vermont',
+															'VA' => 'Virginia',
+															'WA' => 'Washington',
+															'WV' => 'West Virginia',
+															'WI' => 'Wisconsin',
+															'WY' => 'Wyoming'
+															], null, ['class'=> 'form-control', 'id' => 'form-state'] ) !!}
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label class="col-md-4 control-label">Description</label>
+							{!! Form::label('description', 'Description', ['class'=> 'col-md-4 control-label']) !!}
 							<div class="col-md-6">
-								<textarea class="form-control" name="description" placeholder="List any other details"></textarea>
+								{!! Form::textarea('description', null, ['class'=> 'form-control', 'placeholder' => 'List any other details']) !!}
 							</div>
 						</div>	
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Post
-								</button>
+								{!! Form::submit('Submit Post', ['class'=> 'btn btn-primary']) !!}
 							</div>
 						</div>
-					</form>
+					{!! Form::close() !!}
 				</div>
 			</div>
 		</div>

@@ -21,17 +21,17 @@ class CreateTryoutsTable extends Migration {
 			$table->string('contact_name');
 			$table->string('contact_email');
 			$table->string('sport');
-			$table->integer('age1');
+			$table->integer('age');
 			$table->integer('age2')->nullable();
 			$table->integer('age3')->nullable();
 			$table->integer('age4')->nullable();
 			$table->integer('age5')->nullable();
 			$table->date('date');
-			$table->time('time');
+			$table->time('time')->nullable();
 			$table->string('location');
 			$table->string('city');
 			$table->string('state');
-			$table->text('description');
+			$table->text('description')->nullable();
 			$table->timestamps();
 		});
 

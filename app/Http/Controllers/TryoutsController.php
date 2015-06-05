@@ -106,10 +106,10 @@ class TryoutsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
-	{
-		$input = $this->request->all();
-
+	public function store(Requests\TryoutRequest $request)
+	{	
+		$input = $request->all();
+		
 		Tryout::create($input);
 
 		return redirect('tryouts');
@@ -152,7 +152,7 @@ class TryoutsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, Requests\TryoutRequest $request)
 	{
 		$tryout = Tryout::findOrFail($id);
 

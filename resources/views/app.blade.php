@@ -20,6 +20,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<link href="{{ asset('adm/css/animate.css') }}" rel="stylesheet">
+	<link href="{{ asset('adm/css/vegas.css')}}" rel="stylesheet">
 	<link href="{{ asset('adm/css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('adm/css/main.css') }}" rel="stylesheet">
 </head>
@@ -85,6 +86,7 @@
 	</footer>
 	<!-- Scripts -->
 	<script src="{{ asset('/adm/js/admin.js') }}"></script>
+	<script src="{{ asset('/adm/js/vegas.js') }}"></script>
 	<script src="{{ asset('/adm/js/main.js') }}"></script>
 </body>
 </html>

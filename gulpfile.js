@@ -43,11 +43,24 @@ elixir(function(mix) {
       'vendor/bower_components/animate.css/',
       'public/adm/css'
     )
+    .copy(
+      'vendor/bower_components/vegas/dist/vegas.js',
+      'resources/assets/js/vegas.js'
+    )
+    .copy(
+      'vendor/bower_components/vegas/dist/vegas.js',
+      'public/adm/js/vegas.js'
+    )
+    .copy(
+      'vendor/bower_components/vegas/dist/vegas.css',
+      'public/adm/css'
+    )
 
     .scripts([
         'js/jquery.js',
         'js/bootstrap.js',
-        'js/vue.js'
+        'js/vue.js',
+        'js/vegas.js'
       ],
       'public/adm/js/admin.js',
       'resources/assets'

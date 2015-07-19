@@ -46,6 +46,11 @@ class TryoutsController extends Controller {
 		if (count($tryouts) < 1) {
 			return Redirect::back()->with('message','Sorry, that post was not found. Please check back later.');
 		}
+		foreach ($tryouts as $tryout) {
+			$location_name = urlencode($tryout->location_name);
+			$city = urlencode($tryout->city);
+			$state = urlencode($tryout->state);
+		}
 
 		return view('tryouts.show', compact('tryouts', 'sport', 'state', 'city', 'id'));			
 	}
@@ -70,6 +75,19 @@ class TryoutsController extends Controller {
 		}
 		
 
+	}
+
+	/****************************************************************************************
+									 Add RSVPs to Tryout
+	****************************************************************************************/
+	public function rsvp($id){
+		$tryout = Tryout::findOrFail($id);
+
+		$tryout->rsvp++;
+		
+        $tryout->save();
+
+		return Redirect::back();			
 	}
 
 	/**
@@ -108,9 +126,27 @@ class TryoutsController extends Controller {
 	 */
 	public function store(Requests\TryoutRequest $request)
 	{	
-		$input = $request->all();
+
+		$address = urlencode($request->address);
+
+		$city = urlencode($request->city);
+
+		$state = urlencode($request->state);
 		
+		$gmap = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . ',+' . $city . ',+' . $state . '&key=AIzaSyAJMBpWUA3EtmSMeZPOMdLYlHhGbyQ5Er4');
+
+		$obj = json_decode($gmap);
+		$lat = $obj->{'results'}[0]->{'geometry'}->{'location'}->{'lat'};
+		$lng = $obj->{'results'}[0]->{'geometry'}->{'location'}->{'lng'};
+
+		$request->merge(array('lat' => $lat));
+
+		$request->merge(array('lng' => $lng));
+
+		$input = $request->all();
+
 		Tryout::create($input);
+
 
 		return redirect('tryouts');
 	}
@@ -156,6 +192,22 @@ class TryoutsController extends Controller {
 	{
 		$tryout = Tryout::findOrFail($id);
 
+		$address = urlencode($request->address);
+
+		$city = urlencode($request->city);
+
+		$state = urlencode($request->state);
+		
+		$gmap = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . ',+' . $city . ',+' . $state . '&key=AIzaSyAJMBpWUA3EtmSMeZPOMdLYlHhGbyQ5Er4');
+
+		$obj = json_decode($gmap);
+		$lat = $obj->{'results'}[0]->{'geometry'}->{'location'}->{'lat'};
+		$lng = $obj->{'results'}[0]->{'geometry'}->{'location'}->{'lng'};
+
+		$request->merge(array('lat' => $lat));
+
+		$request->merge(array('lng' => $lng));
+
 		$tryout->update($request->all());
 
 		return redirect('tryouts/' . $tryout->sport . '/' . $tryout->state . '/' . $tryout->city .'/' . $id);
@@ -169,7 +221,11 @@ class TryoutsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$tryout = Tryout::findOrFail($id);
+
+		$tryout->delete();
+
+		return redirect('profile');
 	}
 
 }

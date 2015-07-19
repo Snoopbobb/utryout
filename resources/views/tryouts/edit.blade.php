@@ -112,11 +112,6 @@
 								{!! Form::radio('age', '6', null, ['class' => 'hidden', 'id' => '6']) !!}
 							</div>
 						</div>
-
-						<div>
-							<a href="#" class="btn btn-primary add" id="add-component">Add Another Age Group</a>
-							<p>Note: Additional charge of $3.00 will be applied</p>
-						</div>
 						
 						<div class="form-group">
 							{!! Form::label('date', 'Tryout Date', ['class'=> 'col-md-4 control-label']) !!}
@@ -133,10 +128,18 @@
 							</div>
 						</div>
 						<div class="form-group">
-							{!! Form::label('location', 'Location', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('location_name', 'Location Name', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
-								{!! Form::text('location', null, ['class'=> 'form-control', 'placeholder' => 'Enter park name, cross streets, etc.']) !!}
+								{!! Form::text('location_name', null, ['class'=> 'form-control', 'placeholder' => 'Enter park name, cross streets, etc.']) !!}
+							</div>
+						</div>
+
+						<div class="form-group">
+							{!! Form::label('address', 'Address', ['class'=> 'col-md-4 control-label']) !!}
+
+							<div class="col-md-6">
+								{!! Form::text('address', null, ['class'=> 'form-control', 'placeholder' => 'Enter Street Address']) !!}
 							</div>
 						</div>
 

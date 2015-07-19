@@ -12,7 +12,6 @@
 	<title>Utryout | Youth Sports Tryouts</title>
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -81,12 +80,11 @@
 	@yield('content')
 
 	<footer>
-		<h6>Photo Courtesy: <a href="#">Mette McConnell</a></h4>
-		<h6>An <a href="#">AthleTech Software</a> Application &copy;{{ date('Y') }}</h4>
+		<h6>A <a href="#">Firestack Development</a> Application &copy;{{ date('Y') }}</h4>
 	</footer>
 	<!-- Scripts -->
 	<script src="{{ asset('/adm/js/admin.js') }}"></script>
 	<script src="{{ asset('/adm/js/vegas.js') }}"></script>
-	<script src="{{ asset('/adm/js/main.js') }}"></script>
+	<script src="{{ asset('/adm/js/main.js') }}"></script>	
 </body>
 </html>

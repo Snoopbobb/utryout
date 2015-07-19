@@ -14,17 +14,13 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.less('app.less');
 
-     mix.copy(
+    mix.copy(
       'vendor/bower_components/jquery/dist/jquery.js',
       'resources/assets/js/jquery.js'
     )
     .copy(
       'vendor/bower_components/bootstrap/dist/js/bootstrap.js',
       'resources/assets/js/bootstrap.js'
-    )
-    .copy(
-      'vendor/bower_components/vue/dist/vue.js',
-      'resources/assets/js/vue.js'
     )
     .copy(
       'vendor/bower_components/bootstrap/less',
@@ -43,24 +39,10 @@ elixir(function(mix) {
       'vendor/bower_components/animate.css/',
       'public/adm/css'
     )
-    .copy(
-      'vendor/bower_components/vegas/dist/vegas.js',
-      'resources/assets/js/vegas.js'
-    )
-    .copy(
-      'vendor/bower_components/vegas/dist/vegas.js',
-      'public/adm/js/vegas.js'
-    )
-    .copy(
-      'vendor/bower_components/vegas/dist/vegas.css',
-      'public/adm/css'
-    )
 
     .scripts([
         'js/jquery.js',
-        'js/bootstrap.js',
-        'js/vue.js',
-        'js/vegas.js'
+        'js/bootstrap.js'
       ],
       'public/adm/js/admin.js',
       'resources/assets'

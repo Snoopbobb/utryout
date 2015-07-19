@@ -5,11 +5,7 @@
 	
 	@if( count($tryouts) > 0 )
 		<div class="seperator">
-			@if(!empty($sport))
-				<h1>{{ ucwords($sport) }} Tryouts</h1>
-			@else
-				<h1>All Tryouts</h1>
-			@endif
+			<h1>Search Results</h1>
 		</div>
 		
 		<div id="map-canvas"></div>
@@ -21,13 +17,7 @@
 			</div>
 		@endforeach
 	@else
-		<h1>We're Sorry There Are No Upcoming {{ ucwords($sport) }} Tryouts 
-
-			@if(!empty($state))
-				in {{ strtoupper($state) }}
-			@endif 
-
-			Posted, Please Check Back Soon!</h1>
+		<h1>We're sorry, we couldn't find any tryouts that meet that criteria. Please try a different criteria or try again later!</h1>
 	@endif
 
 	</div>

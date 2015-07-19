@@ -29,7 +29,8 @@ class TryoutRequest extends Request {
         	'sport' => 'required',
         	'age' => 'required',
         	'date' => 'required|date',
-        	'location' => 'required',
+        	'location_name' => 'required',
+        	'address' => 'required',
         	'city' => 'required',
         	'state' => 'required'
 		];

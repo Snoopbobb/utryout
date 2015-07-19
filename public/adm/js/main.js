@@ -25,16 +25,28 @@ $(function(){
  //    	]
 	// });
 
-	$('body').vegas({
-    delay: 7000,
-    timer: true,
-    shuffle: true,
-    transition: 'slideDown2',
-    transitionDuration: 2000,
-    slides: [
-        { src: '../../../img/catcher.jpg', transition: 'fade' },
-        { src: '../../../img/arial-field.jpg' }
-    	]
-	});
+	// $('body').vegas({
+ //    delay: 7000,
+ //    timer: true,
+ //    shuffle: true,
+ //    transition: 'slideDown2',
+ //    transitionDuration: 2000,
+ //    slides: [
+ //        { src: '../../../img/catcher.jpg', transition: 'fade' },
+ //        { src: '../../../img/arial-field.jpg' }
+ //    	]
+	// });
 
 });
+
+
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(51.508742,-0.120850),
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+

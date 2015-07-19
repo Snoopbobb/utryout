@@ -17,10 +17,6 @@
 			<h1><a href="http://{{ ucwords($tryout->website) }}">Visit {{ $tryout->organization }} Website</a></h1>
 			<h1><span class="tryout-title">Sport:</span> {{ ucwords($tryout->sport) }}</h1>
 			<h1><span class="tryout-title">Age:</span> {{ $tryout->age . 'U' }}</h1>
-			<h1>{{ $tryout->age2 }}</h1>
-			<h1>{{ $tryout->age3 }}</h1>
-			<h1>{{ $tryout->age4 }}</h1>
-			<h1>{{ $tryout->age5 }}</h1>
 			<h1><span class="tryout-title">Date:</span> {{ date('D F d, Y', strtotime($tryout->date)) }}</h1>
 			<h1><span class="tryout-title">Time:</span> {{ date('g:i A', strtotime($tryout->time)) }}</h1>
 			<h1><span class="tryout-title">Location:</span> {{ ucwords($tryout->location_name) }}</h1>
@@ -64,7 +60,7 @@
 		@if ($tryout->rsvp != null)
 			<h3>{{ $tryout->rsvp }} people plan on attending this tryout.</h3>
 		@endif
-		
+
 		</div>
 	</div>
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>	

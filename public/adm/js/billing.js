@@ -46,10 +46,10 @@ $(document).ready(function(){
 
 	StripeBilling.init();
 
-	$('#submit-button').submit(function(event) {
-		// validation code here
-    	if(valid) {
-      		event.preventDefault();
-    	}
-	});
+	// $('#submit-button').submit(function(event) {
+	// 	// validation code here
+ //    	if(valid) {
+ //      		event.preventDefault();
+ //    	}
+	// });
 });

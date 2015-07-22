@@ -131,8 +131,6 @@ class TryoutsController extends Controller {
 
 		$user = Auth::user();
 
-		Billing::charge(500);
-
 		$address = urlencode($request->address);
 
 		$city = urlencode($request->city);

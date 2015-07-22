@@ -31,9 +31,8 @@ class SearchController extends Controller {
 	  	$age = Request::input('age');
 	  	$age = intval($age);
 
-	    $tryouts = Tryout::all()->where('age', $age);
+	    $tryouts = Tryout::all()where('age', $age)->where('sport', $sport)->sortBy('date');
 
-	  	// dd($tryouts);
 	  }
 
 	  if (Input::has('zip'))

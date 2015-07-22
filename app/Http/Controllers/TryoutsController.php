@@ -128,7 +128,6 @@ class TryoutsController extends Controller {
 	 */
 	public function store(Requests\TryoutRequest $request)
 	{	
-		dd(Input::all());
 
 		$user = Auth::user();
 

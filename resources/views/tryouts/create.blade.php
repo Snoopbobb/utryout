@@ -231,7 +231,7 @@
 	</div>
 </div>
 
-<!-- Small modal -->
+{{-- <!-- Small modal -->
 <button type="button" class="btn" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
@@ -275,7 +275,7 @@
 		 </div>
     </div>
   </div>
-</div>
+</div> --}}
 @endsection
 
 @section('scripts')

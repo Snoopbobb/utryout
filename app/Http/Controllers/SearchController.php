@@ -27,6 +27,7 @@ class SearchController extends Controller {
 
 	  if (Input::has('age'))
 	  {
+	  	dd(Request::input('age'));
 	  	$sport = Request::input('sport');
 	  	$age = Request::input('age');
 

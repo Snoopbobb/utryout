@@ -31,7 +31,7 @@ class SearchController extends Controller {
 	  	$age = Request::input('age');
 	  	$age = intval($age);
 
-	    $tryouts = DB::table('tryouts')->where('age', '=', $age);
+	    $tryouts = DB::table('tryouts')->where('age', '=', $age)->get();
 
 	    dd($tryouts);
 

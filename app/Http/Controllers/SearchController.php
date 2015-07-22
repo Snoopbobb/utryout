@@ -31,6 +31,8 @@ class SearchController extends Controller {
 	  	$age = Request::input('age');
 	  	$age = intval($age);
 
+	  	dd($age);
+
 	    $tryouts = Tryout::all()->where('age', $age);
 
 	  }

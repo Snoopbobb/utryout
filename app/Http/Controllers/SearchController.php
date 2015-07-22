@@ -31,7 +31,7 @@ class SearchController extends Controller {
 	  	$age = Request::input('age');
 	  	$age = intval($age);
 
-	    $tryouts = Tryout::all()->where('age', $age)->where('sport', $sport)->sortBy('date');
+	    $tryouts = Tryout::all()->where('age', Request::input('age'))->where('sport', $sport)->sortBy('date');
 
 	  }
 

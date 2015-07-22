@@ -28,8 +28,8 @@ class CreateTryoutsTable extends Migration {
 			$table->string('address');
 			$table->string('city');
 			$table->string('state');
-			$table->decimal('lat', 10,7);
-			$table->decimal('lng', 10,7);
+			$table->decimal('lat', 10,7)->index();
+			$table->decimal('lng', 10,7)->index();
 			$table->text('description')->nullable();
 			$table->integer('rsvp')->nullable();
 			$table->timestamps();

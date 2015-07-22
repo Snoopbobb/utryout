@@ -8,6 +8,7 @@ use Auth;
 use App\Http\Helpers;
 use Illuminate\Http\Request;
 use DB;
+use Billable;
 
 class TryoutsController extends Controller {
 
@@ -84,7 +85,7 @@ class TryoutsController extends Controller {
 		$tryout = Tryout::findOrFail($id);
 
 		$tryout->rsvp++;
-		
+
         $tryout->save();
 
 		return Redirect::back();			
@@ -126,6 +127,9 @@ class TryoutsController extends Controller {
 	 */
 	public function store(Requests\TryoutRequest $request)
 	{	
+		$user = Auth::user();
+
+		Billing::charge(500);
 
 		$address = urlencode($request->address);
 

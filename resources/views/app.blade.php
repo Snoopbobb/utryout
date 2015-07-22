@@ -50,7 +50,7 @@
 	            			<li><a href="{{ url('tryouts/softball') }}">Softball</a></li>
 	          			</ul>
 	          		</li>
-	          		<li><a href=" {{ url('/search') }}">Search Tryouts</a></li>
+	          		<li><a href=" {{ url('/search') }}">Browse Tryouts</a></li>
 					<li><a href="{{ url('/about') }}" id="about">About</a></li>
 					<li><a href="{{ url('/contact') }}" id="contact">Contact</a></li>
 					@if(Auth::user())
@@ -80,11 +80,11 @@
 	@yield('content')
 
 	<footer>
-		<h6>A <a href="#">Firestack Development</a> Application &copy;{{ date('Y') }}</h4>
+		<h6>A <a href="#">Firestackd</a> Application &copy;{{ date('Y') }}</h4>
 	</footer>
 	<!-- Scripts -->
 	<script src="{{ asset('/adm/js/admin.js') }}"></script>
-	<script src="{{ asset('/adm/js/vegas.js') }}"></script>
+	<script src="https://js.stripe.com/v2/"></script>
 	<script src="{{ asset('/adm/js/main.js') }}"></script>	
 </body>
 </html>

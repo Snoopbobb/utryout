@@ -6,7 +6,7 @@ use App\Tryout;
 use Redirect;
 use Auth;
 use App\Http\Helpers;
-use Illuminate\Http\Request;
+use Request;
 use DB;
 use Input;
 
@@ -18,30 +18,37 @@ class SearchController extends Controller {
 
 	public function browse() {
 
-	  $q = Tryout::query();
-
-	  if (Input::has('search'))
-	  {
-	     // simple where here or another scope, whatever you like
-	     $q->where('name','like',Input::get('search'));
-	  }
-
 	  if (Input::has('sport'))
 	  {
-	     $q->Sport(Input::get('sport'));
+	  	 $sport = Request::input('sport');
+	  	 
+	     $tryouts = Tryout::all()->where('sport', $sport)->sortBy('date');
 	  }
 
 	  if (Input::has('age'))
 	  {
-	     $q->where('age', Input::get('age'));
+	  	$sport = Request::input('sport');
+	  	$age = Request::input('age');
+
+	    $tryouts = Tryout::all()->where('sport', $sport)->where('age', intval($age))->sortBy('date');
 	  }
 
-	  if (Input::has('radius' != null))
+	  if (Input::has('zip'))
 	  {
-	     $q->withinRadius(Input::get('radius'));
-	  }
+	  	$zip = Request::input('zip');
+	  	$rad = Request::input('radius');
 
-	  $tryouts = $q->orderBy('date')->paginate(5);
+	  	$gmap = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $zip. '&key=AIzaSyAJMBpWUA3EtmSMeZPOMdLYlHhGbyQ5Er4');
+	  	
+	  	$obj = json_decode($gmap);
+		$lat = $obj->{'results'}[0]->{'geometry'}->{'location'}->{'lat'};
+		$lng = $obj->{'results'}[0]->{'geometry'}->{'location'}->{'lng'};
+
+		// $tryouts = DB::select());
+
+		$tryouts = Tryout::searchRadius(Input::get('age'), Input::get('sport'), $lat, $lng, $rad);
+
+	  }
 			
 	  return view('search.results', compact('tryouts'));
 

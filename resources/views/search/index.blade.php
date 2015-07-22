@@ -10,7 +10,7 @@
 					{!! Form::open(['class' => 'form-horizontal', 'method' => 'POST', 'action' => 'SearchController@browse']) !!}
 
 						<div class="form-group">
-							{!! Form::label('sport', 'Sport', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('sport', 'By sport', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::select('sport', [
@@ -26,7 +26,7 @@
 						</div>
 
 						<div class="form-group age">
-							{!! Form::label('age', 'Age group', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('age', 'By age group', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-7 btn-group">
 								{!! Form::label('18', '18u', ['class'=> 'btn btn-primary unchecked']) !!}
@@ -71,7 +71,7 @@
 						</div>
 
 						<div class="form-group">
-							{!! Form::label('radius', 'Tryouts Within', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('radius', 'By Location Within', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::select('radius', [

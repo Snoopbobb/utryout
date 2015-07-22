@@ -1,6 +1,8 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
+use Billable;
 
 class Tryout extends Model {
 
@@ -23,24 +25,73 @@ class Tryout extends Model {
 		'description'
 	];
 
-	public function scopeSport($query, $sport)
+	public static function searchSport($sport)
 	{
-	  return $query->where('sport', $sport);
+	  $tryouts = DB::table('tryouts')->where('sport', $sport);
+
+	  return $tryouts;
+	  
 	}
 
-	public function scopeAge($query, $age)
+	public static function searchAge($age, $sport)
 	{
-	  $query->whereHas('age', function ($q) use ($age) {
-	    $q->where('name', 'like', "%{$age}%");
-	  });
+	  $tryouts = DB::table('tryouts')->where('age', '=', $age)->where('sport', $sport);
+
+	  return $tryouts;
+
 	}
 
-	public function scopeWithinRadius($query, $radius, $zip)
+	public static function searchRadius($age, $sport, $lat, $lng, $rad)
 	{
-	  $query->where(
-	  	3959 * acos(cos(radians('40.7142')) * cos(radians(lat)) 
-	  		* cos( radians(lng) - radians('-74.0064')) + sin(radians('40.7142')) * sin(radians(lat)))
-	  ); // do math here
+		//if age is set, run this
+		if($age){
+			$tryouts = DB::select(DB::raw(
+				"SELECT *
+				FROM (
+				  SELECT 
+				    *,
+				    3956 * ACOS(COS(RADIANS($lat)) * COS(RADIANS(lat)) * COS(RADIANS($lng) - RADIANS(lng)) + 
+				    	SIN(RADIANS($lat)) * SIN(RADIANS(lat))) AS distance
+				  FROM tryouts
+				  WHERE
+				    lat 
+				      BETWEEN $lat - ($rad / 69) 
+				      AND $lat + ($rad / 69)
+				    AND lng 
+				      BETWEEN $lng - ($rad / (69 * COS(RADIANS($lat)))) 
+				      AND $lng + ($rad / (69* COS(RADIANS($lat))))
+				) r
+				WHERE distance < $rad
+					AND age = $age
+					AND sport = '$sport'
+				ORDER BY distance ASC
+				", array('lat'=> $lat, 'lng'=> $lng, 'rad'=> $rad, 'sport'=> $sport)));
+
+			return $tryouts;
+		}
+		//if age is not set, run this
+		$tryouts = DB::select(DB::raw(
+				"SELECT *
+				FROM (
+				  SELECT 
+				    *,
+				    3956 * ACOS(COS(RADIANS($lat)) * COS(RADIANS(lat)) * COS(RADIANS($lng) - RADIANS(lng)) + 
+				    	SIN(RADIANS($lat)) * SIN(RADIANS(lat))) AS distance
+				  FROM tryouts
+				  WHERE
+				    lat 
+				      BETWEEN $lat - ($rad / 69) 
+				      AND $lat + ($rad / 69)
+				    AND lng 
+				      BETWEEN $lng - ($rad / (69 * COS(RADIANS($lat)))) 
+				      AND $lng + ($rad / (69* COS(RADIANS($lat))))
+				) r
+				WHERE distance < $rad
+					AND sport = '$sport'
+				ORDER BY distance ASC
+				", array('lat'=> $lat, 'lng'=> $lng, 'rad'=> $rad, 'sport'=> $sport)));
+
+			return $tryouts;
 	}
 
 }

@@ -187,6 +187,7 @@ a .active {
 
 .individual-tryout {
 	text-align: center;
+	word-wrap: break-word;
 }
 
 .tryout h3 {

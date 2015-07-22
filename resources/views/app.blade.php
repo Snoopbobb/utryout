@@ -81,7 +81,7 @@
 	@yield('content')
 
 	<footer>
-		<h6>A <a href="#">Firestackd</a> Application &copy;{{ date('Y') }}</h4>
+		<h6>A <a href="#">Firestackd</a> Application &copy;{{ date('Y') }}</h6>
 	</footer>
 
 	

@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
-use Billable;
 
 class Tryout extends Model {
 

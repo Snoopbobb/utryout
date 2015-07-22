@@ -230,6 +230,52 @@
 		</div>
 	</div>
 </div>
+
+<!-- Small modal -->
+<button type="button" class="btn" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+   
+    	<div class="modal-body">
+    		  <h4>Post your tryout for only $5.00</h4>
+		      {!! Form::open(['id'=> 'billing-form']) !!}
+		      	<div class="form-group">
+					
+					<div class="">
+						{!! Form::text('', null, ['class'=> 'form-control', 'data-stripe'=> 'number', 'placeholder' => 'Credit Card Number']) !!}
+					</div>
+				</div>
+				<div class="form-group">
+					
+					<div class="">
+						{!! Form::text('', null, ['class'=> 'form-control', 'data-stripe'=> 'cvc', 'placeholder' => 'CVC Number']) !!}
+					</div>
+				</div>
+				<div class="form-group">
+					
+					<div class="col-md-6">
+						{!! Form::selectMonth(null, null, ['class'=> 'form-control', 'data-stripe'=> 'exp-month']) !!}
+					</div>
+					<div class="col-md-6">
+						{!! Form::selectYear(null, date('Y'), date('Y') + 10, null, ['class'=> 'form-control', 'data-stripe'=> 'exp-year']) !!}
+					</div>
+				</div>
+				<div class="form-group">
+					
+					<div class="">
+						{!! Form::submit('Buy Now', ['class'=>'btn btn-primary']) !!}
+					</div>
+				</div>
+				<div class="payment-errors">
+					
+				</div>			
+		      {!! Form::close() !!}
+		 </div>
+    </div>
+  </div>
+</div>
 @endsection
 
 @section('scripts')

@@ -12,9 +12,9 @@
 					<a href="{{ url('/tryouts/') . '/' . $tryout->sport . '/' . strtolower($tryout->state) . '/' . seoUrl(strtolower($tryout->city)) . '/' .$tryout->id }}">Additional Information</a>
 				</div>
 			@endforeach
-				<a href="tryouts/create" class="btn btn-primary">Post Another Tryout</a>
+				<a href="tryouts/create" class="btn">Post Another Tryout</a>
 		@else
-			<a href="tryouts/create" class="btn btn-primary">Post A Tryout</a>
+			<a href="tryouts/create" class="btn">Post A Tryout</a>
 		@endif
 	</div>
 @endsection

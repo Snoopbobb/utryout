@@ -9,6 +9,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="publishable-key" content="pk_test_Mf4toi2NFZ1E5iGEgPyGrw5c">
 	<title>Utryout | Youth Sports Tryouts</title>
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -82,9 +83,15 @@
 	<footer>
 		<h6>A <a href="#">Firestackd</a> Application &copy;{{ date('Y') }}</h4>
 	</footer>
+
+	
 	<!-- Scripts -->
 	<script src="{{ asset('/adm/js/admin.js') }}"></script>
 	<script src="https://js.stripe.com/v2/"></script>
-	<script src="{{ asset('/adm/js/main.js') }}"></script>	
+	<script src="{{ asset('/adm/js/main.js') }}"></script>
+
+
+
+	@yield('scripts')
 </body>
 </html>

@@ -95,7 +95,7 @@
 
 						<div class="form-group">
 							<div class="">
-								{!! Form::submit('Find Tryout', ['class'=> 'btn btn-primary']) !!}
+								{!! Form::submit('Find Tryout', ['class'=> 'btn']) !!}
 							</div>
 						</div>
 

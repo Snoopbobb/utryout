@@ -9,6 +9,7 @@ use App\Http\Helpers;
 use Illuminate\Http\Request;
 use DB;
 use Billable;
+use Input;
 
 class TryoutsController extends Controller {
 
@@ -127,6 +128,8 @@ class TryoutsController extends Controller {
 	 */
 	public function store(Requests\TryoutRequest $request)
 	{	
+		dd(Input::all());
+
 		$user = Auth::user();
 
 		Billing::charge(500);

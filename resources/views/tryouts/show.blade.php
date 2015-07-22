@@ -63,6 +63,9 @@
 
 		</div>
 	</div>
+@endsection
+
+@section('scripts')
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>	
 	<script>
 		var lat = {{ $tryout->lat }};
@@ -84,6 +87,5 @@
 		}
 
 		google.maps.event.addDomListener(window, 'load', initialize);
-		
 	</script>
 @endsection

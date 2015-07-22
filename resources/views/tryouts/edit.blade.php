@@ -220,7 +220,7 @@
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								{!! Form::submit('Update Post', ['class'=> 'btn btn-primary']) !!}
+								{!! Form::submit('Update Post', ['class'=> 'btn']) !!}
 							</div>
 						</div>
 					{!! Form::close() !!}

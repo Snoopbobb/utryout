@@ -221,7 +221,7 @@
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								{!! Form::submit('Submit Post', ['class'=> 'btn btn-primary']) !!}
+								{!! Form::submit('Submit Post', ['class'=> 'btn']) !!}
 							</div>
 						</div>
 					{!! Form::close() !!}
@@ -230,15 +230,10 @@
 		</div>
 	</div>
 </div>
+@endsection
 
-<form action="" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_Mf4toi2NFZ1E5iGEgPyGrw5c"
-    data-amount="2000"
-    data-name="Demo Site"
-    data-description="2 widgets ($20.00)"
-    data-image="/128x128.png">
-  </script>
-</form>
+@section('scripts')
+
+	<script src="{{ asset('/adm/js/billing.js') }}"></script>
+
 @endsection

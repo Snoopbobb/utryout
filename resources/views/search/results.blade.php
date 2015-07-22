@@ -22,7 +22,9 @@
 	@endif
 	
 	</div>
+@endsection
 
+@section('scripts')
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>	
 	<script>
 		@if(isset($tryout))
@@ -59,4 +61,4 @@
 	      });
 		}
   </script>
-@endsection
+  @endsection

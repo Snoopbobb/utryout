@@ -33,6 +33,8 @@ class SearchController extends Controller {
 
 	    $tryouts = DB::table('tryouts')->where('age', '=', $age);
 
+	    dd($tryouts);
+
 	  }
 
 	  if (Input::has('zip'))

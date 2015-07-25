@@ -225,6 +225,7 @@
 							</div>
 						</div>
 					{!! Form::close() !!}
+							<h5>Please note that a $5.00 charge wil be due for each tryout posting.</h5>
 				</div>
 			</div>
 		</div>

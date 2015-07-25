@@ -25,7 +25,7 @@ Route::controllers([
 ]);
 
 // Static Pages Routes
-Route::get('about', 'PagesController@about');
+Route::get('how-it-works', 'PagesController@how');
 Route::get('contact', 'PagesController@contact');
 
 Route::resource('tryouts', 'TryoutsController');

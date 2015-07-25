@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller {
 
-	public function about(){
-		return view('pages.about');
+	public function how(){
+		return view('pages.how');
 	}
 
 	public function contact(){

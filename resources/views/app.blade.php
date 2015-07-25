@@ -52,11 +52,11 @@
 	          			</ul>
 	          		</li>
 	          		<li><a href=" {{ url('/search') }}">Browse Tryouts</a></li>
-					<li><a href="{{ url('/about') }}" id="about">About</a></li>
-					<li><a href="{{ url('/contact') }}" id="contact">Contact</a></li>
+					<li><a href="{{ url('/how-it-works') }}" id="about">How It Works</a></li>
+					<li><a href="{{ url('/contact') }}" id="contact">Contact Us</a></li>
 					@if(Auth::user())
 						<li><a href="{{ url('tryouts/create') }}" id="create">Post Tryout</a></li>
-						<li><a href="{{ url('/profile') }}" id="profile">Profile</a></li>
+						<li><a href="{{ url('/profile') }}" id="profile">Your Tryouts</a></li>
 					@endif
           		</ul>			
 				

@@ -17,7 +17,6 @@ body {
 	background-attachment: fixed;
 }
 
-
 .btn {
 	margin: 50px 10px;
 	font-size: 20;
@@ -45,6 +44,11 @@ body {
 .btn-link, .btn-link:hover {
 	color: white;
 	background-color: transparent;
+}
+
+.center {
+	text-align: center;
+	margin: 0 auto;
 }
 
 /******************************************
@@ -130,6 +134,22 @@ body {
 	margin: 10px auto;
 	height: 380px;
 	width: 70%;
+}
+
+.how {
+	display: inline-flex;
+	text-align: left;
+	font-weight: bolder;
+	font-size: 1.3em;
+	color: white;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.how h1, .how h2 {
+	text-align: center;
+	color: red;
+	font-weight: bolder;
 }
 
 /*************************************************

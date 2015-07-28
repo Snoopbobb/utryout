@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Browse Tryouts</div>
+				<div class="panel-heading"><h4>Browse Tryouts</h4></div>
 				<div class="panel-body">
 					{!! Form::open(['class' => 'form-horizontal', 'method' => 'POST', 'action' => 'SearchController@browse']) !!}
 
@@ -75,7 +75,7 @@
 
 							<div class="col-md-6">
 								{!! Form::select('radius', [
-															null => 'Any',
+															'5000' => 'Any',
 															'5' => '5 Miles',
 															'10' => '10 Miles',
 															'15' => '15 Miles',

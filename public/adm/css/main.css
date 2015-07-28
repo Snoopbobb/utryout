@@ -108,6 +108,11 @@ body {
 	display: inline-block;
 }
 
+.panel-heading h4{
+	color: red;
+	font-weight: bolder;
+}
+
 .seperator {
 	font-size: 140%;
 	font-weight: bolder;

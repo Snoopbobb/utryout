@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Have a question or a comment? Drop us a line.</div>
+				<div class="panel-heading"><h4>Have a question or a comment? Drop us a line.</h4></div>
 				<div class="panel-body">
 		
 					{!! Form::open(['class' => 'form-horizontal']) !!}

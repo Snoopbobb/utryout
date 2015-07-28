@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Post Tryout</div>
+				<div class="panel-heading"><h4>Post A Tryout</h4></div>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">

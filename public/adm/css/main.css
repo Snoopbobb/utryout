@@ -285,6 +285,8 @@ footer a {
 
 footer h6 {
 	font-size: 70%;
+	display: inline;
+	margin: 0 50px;
 }
 
 /*************************************************

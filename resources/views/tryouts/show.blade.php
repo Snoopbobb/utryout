@@ -34,15 +34,15 @@
 		@if(Auth::user())
 			@if(Auth::user()->id == $tryout->user_id)
 				<div>
-					<a href="/tryouts/{{$id}}/edit" class="btn btn-primary">Edit Post</a>
-					<a href="/tryouts/{{$id}}/delete" class="btn btn-primary">Delete Post</a>
+					<a href="/tryouts/{{$id}}/edit" class="btn btn-lg">Edit Post</a>
+					<a href="/tryouts/{{$id}}/delete" class="btn btn-lg" onclick="return confirm('Are you sure you want to delete this post?');">Delete Post</a>
 				</div>
 			@else
 				{!! Form::model($tryout, ['method' => 'POST', 'class' => 'form-horizontal', 'action' => ['TryoutsController@rsvp', $tryout->id]]) !!}
 
 				<div class="form-group">
 					<h3>{!! Form::label('rsvp', 'Do you plan on attending this tryout?', ['class'=> 'control-label', 'id' => 'rsvp']) !!}</h3>		
-					{!! Form::submit('Yes', ['class'=> 'btn btn-primary', 'id' => 'rsvp']) !!}
+					{!! Form::submit('Yes', ['class'=> 'btn', 'id' => 'rsvp']) !!}
 				</div>
 			{!! Form::close() !!}
 			@endif
@@ -51,7 +51,7 @@
 
 				<div class="form-group">
 					<h3>{!! Form::label('rsvp', 'Do you plan on attending this tryout?', ['class'=> 'control-label', 'id' => 'rsvp']) !!}</h3>		
-					{!! Form::submit('Yes', ['class'=> 'btn btn-primary', 'id' => 'rsvp']) !!}
+					{!! Form::submit('Yes', ['class'=> 'btn', 'id' => 'rsvp']) !!}
 				</div>
 			{!! Form::close() !!}	
 			

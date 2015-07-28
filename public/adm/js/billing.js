@@ -55,18 +55,4 @@ $(function(){
 
 	StripeBilling.init();
 
-	// $('#post-tryout').submit(function(event){
-	//     if(true) { 
-	//        event.preventDefault();  
-	//     }  
- //  	});
-
-	// $('#post-tryout').submit(function(e) {
-	// 	// validation code here
-	// 	e.preventDefault();
-
- //    	if(valid) {
- //      		event.preventDefault();
- //    	}
-	// });
 });

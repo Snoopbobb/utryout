@@ -51,7 +51,7 @@
 	            			<li><a href="{{ url('tryouts/softball') }}">Softball</a></li>
 	          			</ul>
 	          		</li>
-	          		<li><a href=" {{ url('/search') }}">Browse Tryouts</a></li>
+	          		<li><a href="{{ url('/search') }}">Browse Tryouts</a></li>
 					<li><a href="{{ url('/how-it-works') }}" id="about">How It Works</a></li>
 					<li><a href="{{ url('/contact') }}" id="contact">Contact Us</a></li>
 					@if(Auth::user())

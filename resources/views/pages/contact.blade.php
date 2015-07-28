@@ -14,7 +14,7 @@
 							{!! Form::label('name', 'Name', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
-								{!! Form::text('name', null, ['class'=> 'form-control', 'placeholder' => 'Enter Organization/Team Name']) !!}
+								{!! Form::text('name', null, ['class'=> 'form-control', 'placeholder' => 'Enter Your Name or Your Organization/Team Name']) !!}
 							</div>
 						</div>
 
@@ -22,14 +22,14 @@
 							{!! Form::label('email', 'Email', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
-								{!! Form::email('email', null, ['class'=> 'form-control', 'placeholder' => 'www.example or example.com']) !!}
+								{!! Form::email('email', null, ['class'=> 'form-control', 'placeholder' => 'Enter Your Email Address']) !!}
 							</div>
 						</div>
 						
 						<div class="form-group">
 							{!! Form::label('comment', 'Comments', ['class'=> 'col-md-4 control-label']) !!}
 							<div class="col-md-6">
-								{!! Form::textarea('comment', null, ['class'=> 'form-control', 'placeholder' => 'List any other details']) !!}
+								{!! Form::textarea('comment', null, ['class'=> 'form-control', 'placeholder' => 'Ask your questions or let us know your comments and we\'ll get back to you soon. Thank you!']) !!}
 							</div>
 						</div>	
 

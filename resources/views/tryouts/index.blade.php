@@ -21,7 +21,11 @@
 			</div>
 		@endforeach
 	@else
-		<h1>We're Sorry There Are No Upcoming {{ ucwords($sport) }} Tryouts 
+			@if(!empty($sport))
+				<h1>We're Sorry There Are No Upcoming {{ ucwords($sport) }} Tryouts
+			@else
+				<h1>We're Sorry There Are No Upcoming Tryouts
+			@endif 
 
 			@if(!empty($state))
 				in {{ strtoupper($state) }}

@@ -10,7 +10,7 @@
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
 							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<strong>Don't worry, your credit card has not been charged!</strong><br><br>
+							{{-- <strong>Don't worry, your credit card has not been charged!</strong><br><br> --}}
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
@@ -222,11 +222,11 @@
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								{!! Form::button('Submit Post', ['class'=> 'btn', 'data-toggle'=> 'modal', 'data-target'=> '.bs-example-modal-sm']) !!}
+								{!! Form::button('Submit Post', ['class'=> 'btn', 'data-toggle'=> 'modal', 'data-target'=> '.bs-example-modal-sm', 'type' => 'submit']) !!}
 							</div>
 						</div>
 					{!! Form::close() !!}
-							<h5>Please note that a $5.00 charge wil be due for each tryout posting.</h5>
+							{{-- <h5>Please note that a $5.00 charge wil be due for each tryout posting.</h5> --}}
 				</div>
 			</div>
 		</div>
@@ -236,7 +236,7 @@
 <!-- Small modal -->
 {{-- <button type="button" class="btn" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button> --}}
 
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+{{-- <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
    
@@ -283,11 +283,11 @@
 		 </div>
     </div>
   </div>
-</div>
+</div> --}}
 @endsection
 
 @section('scripts')
 
-	<script src="{{ asset('/adm/js/billing.js') }}"></script>
+	<!-- <script src="{{ asset('/adm/js/billing.js') }}"></script> -->
 
 @endsection

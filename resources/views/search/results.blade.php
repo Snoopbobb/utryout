@@ -37,9 +37,6 @@
 
 		var locations = <?php echo json_encode($tryouts); ?>;
 
-		
-	    console.log(locations);
-
 	    var map = new google.maps.Map(document.getElementById('map-canvas'), {
 		  zoom: 10,
 	      center: new google.maps.LatLng(lat, lng),

@@ -10,6 +10,7 @@
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
 							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							<strong>Don't worry, your credit card has not been charged!</strong><br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
@@ -17,7 +18,7 @@
 							</ul>
 						</div>
 					@endif
-					{!! Form::open(['class' => 'form-horizontal', 'action' => 'TryoutsController@store']) !!}
+					{!! Form::open(['class' => 'form-horizontal', 'action' => 'TryoutsController@store', 'id'=> 'post-tryout']) !!}
 						{!! Form::hidden('user_id', Auth::user()->id) !!} 
 						{{-- <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"> --}}
 
@@ -221,7 +222,7 @@
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								{!! Form::submit('Submit Post', ['class'=> 'btn']) !!}
+								{!! Form::button('Submit Post', ['class'=> 'btn', 'data-toggle'=> 'modal', 'data-target'=> '.bs-example-modal-sm']) !!}
 							</div>
 						</div>
 					{!! Form::close() !!}
@@ -232,8 +233,8 @@
 	</div>
 </div>
 
-{{-- <!-- Small modal -->
-<button type="button" class="btn" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+<!-- Small modal -->
+{{-- <button type="button" class="btn" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button> --}}
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm">
@@ -242,6 +243,12 @@
     	<div class="modal-body">
     		  <h4>Post your tryout for only $5.00</h4>
 		      {!! Form::open(['id'=> 'billing-form']) !!}
+		      	<div class="form-group">
+					
+					<div class="">
+						{!! Form::email('', null, ['class'=> 'form-control', 'data-stripe'=> 'receipt-email', 'id'=> 'stripe-email', 'name'=> 'stripe-email','placeholder' => 'Billing Email Address']) !!}
+					</div>
+				</div>
 		      	<div class="form-group">
 					
 					<div class="">
@@ -276,7 +283,7 @@
 		 </div>
     </div>
   </div>
-</div> --}}
+</div>
 @endsection
 
 @section('scripts')

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 	var StripeBilling = {
 		init: function(){
 			this.form = $('#billing-form');
@@ -36,18 +36,35 @@ $(document).ready(function(){
 
 			$('<input>', {
 				type: 'hidden',
-				name: 'stripeToken',
+				name: 'stripe-token',
 				value: response.id
-			}).appendTo(this.form);
+			}).appendTo('#post-tryout');
 
-			// this.form[0].submit();
+
+			$('<input>', {
+				type: 'hidden',
+				name: 'stripe-email',
+				value: $('#stripe-email').val()
+			}).appendTo('#post-tryout');
+
+			$('.modal').modal('toggle');
+			
+			$("#post-tryout").submit();
 		}
 	};
 
 	StripeBilling.init();
 
-	// $('#submit-button').submit(function(event) {
+	// $('#post-tryout').submit(function(event){
+	//     if(true) { 
+	//        event.preventDefault();  
+	//     }  
+ //  	});
+
+	// $('#post-tryout').submit(function(e) {
 	// 	// validation code here
+	// 	e.preventDefault();
+
  //    	if(valid) {
  //      		event.preventDefault();
  //    	}

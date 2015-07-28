@@ -299,6 +299,10 @@ footer h6 {
 		margin-left: 0;
 		margin-right: 0;
 	}
+
+	footer h6 {
+		margin: 0 25px;
+	}
 }
 
 @media(min-width:768px){}

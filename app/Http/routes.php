@@ -33,14 +33,18 @@ Route::resource('tryouts', 'TryoutsController');
 // Tryout Pages Routes
 Route::get('tryouts', 'TryoutsController@index');
 Route::post('tryouts', 'TryoutsController@store');
+
 Route::get('tryouts/create', 'TryoutsController@create');
+
 Route::get('tryouts/{sport}', 'TryoutsController@show');
+
+Route::get('tryouts/{id}/delete', 'TryoutsController@destroy');
+Route::get('tryouts/{id}/edit', 'TryoutsController@edit');
+Route::post('tryouts/{id}/rsvp', 'TryoutsController@rsvp');
+
 Route::get('tryouts/{sport}/{state}', 'TryoutsController@showState');
 Route::get('tryouts/{sport}/{state}/{city}', 'TryoutsController@showCity');
 Route::get('tryouts/{sport}/{state}/{city}/{id}', 'TryoutsController@showId');
-Route::get('tryouts/{id}/edit', 'TryoutsController@edit');
-Route::post('tryouts/{id}/rsvp', 'TryoutsController@rsvp');
-Route::get('tryouts/{id}/delete', 'TryoutsController@destroy');
 
 Route::get('search', 'SearchController@index');
 

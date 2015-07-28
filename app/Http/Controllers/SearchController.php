@@ -6,9 +6,10 @@ use App\Tryout;
 use Redirect;
 use Auth;
 use App\Http\Helpers;
-use Request;
+use Illuminate\Http\Request;
 use DB;
 use Input;
+use Validator;
 
 class SearchController extends Controller {
 
@@ -16,19 +17,23 @@ class SearchController extends Controller {
 		return view('search.index');
 	}
 
-	public function browse() {
+	public function browse(Request $request) {
+
+	  $this->validate($request, [
+        'zip' => 'digits:5|integer',
+      ]);
 
 	  if (Input::has('sport'))
 	  {
-	  	 $sport = Request::input('sport');
+	  	 $sport = $request->sport;
 	  	 
 	     $tryouts = Tryout::all()->where('sport', $sport)->sortBy('date');
 	  }
 
 	  if (Input::has('age'))
 	  {
-	  	$sport = Request::input('sport');
-	  	$age = Request::input('age');
+	  	$sport = $request->sport;
+	  	$age = $request->age;
 	  	$age = intval($age);
 
 	    $tryouts = Tryout::all()->where('age', $age)->where('sport', $sport)->sortBy('date');
@@ -37,8 +42,8 @@ class SearchController extends Controller {
 
 	  if (Input::has('zip'))
 	  {
-	  	$zip = Request::input('zip');
-	  	$rad = Request::input('radius');
+	  	$zip = $request->zip;
+	  	$rad = $request->radius;
 
 	  	$gmap = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $zip. '&key=AIzaSyAJMBpWUA3EtmSMeZPOMdLYlHhGbyQ5Er4');
 	  	

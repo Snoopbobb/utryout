@@ -7,6 +7,21 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"><h4>Have a question or a comment? Drop us a line.</h4></div>
 				<div class="panel-body">
+
+					@if (count($errors) > 0)
+						<div class="alert alert-danger">
+							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							<ul>
+								@foreach ($errors->all() as $error)
+									<li>{{ $error }}</li>
+								@endforeach
+							</ul>
+						</div>
+					@endif
+
+					@if(Session::has('message'))
+						<p class="alert {{ Session::get('alert-class', 'alert-success') }}"><strong>{{ Session::get('message') }}</strong></p>
+					@endif
 		
 					{!! Form::open(['class' => 'form-horizontal']) !!}
 
@@ -27,9 +42,9 @@
 						</div>
 						
 						<div class="form-group">
-							{!! Form::label('comment', 'Comments', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('msg', 'Message', ['class'=> 'col-md-4 control-label']) !!}
 							<div class="col-md-6">
-								{!! Form::textarea('comment', null, ['class'=> 'form-control', 'placeholder' => 'Ask your questions or let us know your comments and we\'ll get back to you soon. Thank you!']) !!}
+								{!! Form::textarea('msg', null, ['class'=> 'form-control', 'placeholder' => 'Ask your questions or let us know your comments and we\'ll get back to you soon. Thank you!']) !!}
 							</div>
 						</div>	
 

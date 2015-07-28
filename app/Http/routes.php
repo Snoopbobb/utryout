@@ -27,6 +27,7 @@ Route::controllers([
 // Static Pages Routes
 Route::get('how-it-works', 'PagesController@how');
 Route::get('contact', 'PagesController@contact');
+Route::post('contact', 'PagesController@contactSend');
 
 Route::resource('tryouts', 'TryoutsController');
 

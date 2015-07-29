@@ -14,7 +14,11 @@
 			<div class="seperator">
 				<h1>{{ ucwords($tryout->organization) }}</h1>
 			</div>
-			<h1><a href="http://{{ ucwords($tryout->website) }}">Visit {{ $tryout->organization }} Website</a></h1>
+			
+			@if (!empty($tryout->website))
+				<h1><a href="http://{{ ucwords($tryout->website) }}">Visit {{ $tryout->organization }} Website</a></h1>
+			@endif
+
 			<h1><span class="tryout-title">Sport:</span> {{ ucwords($tryout->sport) }}</h1>
 			<h1><span class="tryout-title">Age:</span> {{ $tryout->age . 'U' }}</h1>
 			<h1><span class="tryout-title">Date:</span> {{ date('D F d, Y', strtotime($tryout->date)) }}</h1>

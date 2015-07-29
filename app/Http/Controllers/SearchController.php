@@ -36,8 +36,10 @@ class SearchController extends Controller {
 	  	$age = Input::get('age');
 	  	$age = intval($age); 
 	  	 
-	    $tryouts = Tryout::all()->where('age', intval(Input::get('age')))->where('sport', $sport)->sortBy('date');
+	    // $tryouts = Tryout::all()->where('age', $age)->where('sport', $sport)->sortBy('date');
 
+	  	$tryouts = Tryout::searchAge($age, $sport);
+	  	
 	  }
 
 	  if (Input::has('zip'))

@@ -34,7 +34,14 @@ class Tryout extends Model {
 
 	public static function searchAge($age, $sport)
 	{
-	  $tryouts = Tryout::select('tryouts')->where('age', '=', $age)->where('sport', $sport);
+	  // $tryouts = Tryout::select('tryouts')->where('age', '=', $age)->where('sport', $sport);
+
+	  $tryouts = DB::select(DB::raw(
+	  		"SELECT *
+	  		 FROM tryouts
+	  		 WHERE age = :age
+	  		 AND sport = :sport"),
+	  		 array(':age'=> $age, ':sport'=> $sport));
 
 	  return $tryouts;
 

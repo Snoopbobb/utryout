@@ -25,18 +25,18 @@ class SearchController extends Controller {
 
 	  if (Input::has('sport'))
 	  {
-	  	 $sport = $request->sport;
+	  	 $sport = Input::get('sport');
 	  	 
 	     $tryouts = Tryout::all()->where('sport', $sport)->sortBy('date');
 	  }
 
 	  if (Input::has('age'))
 	  {
-	  	$sport = $request->sport;
+	  	$sport = Input::get('sport');
 	  	$age = Input::get('age');
 	  	$age = intval($age);
 
-	    $tryouts = Tryout::all()->where('sport', $sport)->where('age', $age)->sortBy('date');
+	    $tryouts = Tryout::all()->where('age', $age)->where('sport', $sport)->sortBy('date');
 
 	  }
 

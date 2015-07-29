@@ -5,7 +5,7 @@
 	<div class="row">
     	<div class="col-sm-5 col-md-6">
     		<h1>For Player/Parent</h1>
-    		<p>Utryout makes it easy to browse youth sports tryouts in your area.  Instead of sifting through several websites, forums, or social media just to find a team.  We make it easy for you to find what you’re looking for and get all the details before trying out. Find youth sports organizations in your area.</p>
+    		<p>Utryout makes it easy to find youth sports tryouts in your area.  Stop sifting through several websites, forums, or social media just to find a team.  We make it easy for you to find what you’re looking for and get all the details before trying out. Browse through our list of tryouts and find a team for your child to join today.</p>
     		<h2>Browse Tryouts</h2>
     		<ol>
     			<li>Select the sport, age, and enter your location to find upcoming tryouts in your area.</li>

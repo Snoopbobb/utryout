@@ -14,7 +14,7 @@
 			<div class="seperator">
 				<h1>{{ ucwords($tryout->organization) }}</h1>
 			</div>
-			
+
 			@if (!empty($tryout->website))
 				<h1><a href="http://{{ ucwords($tryout->website) }}">Visit {{ $tryout->organization }} Website</a></h1>
 			@endif
@@ -64,13 +64,38 @@
 		@if ($tryout->rsvp != null)
 			<h3>{{ $tryout->rsvp }} people plan on attending this tryout.</h3>
 		@endif
+		
+		<div
+		  class="fb-like center"
+		  data-share="true"
+		  data-width="450"
+		  data-show-faces="true">
+		</div>
 
 		</div>
 	</div>
+
 @endsection
 
 @section('scripts')
-	<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>	
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '460595727445651',
+	      xfbml      : true,
+	      version    : 'v2.4'
+	    });
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>	
 	<script>
 		var lat = {{ $tryout->lat }};
 		var lng = {{ $tryout->lng }};

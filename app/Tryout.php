@@ -47,7 +47,7 @@ class Tryout extends Model {
 
 	}
 
-	public static function searchRadius($age, $sport, $lat, $lng, $rad)
+	public static function searchRadius($age, $sport, $lat, $lng, $rad, $date)
 	{
 		//if age is set, run this
 		if($age){
@@ -70,6 +70,7 @@ class Tryout extends Model {
 				WHERE distance < $rad
 					AND age = $age
 					AND sport = '$sport'
+					AND date >= $date
 				ORDER BY distance ASC
 				", array('lat'=> $lat, 'lng'=> $lng, 'rad'=> $rad, 'sport'=> $sport)));
 
@@ -94,6 +95,7 @@ class Tryout extends Model {
 				) r
 				WHERE distance < $rad
 					AND sport = '$sport'
+					AND date >= $date
 				ORDER BY distance ASC
 				", array('lat'=> $lat, 'lng'=> $lng, 'rad'=> $rad, 'sport'=> $sport)));
 

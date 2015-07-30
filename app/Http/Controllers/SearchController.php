@@ -26,20 +26,25 @@ class SearchController extends Controller {
 	  if (Input::has('sport'))
 	  {
 	  	 $sport = Input::get('sport');
-	  	 
-	     $tryouts = Tryout::all()->where('sport', $sport)->sortBy('date');
+
+	  	 $date = date('Y-m-d');
+
+		 $tryouts = Tryout::orderBy('date')->where('date', '>=', $date)->where('sport', '=', $sport)->get();
 	  }
 
 	  if (Input::has('age'))
 	  {
 	  	$sport = Input::get('sport');
+
 	  	$age = Input::get('age');
 	  	$age = intval($age); 
-	  	 
-	    // $tryouts = Tryout::all()->where('age', $age)->where('sport', $sport)->sortBy('date');
 
-	  	$tryouts = Tryout::searchAge($age, $sport);
-	  	
+	  	$date = date('Y-m-d');
+	  	 
+	    $tryouts = Tryout::orderBy('date')->where('date', '>=', $date)->where('sport', '=', $sport)->where('age', '=', $age)->get();
+
+	  	// $tryouts = Tryout::searchAge($age, $sport)->where('date', '>=', $date)->orderBy('date')->get();
+
 	  }
 
 	  if (Input::has('zip'))
@@ -53,9 +58,9 @@ class SearchController extends Controller {
 		$lat = $obj->{'results'}[0]->{'geometry'}->{'location'}->{'lat'};
 		$lng = $obj->{'results'}[0]->{'geometry'}->{'location'}->{'lng'};
 
-		// $tryouts = DB::select());
+		$date = date('Y-m-d');
 
-		$tryouts = Tryout::searchRadius(Input::get('age'), Input::get('sport'), $lat, $lng, $rad);
+		$tryouts = Tryout::searchRadius(Input::get('age'), Input::get('sport'), $lat, $lng, $rad, $date);
 
 	  }
 			

@@ -45,7 +45,8 @@ Route::post('tryouts/{id}/rsvp', 'TryoutsController@rsvp');
 
 Route::get('tryouts/{sport}/{state}', 'TryoutsController@showState');
 Route::get('tryouts/{sport}/{state}/{city}', 'TryoutsController@showCity');
-Route::get('tryouts/{sport}/{state}/{city}/{id}', 'TryoutsController@showId');
+Route::get('tryouts/{sport}/{state}/{city}/{id}/', 'TryoutsController@showId');
+Route::get('tryouts/{sport}/{state}/{city}/{id}/{organization}/', 'TryoutsController@showId');
 
 Route::get('search', 'SearchController@index');
 

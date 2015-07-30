@@ -35,7 +35,7 @@ class TryoutsController extends Controller {
 									 Filters Tryouts by city
 	****************************************************************************************/
 	public function showCity($sport, $state, $city){
-		$tryouts = Tryout::all()->where('sport', $sport)->where('state', strtoupper($state))->where('city', ucwords($city));
+		$tryouts = Tryout::all()->where('sport', $sport)->where('state', strtoupper($state))->where('city', ucwords(str_replace("-", " ", $city)));
 
 		return view('tryouts.index', compact('tryouts', 'sport', 'state', 'city'));			
 	}

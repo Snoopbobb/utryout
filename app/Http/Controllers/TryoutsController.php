@@ -12,6 +12,7 @@ use Billable;
 use Input;
 use App\Billing\StripeBilling;
 use Stripe;
+use Carbon\Carbon;
 
 class TryoutsController extends Controller {
 
@@ -26,7 +27,10 @@ class TryoutsController extends Controller {
 									 Filters Tryouts by state
 	****************************************************************************************/
 	public function showState($sport, $state){
-		$tryouts = Tryout::all()->where('sport', $sport)->where('state', strtoupper($state));
+
+		$date = date('Y-m-d');
+
+		$tryouts = Tryout::orderBy('date')->where('sport', $sport)->where('state', strtoupper($state))->where('date', '>', $date)->get();
 
 		return view('tryouts.index', compact('tryouts', 'sport', 'state'));			
 	}
@@ -35,7 +39,10 @@ class TryoutsController extends Controller {
 									 Filters Tryouts by city
 	****************************************************************************************/
 	public function showCity($sport, $state, $city){
-		$tryouts = Tryout::all()->where('sport', $sport)->where('state', strtoupper($state))->where('city', ucwords(str_replace("-", " ", $city)));
+		
+		$date = date('Y-m-d');
+
+		$tryouts = Tryout::orderBy('date')->where('sport', $sport)->where('state', strtoupper($state))->where('city', ucwords(str_replace("-", " ", $city)))->where('date', '>', $date)->get();
 
 		return view('tryouts.index', compact('tryouts', 'sport', 'state', 'city'));			
 	}
@@ -67,7 +74,7 @@ class TryoutsController extends Controller {
 		if(Auth::user()){
 			$user_id = Auth::user()->id;
 			
-			$tryouts = Tryout::all()->where('user_id', $user_id);
+			$tryouts = Tryout::orderBy('date')->where('user_id', $user_id)->get();
 
 
 			return view('tryouts.profile', compact('tryouts'));
@@ -101,7 +108,9 @@ class TryoutsController extends Controller {
 	 */
 	public function index()
 	{
-		$tryouts = Tryout::orderBy('date')->get();
+		$date = date('Y-m-d');
+
+		$tryouts = Tryout::orderBy('date')->where('date', '>', $date)->get();
 
 		return view('tryouts.index', compact('tryouts'));
 	}
@@ -215,7 +224,9 @@ class TryoutsController extends Controller {
 	 */
 	public function show($sport)
 	{
-		$tryouts = Tryout::all()->where('sport', $sport);
+		$date = date('Y-m-d');
+
+		$tryouts = Tryout::orderBy('date')->where('date', '>', $date)->where('sport', '=', $sport)->get();
 
 		return view('tryouts.index', compact('tryouts', 'sport'));
 	}

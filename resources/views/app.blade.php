@@ -13,7 +13,7 @@
 
 	@if ( empty($tryout->organization) )
 		<title>Utryout | Youth Sports Tryouts</title>
-	@elseif (count($tryouts) > 1)
+	@elseif (isset($tryouts) && count($tryouts) > 1)
 		<title>Utryout | Youth Sports Tryouts</title>
 	@else 
 		<title>Utryout | {{ $tryout->organization }}</title>

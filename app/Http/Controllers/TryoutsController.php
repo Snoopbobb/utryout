@@ -30,7 +30,7 @@ class TryoutsController extends Controller {
 
 		$date = date('Y-m-d');
 
-		$tryouts = Tryout::orderBy('date')->where('sport', $sport)->where('state', strtoupper($state))->where('date', '>', $date)->get();
+		$tryouts = Tryout::orderBy('date')->where('sport', $sport)->where('state', strtoupper($state))->where('date', '>=', $date)->get();
 
 		return view('tryouts.index', compact('tryouts', 'sport', 'state'));			
 	}
@@ -42,7 +42,7 @@ class TryoutsController extends Controller {
 		
 		$date = date('Y-m-d');
 
-		$tryouts = Tryout::orderBy('date')->where('sport', $sport)->where('state', strtoupper($state))->where('city', ucwords(str_replace("-", " ", $city)))->where('date', '>', $date)->get();
+		$tryouts = Tryout::orderBy('date')->where('sport', $sport)->where('state', strtoupper($state))->where('city', ucwords(str_replace("-", " ", $city)))->where('date', '>=', $date)->get();
 
 		return view('tryouts.index', compact('tryouts', 'sport', 'state', 'city'));			
 	}
@@ -110,7 +110,7 @@ class TryoutsController extends Controller {
 	{
 		$date = date('Y-m-d');
 
-		$tryouts = Tryout::orderBy('date')->where('date', '>', $date)->get();
+		$tryouts = Tryout::orderBy('date')->where('date', '>=', $date)->get();
 
 		return view('tryouts.index', compact('tryouts'));
 	}
@@ -226,7 +226,7 @@ class TryoutsController extends Controller {
 	{
 		$date = date('Y-m-d');
 
-		$tryouts = Tryout::orderBy('date')->where('date', '>', $date)->where('sport', '=', $sport)->get();
+		$tryouts = Tryout::orderBy('date')->where('date', '>=', $date)->where('sport', '=', $sport)->get();
 
 		return view('tryouts.index', compact('tryouts', 'sport'));
 	}

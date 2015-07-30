@@ -10,7 +10,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="publishable-key" content="pk_test_Mf4toi2NFZ1E5iGEgPyGrw5c">
-	<title>Utryout | Youth Sports Tryouts</title>
+
+	@if ( empty($tryout->organization) )
+		<title>Utryout | Youth Sports Tryouts</title>
+	@elseif (count($tryouts) > 1)
+		<title>Utryout | Youth Sports Tryouts</title>
+	@else 
+		<title>Utryout | {{ $tryout->organization }}</title>
+	@endif
+
+
 	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>

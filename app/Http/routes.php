@@ -19,6 +19,11 @@ Route::get('home', function(){
 
 Route::get('profile', 'TryoutsController@profile');
 
+Route::get('sitemap', function()
+{
+   return Response::view('pages.sitemap')->header('Content-Type', 'application/xml');
+});
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

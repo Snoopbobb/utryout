@@ -71,7 +71,7 @@
 		  data-width="450"
 		  data-show-faces="true"> 
 		</div>
-		<a href="https://twitter.com/share" class="twitter-share-button" data-via="snoopbobb4">Tweet</a>
+		<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
 		<div>
 	</div>
 

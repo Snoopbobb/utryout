@@ -69,10 +69,10 @@
 		  class="fb-like center"
 		  data-share="true"
 		  data-width="450"
-		  data-show-faces="true">
+		  data-show-faces="true"> 
 		</div>
-
-		</div>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="snoopbobb4">Tweet</a>
+		<div>
 	</div>
 
 @endsection
@@ -95,6 +95,8 @@
 	     js.src = "//connect.facebook.net/en_US/sdk.js";
 	     fjs.parentNode.insertBefore(js, fjs);
 	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 	</script>	
 	<script>
 		var lat = {{ $tryout->lat }};

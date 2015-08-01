@@ -60,7 +60,7 @@
     		var address1 = locations[i].address1;
     		var lat = locations[i].lat;
     		var lng = locations[i].lng;
-    		var url = 'http://utryout.com/tryouts/' + locations[i].sport + '/' + locations[i].city.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].id + '/' + locations[i].organization.replace(/\s+/g, '-').toLowerCase();
+    		var url = locations[i].sport + '/' + locations[i].city.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].id + '/' + locations[i].organization.replace(/\s+/g, '-').toLowerCase();
 
     		var marker = new google.maps.Marker({
 		        position: new google.maps.LatLng(lat, lng),
@@ -68,13 +68,8 @@
 		        url: url
 		    });
 
-		    console.log(url);
-
 		    google.maps.event.addListener(marker, 'click', function() {
-		    	
-    			location.href = url;
-
-    			console.log(url);
+    			window.location.href = this.url;
 			});
 			
 		}

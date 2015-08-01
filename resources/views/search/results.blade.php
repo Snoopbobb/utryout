@@ -54,14 +54,24 @@
 	    var marker, i;
 	    for(i in locations)
 		{
-    		var address1 = locations[i].address1;
+    		var address = locations[i].address;
     		var lat = locations[i].lat;
     		var lng = locations[i].lng;
+    		var url = locations[i].sport + '/' + locations[i].city.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].id + '/' + locations[i].organization.replace(/\s+/g, '-').toLowerCase();
 
-    		marker = new google.maps.Marker({
-	        position: new google.maps.LatLng(lat, lng),
-	        map: map
-	      });
+    		var marker = new google.maps.Marker({
+		        position: new google.maps.LatLng(lat, lng),
+		        address: address,
+		        map: map,
+		        url: url
+		    });
+
+		    google.maps.event.addListener(marker, 'click', function() {
+    			window.location.href = 'http://utryout.com/tryouts/' + this.url;
+			});
+
+			console.log(url);
+			
 		}
   </script>
   @endsection

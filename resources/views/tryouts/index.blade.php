@@ -54,17 +54,29 @@
 	    var infowindow = new google.maps.InfoWindow();
 
 	    var marker, i;
-	    console.log(locations);
+	    
 	    for(i in locations)
 		{
     		var address1 = locations[i].address1;
     		var lat = locations[i].lat;
     		var lng = locations[i].lng;
+    		var url = 'http://utryout.com/tryouts/' + locations[i].sport + '/' + locations[i].city.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].id + '/' + locations[i].organization.replace(/\s+/g, '-').toLowerCase();
 
-    		marker = new google.maps.Marker({
-	        position: new google.maps.LatLng(lat, lng),
-	        map: map
-	      });
+    		var marker = new google.maps.Marker({
+		        position: new google.maps.LatLng(lat, lng),
+		        map: map,
+		        url: url
+		    });
+
+		    console.log(url);
+
+		    google.maps.event.addListener(marker, 'click', function() {
+		    	
+    			location.href = url;
+
+    			console.log(url);
+			});
+			
 		}
   </script>
 @endsection

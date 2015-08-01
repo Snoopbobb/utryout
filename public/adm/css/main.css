@@ -141,22 +141,6 @@ body {
 	width: 70%;
 }
 
-.how {
-	display: inline-flex;
-	text-align: left;
-	font-weight: bolder;
-	font-size: 1.3em;
-	color: white;
-	width: 90%;
-	margin: 0 auto;
-}
-
-.how h1, .how h2 {
-	text-align: center;
-	color: red;
-	font-weight: bolder;
-}
-
 /*************************************************
 					Form
 **************************************************/
@@ -273,6 +257,38 @@ a.btn {
 }
 
 /*************************************************
+					How
+**************************************************/
+.how-content {
+	width: 100%;
+	text-align: center;
+	padding-top: 75px;
+}
+
+.how {
+	display: inline-flex;
+	text-align: left;
+	font-weight: bolder;
+	font-size: 1.3em;
+	color: white;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.how h1, .how h2 {
+	text-align: center;
+	color: red;
+	font-weight: bolder;
+}
+
+.video-wrapper {
+	position: relative;
+	height: 400px;
+	width: 600px;
+	margin: 0 auto;
+}
+
+/*************************************************
 					Footer
 **************************************************/
 
@@ -303,6 +319,10 @@ footer h6 {
 		padding: 0;
 		margin-left: 0;
 		margin-right: 0;
+	}
+
+	.video-wrapper {
+		width: 95%;
 	}
 
 	footer h6 {

@@ -67,7 +67,7 @@
 		    });
 
 		    google.maps.event.addListener(marker, 'click', function() {
-    			window.location.href = 'http://utryout.com/tryouts/' + this.url;
+    			// window.location.href = 'http://utryout.com/tryouts/' + this.url;
 			});
 
 			console.log(url);

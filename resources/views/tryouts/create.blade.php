@@ -241,7 +241,7 @@
     <div class="modal-content">
    
     	<div class="modal-body">
-    		  <h4>Thank you so much! You're $5.00 will help us make improvements to the site and keep it free from advertising.</h4>
+    		  <h4>Thank you so much! You're $5.00 will help us make improvements to the site and keep it free of advertising.</h4>
 		      {!! Form::open(['id'=> 'billing-form']) !!}
 		      	<div class="form-group">
 					

@@ -108,6 +108,7 @@
 		    zoom: 10,
 		    center: myLatlng,
 		    scrollwheel: false,
+		    draggable: false
 		  }
 		  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 

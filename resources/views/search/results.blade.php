@@ -52,6 +52,8 @@
 
 	    var infowindow = new google.maps.InfoWindow();
 
+
+
 	    @if(isset($tryout))
 		    for(i in locations)
 			{

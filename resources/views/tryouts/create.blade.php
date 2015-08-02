@@ -6,6 +6,7 @@
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
 				<div class="panel-heading"><h4>Post A Tryout</h4></div>
+				<h5>Please note that there is a $5.00 charge in order to post your tryout. Thank you!</h5>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -226,7 +227,7 @@
 							</div>
 						</div>
 					{!! Form::close() !!}
-							<h5>Please note that a $5.00 charge wil be due for each tryout posting.</h5>
+							
 				</div>
 			</div>
 		</div>

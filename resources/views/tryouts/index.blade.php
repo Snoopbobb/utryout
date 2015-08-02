@@ -48,31 +48,39 @@
 	    var map = new google.maps.Map(document.getElementById('map-canvas'), {
 	      zoom: 4,
 	      center: new google.maps.LatLng(38.850033, -96.6500523),
-	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	      mapTypeId: google.maps.MapTypeId.ROADMAP,
+	      scrollwheel: false,
 	    });
 
-	    var infowindow = new google.maps.InfoWindow();
-
 	    var marker, i;
-	    
-	    for(i in locations)
-		{
-    		var address = locations[i].address;
-    		var lat = locations[i].lat;
-    		var lng = locations[i].lng;
-    		var url = 'http://utryout.com/tryouts/' + locations[i].sport + '/' + locations[i].city.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].id + '/' + locations[i].organization.replace(/\s+/g, '-').toLowerCase();
+	    @if(isset($tryout))
+		    for(i in locations)
+			{
+	    		var address = locations[i].address;
+	    		var lat = locations[i].lat;
+	    		var lng = locations[i].lng;	    		
 
-    		var marker = new google.maps.Marker({
-		        position: new google.maps.LatLng(lat, lng),
-		        address: address,
-		        map: map,
-		        url: url
-		    });
+	    		var marker = new google.maps.Marker({
+			        position: new google.maps.LatLng(lat, lng),
+			        address: address,
+			        map: map,
+			    });
 
-		    google.maps.event.addListener(marker, 'click', function() {
-    			window.location.href = url;
-			});
-			
-		}
+	    		// var url = '{{ url('/tryouts/') . '/' . $tryout->sport . '/' . strtolower($tryout->state) . '/' . seoUrl(strtolower($tryout->city)) . '/'  .   $tryout->id . '/' . seoUrl(strtolower($tryout->organization)) }}';
+	    		var url = locations[i].sport + '/' + locations[i].state.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].city.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].id + '/' + locations[i].organization.replace(/\s+/g, '-').toLowerCase();
+
+			    var content = 'Sport: ' + locations[i].sport + ' ' + 'Age: ' + locations[i].age + ' ' + 'City: ' + locations[i].city + ' ' +  '<a href="{{ url('/tryouts') }}/' + url + '">' + 'View Tryout' + '</a>';
+
+			    var infoWindow = new google.maps.InfoWindow;
+
+			    google.maps.event.addListener(marker,'click', (function(marker,content,infoWindow){
+
+	    			return function() {
+	        			infoWindow.setContent(content);
+	        			infoWindow.open(map,marker);
+	    			};
+				})(marker,content,infoWindow));	
+			}
+		@endif
   </script>
 @endsection

@@ -106,14 +106,14 @@
 		  var myLatlng = new google.maps.LatLng(lat,lng);
 		  var mapOptions = {
 		    zoom: 10,
-		    center: myLatlng
+		    center: myLatlng,
+		    scrollwheel: false,
 		  }
 		  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
 		  var marker = new google.maps.Marker({
 		      position: myLatlng,
-		      map: map,
-		      title: 'Hello World!'
+		      map: map
 		  });
 		}
 

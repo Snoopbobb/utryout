@@ -6,7 +6,8 @@
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
 				<div class="panel-heading"><h4>Post A Tryout</h4></div>
-				<h5>Please note that there is a $5.00 charge in order to post your tryout. Thank you!</h5>
+				<h5>Get your tryout information seen by people in your area for only $5!</h5>
+				<img width="150px" height="80px" src="/img/stripe.jpg"> 
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -242,7 +243,7 @@
     <div class="modal-content">
    
     	<div class="modal-body">
-    		  <h4>Thank you so much! You're $5.00 will help us make improvements to the site and keep it free of advertising.</h4>
+    		  <h4>Your tryout will be seen by parents and players looking in your area!</h4>
 		      {!! Form::open(['id'=> 'billing-form']) !!}
 		      	<div class="form-group">
 					
@@ -276,6 +277,7 @@
 					<div class="">
 						{!! Form::submit('Buy Now', ['class'=>'btn btn-primary']) !!}
 					</div>
+					<img width="150px" height="80px" src="/img/stripe.jpg">
 				</div>
 				<div class="payment-errors">
 					

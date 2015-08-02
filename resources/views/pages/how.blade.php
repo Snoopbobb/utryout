@@ -5,7 +5,8 @@
 	<div class="video-wrapper">
 		<!-- 4:3 aspect ratio -->
 		<div class="embed-responsive embed-responsive-4by3">
-		  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wwJXkx_s-yM?rel=0"></iframe>
+		  {{-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wwJXkx_s-yM?rel=0"></iframe> --}}
+		  <video controls="controls" name="UTryout Video" src="/video/utryout.mp4"></video>
 		</div>
 	</div>
 	<div class="container how">

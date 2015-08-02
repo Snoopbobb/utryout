@@ -7,7 +7,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"><h4>Post A Tryout</h4></div>
 				<h5>Get your tryout information seen by people in your area for only $5!</h5>
-				<img width="150px" height="80px" src="/img/stripe.jpg"> 
+				<a href="https://stripe.com/" target="_blank"><img width="150px" height="80px" src="/img/stripe.jpg"></a>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -277,7 +277,7 @@
 					<div class="">
 						{!! Form::submit('Buy Now', ['class'=>'btn btn-primary']) !!}
 					</div>
-					<img width="150px" height="80px" src="/img/stripe.jpg">
+					<a href="https://stripe.com/" target="_blank"><img width="150px" height="80px" src="/img/stripe.jpg"></a>
 				</div>
 				<div class="payment-errors">
 					

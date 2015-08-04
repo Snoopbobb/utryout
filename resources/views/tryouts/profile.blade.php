@@ -9,7 +9,7 @@
 			@foreach ($tryouts as $tryout)
 				<div class="tryout">
 					<span class="sport"><a href="/tryouts/{{ $tryout->sport }}">{{ $tryout->sport }}</a></span> <h3>{{ $tryout->organization }} | Ages: {{ $tryout->age }}U | {{ date('D F d, Y', strtotime($tryout->date)) }}, {{ date('g:i A', strtotime($tryout->time)) }} | {{ $tryout->city }}, {{ $tryout->state }}</h3>
-					<a href="{{ url('/tryouts/') . '/' . $tryout->sport . '/' . strtolower($tryout->state) . '/' . seoUrl(strtolower($tryout->city)) . '/' .$tryout->id }}">Additional Information</a>
+					<a href="{{ url('/tryouts/') . '/' . $tryout->sport . '/' . strtolower($tryout->state) . '/' . seoUrl(strtolower($tryout->city)) . '/' . $tryout->id . '/' . seoUrl(strtolower($tryout->organization)) }}">Additional Information</a>
 				</div>
 			@endforeach
 				<a href="tryouts/create" class="btn">Post Another Tryout</a>

@@ -9,6 +9,7 @@ class Search extends Model {
 		'id',
 		'sport',
 		'age',
+		'radius',
 		'zip'
 	];
 

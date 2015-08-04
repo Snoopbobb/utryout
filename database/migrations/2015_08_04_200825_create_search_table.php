@@ -17,6 +17,7 @@ class CreateSearchTable extends Migration {
             $table->string('sport');
             $table->string('age')->nullable();
             $table->string('zip')->nullable();
+            $table->string('radius')->nullable();
             $table->timestamps();
         });
 	}

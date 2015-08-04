@@ -18,6 +18,8 @@
 							</ul>
 						</div>
 					@endif
+
+					<h4>Search by any combination of the selections below.</h4>
 					
 					{!! Form::open(['class' => 'form-horizontal', 'method' => 'POST', 'action' => 'SearchController@browse']) !!}
 

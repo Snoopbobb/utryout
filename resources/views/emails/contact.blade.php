@@ -4,7 +4,8 @@ You received a message from Utryout.com:
 Name: {{ $name }}
 </p>
 
-Email: <p>
+<p>
+Email: 
 {{ $email }}
 </p>
 

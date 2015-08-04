@@ -1,9 +1,13 @@
 ## Utryout.com built using the Laravel PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+A live web application built using Laravel, MySQL, Bootstrap, jQuery, JavaScript, Google Maps api, Stripe api, for users to post and search for youth sports tryouts in their area.
 
-A web application for users to post and search for youth sports tryouts in their area.
+The app allows coaches and organizations to post their tryout information. Parents can then search through the tryouts to find a tryout by sport, by age, and/or by location. 
+
+The app uses Google Maps api to map the tryouts and also uses a radius search for users to search within a selected radius for tryout listings near them.
+
+The app also implements the Stripe api in order to charge users to use the site.
+
+The app also alerts coaches and organizations by email if anyone plans on attending their tryout.
+
+Visit http://utryout.com and let me know what you think. Thanks and have a great day!

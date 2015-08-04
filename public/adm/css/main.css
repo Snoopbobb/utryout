@@ -12,7 +12,7 @@ body {
 	font-weight: 300;
 	font-family: 'Roboto';
 	background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%),
-				url('../../img/catcher.jpg');
+				url('../../img/fieldbw.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -93,7 +93,7 @@ body {
 
 .container {
 	margin: 0;
-	padding-top: 80px;
+	padding-top: 50px;
 	min-height: 95vh;
 	width: 100%;
 	text-align: center;

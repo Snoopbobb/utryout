@@ -70,7 +70,7 @@ class Tryout extends Model {
 				WHERE distance < $rad
 					AND age = $age
 					AND sport = '$sport'
-					AND date >= $date
+					AND date >= '$date'
 				ORDER BY distance ASC
 				", array('lat'=> $lat, 'lng'=> $lng, 'rad'=> $rad, 'sport'=> $sport)));
 
@@ -95,7 +95,7 @@ class Tryout extends Model {
 				) r
 				WHERE distance < $rad
 					AND sport = '$sport'
-					AND date >= $date
+					AND date >= '$date'
 				ORDER BY distance ASC
 				", array('lat'=> $lat, 'lng'=> $lng, 'rad'=> $rad, 'sport'=> $sport)));
 

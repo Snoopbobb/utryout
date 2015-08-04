@@ -13,6 +13,7 @@ use Input;
 use App\Billing\StripeBilling;
 use Stripe;
 use Carbon\Carbon;
+use Mail;
 
 class TryoutsController extends Controller {
 
@@ -98,7 +99,29 @@ class TryoutsController extends Controller {
 
 		$tryout->rsvp++;
 
+		$rsvp = $tryout->rsvp;
+
+		$name = $tryout->contact_name;
+
+		$email = $tryout->contact_email;
+
+		$link = 'http://utryout.com/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 
+            				'/' . seoUrl(strtolower($tryout->city)) . '/'  .   $tryout->id . '/' . 
+            				seoUrl(strtolower($tryout->organization));
+
         $tryout->save();
+
+        Mail::send('emails.rsvp',
+        array(
+            'name' => $name,
+            'link' => $link,
+            'rsvp' => $rsvp,
+            'email' => $email
+        ), function($message) use ($tryout)
+	    {
+	        $message->from('rsvp@utryout.com');
+	        $message->to($tryout->contact_email, $tryout->contact_name)->subject('Good News From Utryout.com');
+	    });
 
 		return Redirect::back();			
 	}

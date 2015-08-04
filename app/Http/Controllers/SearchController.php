@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Tryout;
+use App\Search;
 use Redirect;
 use Auth;
 use App\Http\Helpers;
@@ -22,6 +23,10 @@ class SearchController extends Controller {
 	  $this->validate($request, [
         'zip' => 'digits:5|integer',
       ]);
+
+      $input = $request->all();
+
+	  Search::create($input);
 
 	  if (Input::has('sport'))
 	  {

@@ -4,7 +4,7 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     @foreach( Cache::get('sitemap') as $url => $params )
         {!! $url = htmlentities($url);  !!}
-        {!! $url = str_replace('&hellip;','',$url);!!}
+        {!! $url = str_replace('hellip;','',$url);!!}
         <url>
             <loc>{{ $url }}</loc> 
             <lastmod>{{$params['lastmod']}}</lastmod>

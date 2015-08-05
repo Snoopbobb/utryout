@@ -3,11 +3,11 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     @foreach( Cache::get('sitemap') as $url => $params )
-    <url>
-        <loc>{{$url}}</loc> 
-        <lastmod>{{$params['lastmod']}}</lastmod>
-        <changefreq>{{$params['changefreq']}}</changefreq>
-        <priority>{{$params['priority']}}</priority>
-    </url>
+        <url>
+            <loc>{{ $url }}</loc> 
+            <lastmod>{{$params['lastmod']}}</lastmod>
+            <changefreq>{{$params['changefreq']}}</changefreq>
+            <priority>{{$params['priority']}}</priority>
+        </url>
     @endforeach
 </urlset>

@@ -21,9 +21,7 @@ Route::get('profile', 'TryoutsController@profile');
 
 Route::get('sitemap', function()
 {
-   // return Response::view('pages.sitemap')->header('Content-Type', 'application/xml');
-	$result = Cache::get('sitemap');
-	dd($result);
+   return Response::view('pages.sitemap')->header('Content-Type', 'application/xml');
 });
 
 Route::controllers([

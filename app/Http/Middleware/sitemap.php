@@ -4,7 +4,7 @@ use Closure;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Guard;
 
-class sitemap {
+class Sitemap {
 
     /**
      * The Guard implementation.

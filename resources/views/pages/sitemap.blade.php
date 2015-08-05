@@ -5,6 +5,7 @@
     @foreach( Cache::get('sitemap') as $url => $params )
     {!! $url = str_replace('&nbsp;','',$url); !!}
     {!! $url = str_replace('nbsp','',$url); !!}
+    {!! $url = str_replace('&nbsp','',$url); !!}
     <url>
         <loc>{{$url}}</loc> 
         <lastmod>{{$params['lastmod']}}</lastmod>

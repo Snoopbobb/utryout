@@ -5,7 +5,7 @@
     @foreach( Cache::get('sitemap') as $url => $params )
         <url>
             <loc>{{ str_replace('hellip','',(htmlentities($url))) }}</loc> 
-            <lastmod>{{$params['lastmod']}}</lastmod>
+            <lastmod>{{ date('D F d, Y', strtotime(($params['lastmod'])) }}</lastmod>
             <changefreq>{{$params['changefreq']}}</changefreq>
             <priority>{{$params['priority']}}</priority>
         </url>

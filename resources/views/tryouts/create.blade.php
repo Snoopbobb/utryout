@@ -222,13 +222,13 @@
 							</div>
 						</div>
 
-						<div class="form-group">
+						{{-- <div class="form-group">
 							{!! Form::label('coupon', 'Coupon Code', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::text('coupon', null, ['class'=> 'form-control', 'placeholder' => 'Enter Park or Field Name']) !!}
 							</div>
-						</div>	
+						</div> --}}	
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">

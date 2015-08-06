@@ -1,6 +1,6 @@
 $(function(){
 
-	$(".unchecked").click(function(){
+	$(".radio").click(function(){
 	 	$(".checked").removeClass("checked");
 	 	$(this).toggleClass("checked");
 	});
@@ -15,5 +15,22 @@ $(function(){
       		$(this).addClass('active'); 
     	} 
   	});
+
+	$(".checkbox").click(function(){
+	 	$(this).toggleClass("checked");
+	});
+
+	$("input:checkbox:checked").prev('label').addClass("checked");
+
+	
+
+	$(".post").click(function(){
+		var coupon = $(".coupon").val();
+
+		if (coupon == "softball") {
+			$(".post").attr('type', 'submit')
+		}	 	
+	});
+
 
 });

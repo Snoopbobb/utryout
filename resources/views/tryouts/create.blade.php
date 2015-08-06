@@ -76,43 +76,43 @@
 							{!! Form::label('age', 'Please select an age group', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-7 btn-group">
-								{!! Form::label('18', '18u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('18', '18u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '18', null, ['class' => 'hidden', 'id' => '18']) !!}
 
-								{!! Form::label('17', '17u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('17', '17u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '17', null, ['class' => 'hidden', 'id' => '17']) !!}
 
-								{!! Form::label('16', '16u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('16', '16u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '16', null, ['class' => 'hidden', 'id' => '16']) !!}
 
-								{!! Form::label('15', '15u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('15', '15u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '15', null, ['class' => 'hidden', 'id' => '15']) !!}
 
-								{!! Form::label('14', '14u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('14', '14u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '14', null, ['class' => 'hidden', 'id' => '14']) !!}
 
-								{!! Form::label('13', '13u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('13', '13u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '13', null, ['class' => 'hidden', 'id' => '13']) !!}
 
-								{!! Form::label('12', '12u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('12', '12u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '12', null, ['class' => 'hidden', 'id' => '12']) !!}						
 
-								{!! Form::label('11', '11u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('11', '11u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '11', null, ['class' => 'hidden', 'id' => '11']) !!}
 
-								{!! Form::label('10', '10u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('10', '10u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '10', null, ['class' => 'hidden', 'id' => '10']) !!}
 
-								{!! Form::label('9', '9u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('9', '9u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '9', null, ['class' => 'hidden', 'id' => '9']) !!}
 
-								{!! Form::label('8', '8u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('8', '8u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '8', null, ['class' => 'hidden', 'id' => '8']) !!}
 
-								{!! Form::label('7', '7u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('7', '7u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '7', null, ['class' => 'hidden', 'id' => '7']) !!}
 
-								{!! Form::label('6', '6u', ['class'=> 'btn btn-primary unchecked']) !!}
+								{!! Form::label('6', '6u', ['class'=> 'btn btn-primary unchecked radio']) !!}
 								{!! Form::radio('age', '6', null, ['class' => 'hidden', 'id' => '6']) !!}
 							</div>
 						</div>
@@ -222,17 +222,17 @@
 							</div>
 						</div>
 
-						{{-- <div class="form-group">
+						<div class="form-group">
 							{!! Form::label('coupon', 'Coupon Code', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
-								{!! Form::text('coupon', null, ['class'=> 'form-control', 'placeholder' => 'Enter Park or Field Name']) !!}
+								{!! Form::text('coupon', null, ['class'=> 'form-control coupon', 'placeholder' => 'Enter Valid Coupon Code']) !!}
 							</div>
-						</div> --}}	
+						</div>	
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								{!! Form::button('Post Tryout', ['class'=> 'btn', 'data-toggle'=> 'modal', 'data-target'=> '.bs-example-modal-sm']) !!}
+								{!! Form::button('Post Tryout', ['class'=> 'btn post', 'data-toggle'=> 'modal', 'data-target'=> '.bs-example-modal-sm']) !!}
 							</div>
 						</div>
 					{!! Form::close() !!}

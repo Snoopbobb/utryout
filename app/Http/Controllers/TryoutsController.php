@@ -164,64 +164,66 @@ class TryoutsController extends Controller {
 	 */
 	public function store(Requests\TryoutRequest $request)
 	{	
-		$billing = new StripeBilling;
+		if ($request->coupon !== 'softball') {
+			$billing = new StripeBilling;
 
-		try {
-			if($request->coupon === '50off'){
-				$billing->coupon([
-					'token' => Input::get('stripe-token'),
-					'email' => Input::get('stripe-email')
-				]);
-			} else {
-				$billing->charge([
-					'token' => Input::get('stripe-token'),
-					'email' => Input::get('stripe-email')
-				]);
+			try {
+				if($request->coupon === '50off'){
+					$billing->coupon([
+						'token' => Input::get('stripe-token'),
+						'email' => Input::get('stripe-email')
+					]);
+				} else {
+					$billing->charge([
+						'token' => Input::get('stripe-token'),
+						'email' => Input::get('stripe-email')
+					]);
+				}
+
+			} catch(\Stripe\Error\Card $e) {
+				// Since it's a decline, \Stripe\Error\Card will be caught
+				$body = $e->getJsonBody();
+	  			$errors  = $body['error']['message'];
+
+				return Redirect::back()->withInput()->withErrors($errors);
+
+				} catch (\Stripe\Error\InvalidRequest $e) {
+				  // Invalid parameters were supplied to Stripe's API
+					$body = $e->getJsonBody();
+	  				$errors  = $body['error']['message'];
+
+					return Redirect::back()->withInput()->withErrors($errors);
+
+				} catch (\Stripe\Error\Authentication $e) {
+				  // Authentication with Stripe's API failed
+				  // (maybe you changed API keys recently)
+					$body = $e->getJsonBody();
+	  				$errors  = $body['error']['message'];
+
+					return Redirect::back()->withInput()->withErrors($errors);
+
+				} catch (\Stripe\Error\ApiConnection $e) {
+				  // Network communication with Stripe failed
+					$body = $e->getJsonBody();
+	  				$errors  = $body['error']['message'];
+
+					return Redirect::back()->withInput()->withErrors($errors);
+
+				} catch (\Stripe\Error\Base $e) {
+				  // Display a very generic error to the user, and maybe send
+				  // yourself an email
+					$body = $e->getJsonBody();
+	  				$errors  = $body['error']['message'];
+
+					return Redirect::back()->withInput()->withErrors($errors);
+
+				} catch (Exception $e) {
+				  // Something else happened, completely unrelated to Stripe
+					$body = $e->getJsonBody();
+	  				$errors  = $body['error']['message'];
+
+					return Redirect::back()->withInput()->withErrors($errors);
 			}
-
-		} catch(\Stripe\Error\Card $e) {
-			// Since it's a decline, \Stripe\Error\Card will be caught
-			$body = $e->getJsonBody();
-  			$errors  = $body['error']['message'];
-
-			return Redirect::back()->withInput()->withErrors($errors);
-
-			} catch (\Stripe\Error\InvalidRequest $e) {
-			  // Invalid parameters were supplied to Stripe's API
-				$body = $e->getJsonBody();
-  				$errors  = $body['error']['message'];
-
-				return Redirect::back()->withInput()->withErrors($errors);
-
-			} catch (\Stripe\Error\Authentication $e) {
-			  // Authentication with Stripe's API failed
-			  // (maybe you changed API keys recently)
-				$body = $e->getJsonBody();
-  				$errors  = $body['error']['message'];
-
-				return Redirect::back()->withInput()->withErrors($errors);
-
-			} catch (\Stripe\Error\ApiConnection $e) {
-			  // Network communication with Stripe failed
-				$body = $e->getJsonBody();
-  				$errors  = $body['error']['message'];
-
-				return Redirect::back()->withInput()->withErrors($errors);
-
-			} catch (\Stripe\Error\Base $e) {
-			  // Display a very generic error to the user, and maybe send
-			  // yourself an email
-				$body = $e->getJsonBody();
-  				$errors  = $body['error']['message'];
-
-				return Redirect::back()->withInput()->withErrors($errors);
-
-			} catch (Exception $e) {
-			  // Something else happened, completely unrelated to Stripe
-				$body = $e->getJsonBody();
-  				$errors  = $body['error']['message'];
-
-				return Redirect::back()->withInput()->withErrors($errors);
 		}
 
 		$user = Auth::user();

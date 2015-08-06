@@ -33,7 +33,7 @@ class TryoutRequest extends Request {
         	'address' => 'required',
         	'city' => 'required',
         	'state' => 'required',
-        	'coupon' => 'regex:(50off)'
+        	'coupon' => 'regex:(softball)'
 		];
 
 	}

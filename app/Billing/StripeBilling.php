@@ -25,4 +25,15 @@ class StripeBilling implements BillingInterface
 		]);
 	
 	}
+
+	function coupon(array $data)
+	{
+		return Charge::create([
+			'amount' => 250, //$2.50
+			'currency' => 'usd',
+			'description' => $data['email'],
+			'card' => $data['token'],
+		]);
+	
+	}
 }

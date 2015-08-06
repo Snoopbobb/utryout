@@ -167,10 +167,18 @@ class TryoutsController extends Controller {
 		$billing = new StripeBilling;
 
 		try {
-			$billing->charge([
-				'token' => Input::get('stripe-token'),
-				'email' => Input::get('stripe-email')
-			]);
+			if($request->coupon === '50off'){
+				$billing->coupon([
+					'token' => Input::get('stripe-token'),
+					'email' => Input::get('stripe-email')
+				]);
+			} else {
+				$billing->charge([
+					'token' => Input::get('stripe-token'),
+					'email' => Input::get('stripe-email')
+				]);
+			}
+
 		} catch(\Stripe\Error\Card $e) {
 			// Since it's a decline, \Stripe\Error\Card will be caught
 			$body = $e->getJsonBody();

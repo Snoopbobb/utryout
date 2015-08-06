@@ -181,6 +181,13 @@ a .active {
 
 
 /*************************************************
+					Create
+**************************************************/
+.create-panel {
+	margin-top: 50px;
+}
+
+/*************************************************
 					Tryout
 **************************************************/
 
@@ -286,6 +293,7 @@ a.btn {
 	height: 400px;
 	width: 600px;
 	margin: 0 auto;
+	margin-bottom: 50px;
 }
 
 /*************************************************
@@ -321,13 +329,17 @@ footer h6 {
 		margin-right: 0;
 	}
 
-	.video-wrapper {
-		width: 100%;
-	}
-
 	footer h6 {
 		display: block;
 	}
+}
+
+@media(max-width:680px){
+	
+	.video-wrapper {
+		width: 100%;
+	}
+	
 }
 
 @media(min-width:768px){}

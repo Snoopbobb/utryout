@@ -30,7 +30,6 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<link href="{{ asset('adm/css/animate.css') }}" rel="stylesheet">
-	<link href="{{ asset('adm/css/vegas.css')}}" rel="stylesheet">
 	<link href="{{ asset('adm/css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('adm/css/main.css') }}" rel="stylesheet">
 </head>

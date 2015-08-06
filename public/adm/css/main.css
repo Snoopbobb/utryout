@@ -17,6 +17,10 @@ body {
 	background-attachment: fixed;
 }
 
+p, ol {
+	text-align: left;
+}
+
 .btn {
 	margin: 50px 10px;
 	font-size: 20;
@@ -181,10 +185,10 @@ a .active {
 
 
 /*************************************************
-					Create
+					Register
 **************************************************/
-.create-panel {
-	margin-top: 50px;
+.register-panel {
+	margin-top: 30px;
 }
 
 /*************************************************
@@ -266,27 +270,6 @@ a.btn {
 /*************************************************
 					How
 **************************************************/
-.how-content {
-	width: 100%;
-	text-align: center;
-	padding-top: 75px;
-}
-
-.how {
-	display: inline-flex;
-	text-align: left;
-	font-weight: bolder;
-	font-size: 1.3em;
-	color: white;
-	width: 80%;
-	margin: 0 auto;
-}
-
-.how h1, .how h2 {
-	text-align: center;
-	color: red;
-	font-weight: bolder;
-}
 
 .video-wrapper {
 	position: relative;
@@ -321,6 +304,13 @@ footer h6 {
 /*************************************************
 				Media Queries
 **************************************************/
+@media(max-width:1000px ){
+	.col-sm-5 {
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
 @media(max-width:767px){
 	.tryout {
 		width: 100%;

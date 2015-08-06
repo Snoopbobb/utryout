@@ -3,15 +3,8 @@
 @section('content')
 <div class="container-fluid">
 	<div class="container">
-		<div class="video-wrapper">
-		<!-- 4:3 aspect ratio -->
-		<div class="embed-responsive embed-responsive-4by3">
-		  {{-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wwJXkx_s-yM?rel=0"></iframe> --}}
-		  <video controls="controls" name="UTryout Video" src="/video/utryout_coaches.mp4"></video>
-		</div>
-	</div>
 		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default create-panel">
+			<div class="panel panel-default">
 				<div class="panel-heading"><h4>Post A Tryout</h4></div>
 				<h5>Get your tryout information seen by people in your area for only $5!</h5>
 				<a href="https://stripe.com/" target="_blank"><img width="150px" height="80px" src="/img/stripe.jpg"></a>
@@ -229,13 +222,13 @@
 							</div>
 						</div>
 
-						{{-- <div class="form-group">
+						<div class="form-group">
 							{!! Form::label('coupon', 'Coupon Code', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::text('coupon', null, ['class'=> 'form-control', 'placeholder' => 'Enter Park or Field Name']) !!}
 							</div>
-						</div>	 --}}
+						</div>	
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">

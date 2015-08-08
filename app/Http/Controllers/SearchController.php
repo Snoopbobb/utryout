@@ -73,7 +73,7 @@ class SearchController extends Controller {
 	  	return view('search.results', compact('tryouts'));
 	  }
 	  
-	  $notFound = 'Please try again or signup for an alert below.';
+	  $notFound = 'Please try again or signup and receive an alert for new tryout posts in this area below.';
 
 	  return redirect('alerts')->with('notFound', $notFound);
 	}

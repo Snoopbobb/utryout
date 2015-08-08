@@ -2,6 +2,16 @@
 
 @section('content')
 	<div class="container">
+		  
+		@if (Session::get('message'))
+				<div class="alert alert-success">
+					<strong>Success!</strong> Thank you for posting your tryout!<br><br>
+
+					<ul>										
+						<li>{{ Session::get('message') }}</li>										
+					</ul>
+				</div>
+		@endif
 		<div class="seperator">
 			<h1>{{ Auth::user()->username }}'s Posted Tryouts</h1>
 		</div>

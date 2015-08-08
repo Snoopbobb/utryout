@@ -68,8 +68,13 @@ class SearchController extends Controller {
 		$tryouts = Tryout::searchRadius(Input::get('age'), Input::get('sport'), $lat, $lng, $rad, $date);
 
 	  }
-			
-	  return view('search.results', compact('tryouts'));
+	  
+	  if(count($tryouts) > 0) {
+	  	return view('search.results', compact('tryouts'));
+	  }
+	  
+	  $notFound = 'Please try again or signup for an alert below.';
 
+	  return redirect('alerts')->with('notFound', $notFound);
 	}
 }

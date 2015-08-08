@@ -33,6 +33,10 @@ p, ol {
 	border: none;
 }
 
+.btn-content {
+	margin: 10px 0 0 0;
+}
+
 .btn:focus {
 	color: white;
 	outline: 0;

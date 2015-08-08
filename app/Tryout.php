@@ -26,7 +26,7 @@ class Tryout extends Model {
 
 	public static function searchSport($sport)
 	{
-	  $tryouts = Tryout::selct('tryouts')->where('sport', $sport);
+	  $tryouts = Tryout::select('tryouts')->where('sport', $sport);
 
 	  return $tryouts;
 	  

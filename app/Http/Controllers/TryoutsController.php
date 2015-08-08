@@ -248,7 +248,9 @@ class TryoutsController extends Controller {
 
 		Tryout::create($input);
 
-		return redirect('profile')->with('Thank you so much! Your tryout was successfully posted.');
+		$message = 'Your tryout will now be seen by parents and players in your area. Please consider sharing it on your social media pages.';
+
+		return redirect('profile')->with('message', $message);
 	}
 
 	/**

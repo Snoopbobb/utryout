@@ -22,13 +22,14 @@ class TryoutRequest extends Request {
 	 */
 	public function rules()
 	{
+		$date = date('Y-m-d',strtotime("-1 days"));
 		return [
 			'organization' => 'required',
         	'contact_name' => 'required',
         	'contact_email' => 'required|email',
         	'sport' => 'required',
         	'age' => 'required',
-        	'date' => 'required|date',
+        	'date' => 'required|date|after:'.$date,
         	'location_name' => 'required',
         	'address' => 'required',
         	'city' => 'required',

@@ -2,12 +2,11 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
-use App\Tryout;
+use App\Alert;
 use Redirect;
 use Auth;
 use App\Http\Helpers;
+use Illuminate\Http\Request;
 use DB;
 use Billable;
 use Input;
@@ -16,7 +15,7 @@ use Stripe;
 use Carbon\Carbon;
 use Mail;
 
-class AlertController extends Controller {
+class AlertsController extends Controller {
 
 	protected $request;
 
@@ -32,7 +31,7 @@ class AlertController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return view('search.alerts');
 	}
 
 	/**
@@ -52,7 +51,11 @@ class AlertController extends Controller {
 	 */
 	public function store(Requests\AlertRequest $request)
 	{
-		dd($request);
+		$input = $request->all();
+
+		Alert::create($input);
+		$message = "We will alert you to any new tryouts posted that match your request.";
+		return view('search.alerts')->with('message', $message);
 	}
 
 	/**

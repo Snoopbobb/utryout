@@ -57,3 +57,6 @@ Route::get('search', 'SearchController@index');
 
 Route::post('browse', 'SearchController@browse');
 
+Route::get('alerts', 'AlertsController@index');
+Route::post('alerts', 'AlertsController@store');
+

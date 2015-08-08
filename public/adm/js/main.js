@@ -14,15 +14,7 @@ $(function(){
     	if (ahref == url) {
       		$(this).addClass('active'); 
     	} 
-  	});
-
-	$(".checkbox").click(function(){
-	 	$(this).toggleClass("checked");
-	});
-
-	$("input:checkbox:checked").prev('label').addClass("checked");
-
-	
+  	});	
 
 	$(".post").click(function(){
 		var coupon = $(".coupon").val();

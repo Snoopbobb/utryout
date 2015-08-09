@@ -22,6 +22,7 @@
 		    			<li>Select the sport, age, and enter your location to find upcoming tryouts in your area.</li>
 		    			<li>Find something you like?  Click on “additional information” to see all the details of the team/organization and their upcoming tryouts.</li>
 		    			<li>Let coaches know that you plan on attending by clicking “yes” to attend!</li>
+		    			<li><a href="{{ url('/alerts') }}">Sign up</a> and receive automatic alerts for upcoming tryouts in your area.</li>
 		    		</ol>
 		    	</div>
 				<div class="center">

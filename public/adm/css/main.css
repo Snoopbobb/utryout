@@ -23,6 +23,10 @@ p, ol {
 	font-weight: bolder;
 }
 
+a, a:visited {
+	color: red;
+}
+
 .btn {
 	margin: 50px 10px;
 	font-size: 20;

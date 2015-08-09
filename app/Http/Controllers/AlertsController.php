@@ -53,8 +53,44 @@ class AlertsController extends Controller {
 	{
 		$input = $request->all();
 
-		Alert::create($input);
+		$input['city'] = (ucwords(strtolower($input['city'])));
+
+		$alert = Alert::create($input);
+
+		$date = date('Y-m-d');
+
+		$tryouts = DB::table('tryouts')->where('city', $alert->city)->where('state', $alert->state)->where('date', '<', $date)->get();
+
+		if(count($tryouts) > 0) {
+
+			$count = count($tryouts);
+
+			for ($i=0; $i < $count; $i++) { 
+	
+				if(($alert->sport == $tryouts[$i]->sport && $alert->age == $tryouts[$i]->age) 
+					|| ($alert->sport == 'any' && $alert->age == null)
+					|| ($alert->sport== 'any' && $alert->age == $tryouts[$i]->age) 
+					|| ($alert->sport == $tryouts[$i]->sport && $alert->age == null)) {
+					
+					$link = 'https://utryout.com/tryouts/' . $tryouts[$i]->sport . '/' . strtolower($tryouts[$i]->state) . 
+		            				'/' . seoUrl(strtolower($tryouts[$i]->city)) . '/'  .   $tryouts[$i]->id . '/' . 
+		            				seoUrl(strtolower($tryouts[$i]->organization));
+
+		            $email = $tryouts[$i]->contact_email;
+
+		            $contact_name = $tryouts[$i]->contact_name;
+		          
+					Mail::later(10, 'emails.coach', array('contact_name' => $contact_name, 'link' => $link ), function($message) use ($email)
+					{	
+						$message->from('alerts@utryout.com');
+    					$message->to($email)->subject('Good news from Utryout.com!');
+					});
+				}
+			}
+		}
+
 		$message = "We will alert you to any new tryouts posted that match your request.";
+
 		return view('search.alerts')->with('message', $message);
 	}
 

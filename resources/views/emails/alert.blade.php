@@ -5,6 +5,8 @@
 
 <p>Visit the tryout link below to see more information about the tryout.</p>
 
+
+
 {{ $link }}
 
 

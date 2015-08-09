@@ -105,7 +105,7 @@ class TryoutsController extends Controller {
 
 		$email = $tryout->contact_email;
 
-		$link = 'http://utryout.com/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 
+		$link = 'https://utryout.com/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 
             				'/' . seoUrl(strtolower($tryout->city)) . '/'  .   $tryout->id . '/' . 
             				seoUrl(strtolower($tryout->organization));
 
@@ -246,6 +246,8 @@ class TryoutsController extends Controller {
 
 		$input = $request->all();
 
+		$input['city'] = (ucwords(strtolower($input['city'])));
+
 		$tryout = Tryout::create($input);
 
 		$id = $tryout->id;
@@ -262,7 +264,7 @@ class TryoutsController extends Controller {
 					|| ($tryout->sport == $alerts[$i]->sport && $alerts[$i]->age == null)
 					|| ($alerts[$i]->sport== 'any' && $tryout->age == $alerts[$i]->age) 
 					|| ($alerts[$i]->sport== 'any' && $alerts[$i]->age == null)) {
-					$link = 'http://utryout.com/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 
+					$link = 'https://utryout.com/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 
 		            				'/' . seoUrl(strtolower($tryout->city)) . '/'  .   $id . '/' . 
 		            				seoUrl(strtolower($tryout->organization));
 

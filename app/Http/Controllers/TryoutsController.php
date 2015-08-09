@@ -246,9 +246,37 @@ class TryoutsController extends Controller {
 
 		$input = $request->all();
 
-		Tryout::create($input);
+		$tryout = Tryout::create($input);
 
-		$message = 'Your tryout will now be seen by parents and players in your area. Please consider sharing it on your social media pages.';
+		$id = $tryout->id;
+
+		$alerts = DB::table('alerts')->where('city', $tryout->city)->where('state', $tryout->state)->get();
+
+		if(count($alerts) > 0) {
+
+			$count = count($alerts);
+
+			for ($i=0; $i < $count; $i++) { 
+	
+				if(($tryout->sport == $alerts[$i]->sport && $tryout->age == $alerts[$i]->age) 
+					|| ($alerts[$i]->sport== 'any' && $tryout->age == $alerts[$i]->age) 
+					|| ($alerts[$i]->sport== 'any' && $alerts[$i]->age == null)) {
+					$link = 'http://utryout.com/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 
+		            				'/' . seoUrl(strtolower($tryout->city)) . '/'  .   $id . '/' . 
+		            				seoUrl(strtolower($tryout->organization));
+
+		            $email = $alerts[$i]->email;
+		          
+					Mail::later(10, 'emails.alert', array('link' => $link ), function($message) use ($email)
+					{	
+						$message->from('alerts@utryout.com');
+    					$message->to($email)->subject('Good news from Utryout.com!');
+					});
+				}
+			}
+		}
+
+		$message = 'We have alerted any users who are searching for tryouts like yours about your new posting. Please consider sharing it on your social media pages.';
 
 		return redirect('profile')->with('message', $message);
 	}

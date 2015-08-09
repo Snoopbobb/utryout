@@ -259,6 +259,7 @@ class TryoutsController extends Controller {
 			for ($i=0; $i < $count; $i++) { 
 	
 				if(($tryout->sport == $alerts[$i]->sport && $tryout->age == $alerts[$i]->age) 
+					|| ($tryout->sport == $alerts[$i]->sport && $alerts[$i]->age == null)
 					|| ($alerts[$i]->sport== 'any' && $tryout->age == $alerts[$i]->age) 
 					|| ($alerts[$i]->sport== 'any' && $alerts[$i]->age == null)) {
 					$link = 'http://utryout.com/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 

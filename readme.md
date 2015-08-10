@@ -10,4 +10,34 @@ The app also implements the Stripe api in order to charge users to use the site.
 
 The app also alerts coaches and organizations by email if anyone plans on attending their tryout.
 
+Here's one of my favorite pieces of the code. A new post(tryout) is being created, and I wanted to find any matches to any alerts that have been created. It grabs all the alerts that match the city and the state, iterates through the alerts data, and finds matches to any posts that have been created. If the alert matches the tryout, it will send an email notifying the user that created the alert. There may be a much better way to do this, but it works for me and that made me happy. 
+
+```php
+$alerts = DB::table('alerts')->where('city', $tryout->city)->where('state', $tryout->state)->get();
+
+		if(count($alerts) > 0) {
+
+			$count = count($alerts);
+
+			for ($i=0; $i < $count; $i++) { 
+	
+				if(($tryout->sport == $alerts[$i]->sport && $tryout->age == $alerts[$i]->age) 
+					|| ($tryout->sport == $alerts[$i]->sport && $alerts[$i]->age == null)
+					|| ($alerts[$i]->sport== 'any' && $tryout->age == $alerts[$i]->age) 
+					|| ($alerts[$i]->sport== 'any' && $alerts[$i]->age == null)) {
+					$link = 'https://utryout.com/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 
+		            				'/' . seoUrl(strtolower($tryout->city)) . '/'  .   $id . '/' . 
+		            				seoUrl(strtolower($tryout->organization));
+
+		            $email = $alerts[$i]->email;
+		          
+					Mail::later(10, 'emails.alert', array('link' => $link ), function($message) use ($email)
+					{	
+						$message->from('alerts@utryout.com');
+    					$message->to($email)->subject('Good news from Utryout.com!');
+					});
+				}
+			}
+```
+
 Visit http://utryout.com and let me know what you think. Thanks and have a great day!

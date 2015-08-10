@@ -91,7 +91,7 @@
 
 	<footer>
 		{{-- <h6>Photo courtesy of <a href="#">Mette McConnell</a></h6> --}}
-		<h6>A <a href="http://30andb.com">Firestackd</a> Application &copy;{{ date('Y') }}</h6>
+		<h6>A <a href="http://30andb.com" style="color: white;">Firestackd</a> Application &copy;{{ date('Y') }}</h6>
 	</footer>
 
 	

@@ -10,7 +10,7 @@ The app also implements the Stripe api in order to charge users to use the site.
 
 The app also alerts coaches and organizations by email if anyone plans on attending their tryout.
 
-Here's one of my favorite pieces of the code. A new post(tryout) is being created, and I wanted to find any matches to any alerts that have been created. It grabs all the alerts that match the city and the state, iterates through the alerts data, and finds matches to any posts that have been created. If the alert matches the tryout, it will send an email notifying the user that created the alert. There may be a much better way to do this, but it works for me and that made me happy. 
+Here's one of my favorite pieces of the code. A new tryout is being created, and I wanted to find any matches to any alerts that have been created. It grabs all the alerts that match the city and the state, iterates through the alerts data, and finds matches to the tryout being created. If the alert matches the tryout, it will send an email notifying the user that created the alert. There may be a much better way to do this, but it works for me and that made me happy. 
 
 ```php
 $alerts = DB::table('alerts')->where('city', $tryout->city)->where('state', $tryout->state)->get();

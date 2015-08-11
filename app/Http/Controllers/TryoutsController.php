@@ -246,6 +246,8 @@ class TryoutsController extends Controller {
 
 		$input = $request->all();
 
+		$input['user_id'] = Auth::user()->id; 
+
 		$input['city'] = (ucwords(strtolower($input['city'])));
 
 		$tryout = Tryout::create($input);

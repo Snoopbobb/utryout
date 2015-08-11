@@ -21,8 +21,6 @@
 						</div>
 					@endif
 					{!! Form::open(['class' => 'form-horizontal', 'action' => 'TryoutsController@store', 'id'=> 'post-tryout']) !!}
-						{!! Form::hidden('user_id', Auth::user()->id) !!} 
-						{{-- <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"> --}}
 
 						<div class="form-group">
 							{!! Form::label('organization', 'Organization', ['class'=> 'col-md-4 control-label']) !!}

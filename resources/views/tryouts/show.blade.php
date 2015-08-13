@@ -30,7 +30,7 @@
 			<h1><span class="tryout-title">Contact Email:</span> {{ $tryout->contact_email }}</h1>
 			
 			@if ($tryout->description)
-				<h1><span class="tryout-title">Description:</span> {{ $tryout->description }}</h1>
+				<h1><span class="tryout-title tryout-description">Description:</span> {{ $tryout->description }}</h1>
 			@else
 				<h1>No Additional Information Has Been Provided</h1>
 			@endif

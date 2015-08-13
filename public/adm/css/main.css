@@ -253,6 +253,10 @@ a.btn {
 	color: red;
 }
 
+.tryout-description {
+	text-align: left;
+}
+
 .fb-like {
 	margin: 0 auto;
 	padding: 10px;

@@ -344,11 +344,6 @@ footer h6 {
 		width: 100%;
 	}
 
-	.dropdown:hover .dropdown-menu {
-		display: none;				/* Turns on drop menu on hover in Bootstrap */
-		
-	}
-
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a, .navbar-default .navbar-nav .open .dropdown-menu {
     	color: white;
   	}

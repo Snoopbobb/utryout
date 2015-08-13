@@ -8,6 +8,8 @@
 		</div>
 		
 		<div id="map-canvas"></div>
+
+		<h2>{{ $count }} Upcoming Tryouts Found</h2>
 		
 		@foreach ($tryouts as $tryout)
 			<div class="tryout .col-xs-6 .col-md-4">

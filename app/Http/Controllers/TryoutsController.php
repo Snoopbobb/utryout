@@ -33,7 +33,9 @@ class TryoutsController extends Controller {
 
 		$tryouts = Tryout::orderBy('date')->where('sport', $sport)->where('state', strtoupper($state))->where('date', '>=', $date)->get();
 
-		return view('tryouts.index', compact('tryouts', 'sport', 'state'));			
+		$count = count($tryouts);
+
+		return view('tryouts.index', compact('tryouts', 'sport', 'state', 'count'));			
 	}
 
 	/****************************************************************************************
@@ -45,7 +47,9 @@ class TryoutsController extends Controller {
 
 		$tryouts = Tryout::orderBy('date')->where('sport', $sport)->where('state', strtoupper($state))->where('city', ucwords(str_replace("-", " ", $city)))->where('date', '>=', $date)->get();
 
-		return view('tryouts.index', compact('tryouts', 'sport', 'state', 'city'));			
+		$count = count($tryouts);
+
+		return view('tryouts.index', compact('tryouts', 'sport', 'state', 'city', 'count'));			
 	}
 
 	/****************************************************************************************
@@ -79,8 +83,9 @@ class TryoutsController extends Controller {
 			
 			$tryouts = Tryout::orderBy('date')->where('user_id', $user_id)->where('date', '>=', $date)->get();
 
+			$count = count($tryouts);
 
-			return view('tryouts.profile', compact('tryouts'));
+			return view('tryouts.profile', compact('tryouts', 'count'));
 			
 		} else {
 
@@ -137,7 +142,9 @@ class TryoutsController extends Controller {
 
 		$tryouts = Tryout::orderBy('date')->where('date', '>=', $date)->get();
 
-		return view('tryouts.index', compact('tryouts'));
+		$count = count($tryouts);
+
+		return view('tryouts.index', compact('tryouts', 'count'));
 	}
 
 
@@ -300,7 +307,9 @@ class TryoutsController extends Controller {
 
 		$tryouts = Tryout::orderBy('date')->where('date', '>=', $date)->where('sport', '=', $sport)->get();
 
-		return view('tryouts.index', compact('tryouts', 'sport'));
+		$count = count($tryouts);
+
+		return view('tryouts.index', compact('tryouts', 'sport', 'count'));
 	}
 
 

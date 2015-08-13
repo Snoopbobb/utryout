@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-	
+		
 	 @foreach ($tryouts as $tryout)
 	 	
 		<div class="tryout individual-tryout">

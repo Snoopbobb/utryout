@@ -35,6 +35,8 @@ class SearchController extends Controller {
 	  	 $date = date('Y-m-d');
 
 		 $tryouts = Tryout::orderBy('date')->where('date', '>=', $date)->where('sport', '=', $sport)->get();
+
+		 $count = count($tryouts);
 	  }
 
 	  if (Input::has('age'))
@@ -47,6 +49,8 @@ class SearchController extends Controller {
 	  	$date = date('Y-m-d');
 	  	 
 	    $tryouts = Tryout::orderBy('date')->where('date', '>=', $date)->where('sport', '=', $sport)->where('age', '=', $age)->get();
+
+	    $count = count($tryouts);
 
 	  	// $tryouts = Tryout::searchAge($age, $sport)->where('date', '>=', $date)->orderBy('date')->get();
 
@@ -67,10 +71,12 @@ class SearchController extends Controller {
 
 		$tryouts = Tryout::searchRadius(Input::get('age'), Input::get('sport'), $lat, $lng, $rad, $date);
 
+		$count = count($tryouts);
+
 	  }
 	  
 	  if(count($tryouts) > 0) {
-	  	return view('search.results', compact('tryouts'));
+	  	return view('search.results', compact('tryouts', 'count'));
 	  }
 	  
 	  $notFound = 'Please try again or signup and receive an alert for new tryout posts in this area below.';

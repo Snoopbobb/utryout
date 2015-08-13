@@ -8,9 +8,13 @@
 		</div>
 		
 		<div id="map-canvas"></div>
-
-		<h2>{{ $count }} Upcoming Tryouts Found</h2>
 		
+		@if($count > 1) {
+			<h2>{{ $count }} Upcoming Tryouts Found</h2>
+		@else
+			<h2>{{ $count }} Upcoming Tryout Found</h2>
+		@endif
+
 		@foreach ($tryouts as $tryout)
 			<div class="tryout .col-xs-6 .col-md-4">
 				<span class="sport"><a href="{{ url('/tryouts/') . '/' . $tryout->sport }}">{{ $tryout->sport }}</a></span> <h3> 

@@ -58,6 +58,7 @@
 	      center: new google.maps.LatLng(38.850033, -96.6500523),
 	      mapTypeId: google.maps.MapTypeId.ROADMAP,
 	      scrollwheel: false,
+		    draggable: false
 	    });
 
 	    var marker, i;

@@ -92,7 +92,7 @@
 
 	<footer>
 		{{-- <h6>Photo courtesy of <a href="#">Mette McConnell</a></h6> --}}
-		<a href="https://www.facebook.com/utryout?fref=ts">Like Us On <i class="fa fa-facebook"></i>aceBook!</a>
+		<a href="https://www.facebook.com/utryout?fref=ts">Like Us On <i class="fa fa-facebook"></i>acebook!</a>
 		<h6>A <a href="http://30andb.com" style="color: white;">Firestackd</a> Application &copy;{{ date('Y') }}</h6>
 	</footer>
 

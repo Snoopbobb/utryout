@@ -63,7 +63,11 @@
 		@endif
 
 		@if ($tryout->rsvp != null)
-			<h3>{{ $tryout->rsvp }} player(s) plan on attending this tryout.</h3>
+			@if( $tryout->rsvp > 1)
+				<h3>{{ $tryout->rsvp }} players plan on attending this tryout.</h3>
+			@else
+				<h3>{{ $tryout->rsvp }} player plans on attending this tryout.</h3>
+			@endif
 		@endif
 		
 		<div

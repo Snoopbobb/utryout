@@ -256,7 +256,7 @@ a.btn {
 .tryout-description {
 	text-align: left;
 	font-family: Arial;
-	font-size: 140%;
+	font-size: 150%;
 }
 
 .fb-like {
@@ -328,12 +328,31 @@ footer h6 {
 }
 
 @media(max-width:767px){
+	.container {
+		margin: 50px 0 0 0;
+		padding: 0;
+	}
+
 	.tryout {
 		width: 100%;
 		padding: 0;
 		margin-left: 0;
 		margin-right: 0;
 	}
+
+	#map-canvas {
+		width: 100%;
+	}
+
+	.dropdown:hover .dropdown-menu {
+		display: none;				/* Turns on drop menu on hover in Bootstrap */
+		
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a, .navbar-default .navbar-nav .open .dropdown-menu {
+    	color: white;
+  	}
+
 
 	footer h6 {
 		display: block;

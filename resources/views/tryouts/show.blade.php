@@ -16,7 +16,7 @@
 			</div>
 
 			@if (!empty($tryout->website))
-				<h1><a href="http://{{ ucwords($tryout->website) }}">Visit {{ $tryout->organization }} Website</a></h1>
+				<h1><a href="http://{{ ucwords($tryout->website) }}" class="btn btn-content">Visit {{ $tryout->organization }} Website</a></h1>
 			@endif
 
 			<h1><span class="tryout-title">Sport:</span> {{ ucwords($tryout->sport) }}</h1>
@@ -32,7 +32,7 @@
 			@if ($tryout->description)
 				<h1 class="tryout-description"><span class="tryout-title">Description:</span> {{ $tryout->description }}</h1>
 			@else
-				<h1>No Additional Information Has Been Provided</h1>
+				<h1><span class="tryout-title">Description:</span> No Additional Information Has Been Provided</h1>
 			@endif
 	@endforeach
 		<?php $date = date('Y-m-d'); ?>

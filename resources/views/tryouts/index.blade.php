@@ -14,7 +14,7 @@
 		
 		<div id="map-canvas"></div>
 
-		@if($count > 1) {
+		@if($count > 1)
 			<h2>{{ $count }} Upcoming Tryouts Found</h2>
 		@else
 			<h2>{{ $count }} Upcoming Tryout Found</h2>

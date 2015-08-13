@@ -6,13 +6,18 @@
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
 				<div class="panel-heading"><h4>Post A Tryout</h4></div>
-				<h5>Get your tryout information seen by people in your area for only $5!</h5>
-				<a href="https://stripe.com/" target="_blank"><img width="150px" height="80px" src="/img/stripe.jpg"></a>
+				<h5>For a limited time post your tryout information for free!</h5>
+				
+				{{-- Credit Card payments turned off --}}
+				{{-- <h5>Get your tryout information seen by people in your area for only $5!</h5>
+				<a href="https://stripe.com/" target="_blank"><img width="150px" height="80px" src="/img/stripe.jpg"></a> --}}
+
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
 							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<strong>Don't worry, your credit card has not been charged!</strong><br><br>
+							{{-- Credit Card payments turned off --}}
+							{{-- <strong>Don't worry, your credit card has not been charged!</strong><br><br> --}}
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
@@ -219,18 +224,19 @@
 								{!! Form::textarea('description', null, ['class'=> 'form-control', 'placeholder' => 'List any other details']) !!}
 							</div>
 						</div>
-
-						<div class="form-group">
+						
+						{{-- Credit Card information turned off --}}
+						{{-- <div class="form-group">
 							{!! Form::label('coupon', 'Coupon Code', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::text('coupon', null, ['class'=> 'form-control coupon', 'placeholder' => 'Enter Valid Coupon Code']) !!}
 							</div>
-						</div>	
+						</div> --}}	
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								{!! Form::button('Post Tryout', ['class'=> 'btn post', 'data-toggle'=> 'modal', 'data-target'=> '.bs-example-modal-sm']) !!}
+								{!! Form::button('Post Tryout', ['class'=> 'btn post', 'data-toggle'=> 'modal', 'data-target'=> '.bs-example-modal-sm', 'type' => 'submit']) !!}
 							</div>
 						</div>
 					{!! Form::close() !!}
@@ -242,9 +248,8 @@
 </div>
 
 <!-- Small modal -->
-{{-- <button type="button" class="btn" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button> --}}
-
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+{{-- Credit Card payments turned off --}}
+{{-- <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
    
@@ -291,7 +296,8 @@
 		      {!! Form::close() !!}
 		 </div>
     </div>
-  </div>
+  </div> --}}
+
 </div>
 @endsection
 

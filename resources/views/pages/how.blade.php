@@ -39,7 +39,7 @@
 		    		<ol>
 		    			<li>Register or Sign In to your Utryout account.</li>
 		    			<li>Add all the details of your team/organization including website, age, location, tryout date, and more!</li>
-		    			<li>Submit your post for only $5.00, share it on social media, and your tryout information will be seen by those in your area looking for a great place to play!</li>
+		    			<li>Submit your post for only <strike>$5.00</strike> Free for a limited time, share it on social media, and your tryout information will be seen by those in your area looking for a great place to play!</li>
 		    			<li>Receive automatic alerts when someone plans to attend your tryout.</li>
 		    		</ol>
 				</div>

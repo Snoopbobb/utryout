@@ -37,12 +37,12 @@
 	@endforeach
 		<?php $date = date('Y-m-d'); ?>
 		@if(Auth::user())
-			@if((Auth::user()->id == $tryout->user_id) && ($tryout->date > $date))
+			@if((Auth::user()->id == $tryout->user_id) && ($tryout->date >= $date))
 				<div>
 					<a href="/tryouts/{{$id}}/edit" class="btn btn-lg">Edit Post</a>
 					<a href="/tryouts/{{$id}}/delete" class="btn btn-lg" onclick="return confirm('Are you sure you want to delete this post?');">Delete Post</a>
 				</div>
-			@elseif($tryout->date > $date)
+			@elseif($tryout->date >= $date)
 				{!! Form::model($tryout, ['method' => 'POST', 'class' => 'form-horizontal', 'action' => ['TryoutsController@rsvp', $tryout->id]]) !!}
 
 				<div class="form-group">
@@ -51,7 +51,7 @@
 				</div>
 			{!! Form::close() !!}
 			@endif
-		@elseif($tryout->date > $date)
+		@elseif($tryout->date >= $date)
 			{!! Form::model($tryout, ['method' => 'POST', 'class' => 'form-horizontal', 'action' => ['TryoutsController@rsvp', $tryout->id]]) !!}
 
 				<div class="form-group">

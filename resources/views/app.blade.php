@@ -29,8 +29,8 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link href="{{ asset('adm/css/animate.css') }}" rel="stylesheet">
+	<link href="{{ asset('adm/css/font-awesome.min.css') }}" rel="stylesheet" >
+	<link href="{{ asset('adm/css/animate.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('adm/css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('adm/css/main.css') }}" rel="stylesheet">
 </head>
@@ -92,7 +92,7 @@
 
 	<footer>
 		{{-- <h6>Photo courtesy of <a href="#">Mette McConnell</a></h6> --}}
-		<h6><a href="https://www.facebook.com/utryout?fref=ts">Like Us On <i class="fa fa-facebook"></i>acebook!</a></h6>
+		<a href="https://www.facebook.com/utryout?fref=ts">Like Us On <i class="fa fa-facebook"></i>acebook!</a>
 		<h6>A <a href="http://30andb.com" style="color: white;">Firestackd</a> Application &copy;{{ date('Y') }}</h6>
 	</footer>
 

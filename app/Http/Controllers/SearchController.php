@@ -15,7 +15,10 @@ use Validator;
 class SearchController extends Controller {
 
 	public function index() {
-		return view('search.index');
+
+		$title = "Browse Upcoming Tryouts";	
+
+		return view('search.index', compact('title'));
 	}
 
 	public function browse(Request $request) {
@@ -76,7 +79,10 @@ class SearchController extends Controller {
 	  }
 	  
 	  if(count($tryouts) > 0) {
-	  	return view('search.results', compact('tryouts', 'count'));
+
+	  	$title = "We Found $count Upcoming Tryouts";
+
+	  	return view('search.results', compact('tryouts', 'count', 'title'));
 	  }
 	  
 	  $notFound = 'Please try again or signup and receive an alert for new tryout posts in this area below.';

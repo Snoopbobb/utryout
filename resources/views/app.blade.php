@@ -11,13 +11,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="publishable-key" content="pk_live_rj9Rhg6TBar9ZMp22jcc78n6">
 
-	@if ( empty($tryout->organization) )
+	@if ( empty($title) )
+		<title>Utryout | Youth Sports Tryouts</title>
+	@else 
+		<title>Utryout | {{ $title }}</title>
+	@endif
+
+	<!-- @if ( empty($tryout->organization) )
 		<title>Utryout | Youth Sports Tryouts</title>
 	@elseif (isset($tryouts) && count($tryouts) > 1)
 		<title>Utryout | Youth Sports Tryouts</title>
 	@else 
 		<title>Utryout | {{ $tryout->organization }}</title>
-	@endif
+	@endif -->
 
 
 	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">

@@ -35,7 +35,9 @@ class TryoutsController extends Controller {
 
 		$count = count($tryouts);
 
-		return view('tryouts.index', compact('tryouts', 'sport', 'state', 'count'));			
+		$title = "Youth $sport Tryouts In $state";
+
+		return view('tryouts.index', compact('tryouts', 'sport', 'state', 'count', 'title'));			
 	}
 
 	/****************************************************************************************
@@ -49,7 +51,9 @@ class TryoutsController extends Controller {
 
 		$count = count($tryouts);
 
-		return view('tryouts.index', compact('tryouts', 'sport', 'state', 'city', 'count'));			
+		$title = "Youth $sport Tryouts In $city, $state";
+
+		return view('tryouts.index', compact('tryouts', 'sport', 'state', 'city', 'count', 'title'));			
 	}
 
 	/****************************************************************************************
@@ -68,7 +72,9 @@ class TryoutsController extends Controller {
 			$state = urlencode($tryout->state);
 		}
 
-		return view('tryouts.show', compact('tryouts', 'sport', 'state', 'city', 'id'));			
+		$title = "$tryout->organization";
+
+		return view('tryouts.show', compact('tryouts', 'sport', 'state', 'city', 'id', 'title'));			
 	}
 
 
@@ -79,13 +85,17 @@ class TryoutsController extends Controller {
 		if(Auth::user()){
 			$user_id = Auth::user()->id;
 
+			$username = Auth::user()->username;
+
 			$date = date('Y-m-d');
 			
 			$tryouts = Tryout::orderBy('date')->where('user_id', $user_id)->where('date', '>=', $date)->get();
 
 			$count = count($tryouts);
 
-			return view('tryouts.profile', compact('tryouts', 'count'));
+			$title = $username . "'s Upcoming Tryouts";
+
+			return view('tryouts.profile', compact('tryouts', 'count', 'title'));
 			
 		} else {
 
@@ -144,7 +154,9 @@ class TryoutsController extends Controller {
 
 		$count = count($tryouts);
 
-		return view('tryouts.index', compact('tryouts', 'count'));
+		$title = "All Upcoming Youth Sports Tryouts";
+
+		return view('tryouts.index', compact('tryouts', 'count', 'title'));
 	}
 
 
@@ -156,7 +168,9 @@ class TryoutsController extends Controller {
 	public function create()
 	{	if(Auth::user()){
 
-			return view('tryouts.create');
+			$title = "Create A New Tryout Post";
+
+			return view('tryouts.create', compact('title'));
 
 		} else {
 
@@ -309,7 +323,9 @@ class TryoutsController extends Controller {
 
 		$count = count($tryouts);
 
-		return view('tryouts.index', compact('tryouts', 'sport', 'count'));
+		$title = "Upcoming Youth " . ucwords($sport) . " Tryouts";
+
+		return view('tryouts.index', compact('tryouts', 'sport', 'count', 'title'));
 	}
 
 

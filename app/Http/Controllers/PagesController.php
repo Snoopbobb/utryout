@@ -12,11 +12,17 @@ use Mail;
 class PagesController extends Controller {
 
 	public function how(){
-		return view('pages.how');
+
+        $title = "How It Works";
+
+		return view('pages.how', compact('title'));
 	}
 
 	public function contact(){
-		return view('pages.contact');
+
+        $title = "Contact Us";
+
+		return view('pages.contact', compact('title'));
 	}
 
 	public function contactSend(Request $request) {

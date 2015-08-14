@@ -108,7 +108,7 @@
 			}
 
 			google.maps.event.addDomListener(window, 'load', initialize);
-			
+
 		@endif
   </script>
   @endsection

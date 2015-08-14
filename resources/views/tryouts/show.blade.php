@@ -110,7 +110,7 @@
 		function initialize() {
 		  var myLatlng = new google.maps.LatLng(lat,lng);
 		  var mapOptions = {
-		    zoom: 10,
+		    zoom: 12,
 		    center: myLatlng,
 		    scrollwheel: false,
 		    draggable: false

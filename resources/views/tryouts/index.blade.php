@@ -49,33 +49,36 @@
 		@if(isset($tryout))
 			var lat = {{ $tryout->lat }};
 			var lng = {{ $tryout->lng }};
+		@else
+			var lat = 38.850033;
+			var lng = -96.6500523;
 		@endif
 
 		var locations = <?php echo json_encode($tryouts); ?>;
 
 	    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-	      zoom: 4,
-	      center: new google.maps.LatLng(38.850033, -96.6500523),
 	      mapTypeId: google.maps.MapTypeId.ROADMAP,
 	      scrollwheel: false,
-		    draggable: false
 	    });
 
-	    var marker, i;
+	    var infowindow = new google.maps.InfoWindow();
+
+	    var bounds = new google.maps.LatLngBounds();
+
 	    @if(isset($tryout))
 		    for(i in locations)
 			{
 	    		var address = locations[i].address;
 	    		var lat = locations[i].lat;
 	    		var lng = locations[i].lng;	    		
-
+	    		
 	    		var marker = new google.maps.Marker({
+	    			bounds: bounds.extend(new google.maps.LatLng(lat, lng)),
 			        position: new google.maps.LatLng(lat, lng),
 			        address: address,
 			        map: map,
 			    });
 
-	    		// var url = '{{ url('/tryouts/') . '/' . $tryout->sport . '/' . strtolower($tryout->state) . '/' . seoUrl(strtolower($tryout->city)) . '/'  .   $tryout->id . '/' . seoUrl(strtolower($tryout->organization)) }}';
 	    		var url = locations[i].sport + '/' + locations[i].state.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].city.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].id + '/' + locations[i].organization.replace(/\s+/g, '-').toLowerCase();
 
 			    var content = 'Sport: ' + locations[i].sport + ' ' + 'Age: ' + locations[i].age + 'U ' + 'City: ' + locations[i].city + ' ' +  '<a href="{{ url('/tryouts') }}/' + url + '">' + 'View Tryout' + '</a>';
@@ -91,5 +94,8 @@
 				})(marker,content,infoWindow));	
 			}
 		@endif
+
+		// Apply fitBounds
+      	map.fitBounds(bounds);
   </script>
 @endsection

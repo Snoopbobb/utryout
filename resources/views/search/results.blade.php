@@ -45,66 +45,70 @@
 
 		var locations = <?php echo json_encode($tryouts); ?>;
 
-	    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-	      mapTypeId: google.maps.MapTypeId.ROADMAP,
-	      scrollwheel: false,
-	    });
+		@if( count($tryouts) > 1 )
+		    var map = new google.maps.Map(document.getElementById('map-canvas'), {
+		      mapTypeId: google.maps.MapTypeId.ROADMAP,
+		      scrollwheel: false,
+		    });
 
-	    var infowindow = new google.maps.InfoWindow();
+		    var infowindow = new google.maps.InfoWindow();
 
-	    var bounds = new google.maps.LatLngBounds();
+		    var bounds = new google.maps.LatLngBounds();
 
-	    @if(isset($tryout))
-		    for(i in locations)
-			{
-	    		var address = locations[i].address;
-	    		var lat = locations[i].lat;
-	    		var lng = locations[i].lng;	    		
-	    		
-	    		var marker = new google.maps.Marker({
-	    			bounds: bounds.extend(new google.maps.LatLng(lat, lng)),
-			        position: new google.maps.LatLng(lat, lng),
-			        address: address,
-			        map: map,
-			    });
+		    @if(isset($tryout))
+			    for(i in locations)
+				{
+		    		var address = locations[i].address;
+		    		var lat = locations[i].lat;
+		    		var lng = locations[i].lng;	    		
+		    		
+		    		var marker = new google.maps.Marker({
+		    			bounds: bounds.extend(new google.maps.LatLng(lat, lng)),
+				        position: new google.maps.LatLng(lat, lng),
+				        address: address,
+				        map: map,
+				    });
 
-	    		var url = locations[i].sport + '/' + locations[i].state.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].city.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].id + '/' + locations[i].organization.replace(/\s+/g, '-').toLowerCase();
+		    		var url = locations[i].sport + '/' + locations[i].state.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].city.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].id + '/' + locations[i].organization.replace(/\s+/g, '-').toLowerCase();
 
-			    var content = 'Sport: ' + locations[i].sport + ' ' + 'Age: ' + locations[i].age + 'U ' + 'City: ' + locations[i].city + ' ' +  '<a href="{{ url('/tryouts') }}/' + url + '">' + 'View Tryout' + '</a>';
+				    var content = 'Sport: ' + locations[i].sport + ' ' + 'Age: ' + locations[i].age + 'U ' + 'City: ' + locations[i].city + ' ' +  '<a href="{{ url('/tryouts') }}/' + url + '">' + 'View Tryout' + '</a>';
 
-			    var infoWindow = new google.maps.InfoWindow;
+				    var infoWindow = new google.maps.InfoWindow;
 
-			    google.maps.event.addListener(marker,'click', (function(marker,content,infoWindow){
+				    google.maps.event.addListener(marker,'click', (function(marker,content,infoWindow){
 
-	    			return function() {
-	        			infoWindow.setContent(content);
-	        			infoWindow.open(map,marker);
-	    			};
-				})(marker,content,infoWindow));	
+		    			return function() {
+		        			infoWindow.setContent(content);
+		        			infoWindow.open(map,marker);
+		    			};
+					})(marker,content,infoWindow));	
+				}
+			@endif
+
+			// Apply fitBounds
+	      	map.fitBounds(bounds);
+	     @else
+	     	var lat = {{ $tryout->lat }};
+			var lng = {{ $tryout->lng }};
+
+			function initialize() {
+			  var myLatlng = new google.maps.LatLng(lat,lng);
+			  var mapOptions = {
+			    zoom: 10,
+			    center: myLatlng,
+			    scrollwheel: false,
+			    draggable: false
+			  }
+			  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+			  var marker = new google.maps.Marker({
+			      position: myLatlng,
+			      map: map
+			  });
 			}
+
+			google.maps.event.addDomListener(window, 'load', initialize);
+			
 		@endif
-
-		// Apply fitBounds
-      	map.fitBounds(bounds);
-
-		// var map = new google.maps.Map(document.getElementById('map-canvas'), { 
-  //       mapTypeId: google.maps.MapTypeId.ROADMAP 
-  //     });
-
-  //     var bounds = new google.maps.LatLngBounds();
-
-  //     var points = [
-  //      	new google.maps.LatLng(51.22, 4.40),
-  //      	new google.maps.LatLng(50.94, 3.13)
-  //    ];
-
-  //     // Extend bounds with each point
-  //     for (var i = 0; i < points.length; i++) {
-  //       bounds.extend(points[i]);
-  //       new google.maps.Marker({position: points[i], map: map});
-  //     }
-
-  //     // Apply fitBounds
-  //     map.fitBounds(bounds);
   </script>
   @endsection

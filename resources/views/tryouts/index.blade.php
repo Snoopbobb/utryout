@@ -99,9 +99,14 @@
 			// Apply fitBounds
 	      	map.fitBounds(bounds);
 	     @else
-	     	var lat = {{ $tryout->lat }};
-			var lng = {{ $tryout->lng }};
-
+	    	@if(isset($tryout))
+				var lat = {{ $tryout->lat }};
+				var lng = {{ $tryout->lng }};
+			@else
+				var lat = 38.850033;
+				var lng = -96.6500523;
+			@endif
+			
 			function initialize() {
 			  var myLatlng = new google.maps.LatLng(lat,lng);
 			  var mapOptions = {

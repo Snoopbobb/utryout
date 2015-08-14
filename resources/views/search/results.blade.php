@@ -9,7 +9,7 @@
 		
 		<div id="map-canvas"></div>
 		
-		@if($count > 1) {
+		@if($count > 1) 
 			<h2>{{ $count }} Upcoming Tryouts Found</h2>
 		@else
 			<h2>{{ $count }} Upcoming Tryout Found</h2>
@@ -46,15 +46,13 @@
 		var locations = <?php echo json_encode($tryouts); ?>;
 
 	    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-		  zoom: 8,
-	      center: new google.maps.LatLng(lat, lng),
 	      mapTypeId: google.maps.MapTypeId.ROADMAP,
 	      scrollwheel: false,
 	    });
 
 	    var infowindow = new google.maps.InfoWindow();
 
-
+	    var bounds = new google.maps.LatLngBounds();
 
 	    @if(isset($tryout))
 		    for(i in locations)
@@ -62,8 +60,9 @@
 	    		var address = locations[i].address;
 	    		var lat = locations[i].lat;
 	    		var lng = locations[i].lng;	    		
-
+	    		
 	    		var marker = new google.maps.Marker({
+	    			bounds: bounds.extend(new google.maps.LatLng(lat, lng)),
 			        position: new google.maps.LatLng(lat, lng),
 			        address: address,
 			        map: map,
@@ -84,5 +83,28 @@
 				})(marker,content,infoWindow));	
 			}
 		@endif
+
+		// Apply fitBounds
+      	map.fitBounds(bounds);
+
+		// var map = new google.maps.Map(document.getElementById('map-canvas'), { 
+  //       mapTypeId: google.maps.MapTypeId.ROADMAP 
+  //     });
+
+  //     var bounds = new google.maps.LatLngBounds();
+
+  //     var points = [
+  //      	new google.maps.LatLng(51.22, 4.40),
+  //      	new google.maps.LatLng(50.94, 3.13)
+  //    ];
+
+  //     // Extend bounds with each point
+  //     for (var i = 0; i < points.length; i++) {
+  //       bounds.extend(points[i]);
+  //       new google.maps.Marker({position: points[i], map: map});
+  //     }
+
+  //     // Apply fitBounds
+  //     map.fitBounds(bounds);
   </script>
   @endsection

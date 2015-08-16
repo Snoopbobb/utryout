@@ -374,7 +374,7 @@ class TryoutsController extends Controller {
 
 		$tryout->update($request->all());
 
-		return redirect('tryouts/' . $tryout->sport . '/' . $tryout->state . '/' . $tryout->city .'/' . $id);
+		return redirect('tryouts/' . $tryout->sport . '/' . seoUrl(strtolower($tryout->state)) . '/' . seoUrl(strtolower($tryout->city)) .'/' . $id . '/' . seoUrl(strtolower($tryout->organization)));
 	}
 
 	/**

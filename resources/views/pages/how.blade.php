@@ -16,7 +16,7 @@
 		    		<h4>Parents and Players</h4>
 		    	</div>
 		    	<div class="panel-body">
-		    		<h4>How does Utryout help parents and players?</h4><p>Utryout makes it easy to find youth sports tryouts in your area.  Stop sifting through several websites, forums, or social media just to find a team.  We make it easy for you to find what you’re looking for and get all the details before trying out. Browse through our list of tryouts and find a team for your child to join today.</p>
+		    		<h4>How does Utryout help parents and players?</h4><p>Utryout makes it easy to find youth sports tryouts in your area.  Stop sifting through several websites, forums, or social media just to find a team.  We make it easy for you to find what you’re looking for and we give you all of the details about each tryout, helping you make better decisions for your children. Browse through our list of tryouts and find a team for your child to join today.</p>
 	    			<h4>Browse Tryouts</h4>
 		    		<ol>
 		    			<li>Select the sport, age, and enter your location to find upcoming tryouts in your area.</li>

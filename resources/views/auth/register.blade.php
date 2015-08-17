@@ -20,9 +20,10 @@
 		    		<h4>Post a Tryout</h4>
 		    		<ol>
 		    			<li>Register or Sign In to your Utryout account.</li>
-		    			<li>Add all the details of your team/organization including website, age, location, tryout date, and more!</li>
-		    			<li>Submit your post for <strike>only $5.00</strike> Free for a limited time, share it on social media, and your tryout information will be seen by those in your area looking for a great place to play!</li>
-		    			<li>Receive automatic alerts when someone plans to attend your tryout.</li>
+		    			<li>Add all of the details of your team/organization including website, age, location, tryout date, and more!</li>
+		    			<li>Our site will then automatically alert parents in your area of your upcoming tryout.</li>
+		    			<li>Your post will also be added to our database and parents that use our unique search tools will be able to see your tryout information.</li>
+		    			<li>You will also receive automatic alerts when someone plans to attend your tryout.</li>
 		    		</ol>
 		    	</div>
 				<div class="center">

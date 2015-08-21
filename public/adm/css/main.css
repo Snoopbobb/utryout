@@ -78,6 +78,7 @@ a, a:visited {
 	background-color: red;
 	border: none;
 	margin: 0;
+	position: fixed;
 }
 
 .navbar a:hover {

@@ -7,6 +7,8 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"><h4>Post A Tryout</h4></div>
 				<h5>For a limited time post your tryout information for free!</h5>
+
+				{{-- Message to git --}}
 				
 				{{-- Credit Card payments turned off --}}
 				{{-- <h5>Get your tryout information seen by people in your area for only $5!</h5>

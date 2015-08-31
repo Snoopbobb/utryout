@@ -6,7 +6,7 @@
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
 				<div class="panel-heading"><h4>Post A Tryout</h4></div>
-				<h5>For a limited time post your tryout information for free!</h5>
+				<h5>Post your tryout information for free!</h5>
 
 				{{-- Message to git --}}
 				
@@ -30,7 +30,7 @@
 					{!! Form::open(['class' => 'form-horizontal', 'action' => 'TryoutsController@store', 'id'=> 'post-tryout']) !!}
 
 						<div class="form-group">
-							{!! Form::label('organization', 'Organization', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('organization', 'Organization (Required)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::text('organization', null, ['class'=> 'form-control', 'placeholder' => 'Enter Organization/Team Name']) !!}
@@ -46,7 +46,7 @@
 						</div>
 
 						<div class="form-group">
-							{!! Form::label('contact_name', 'Name of Contact', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('contact_name', 'Name of Contact (Required)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::text('contact_name', null, ['class'=> 'form-control']) !!}
@@ -54,7 +54,7 @@
 						</div>
 
 						<div class="form-group">
-							{!! Form::label('contact_email', 'Email of Contact', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('contact_email', 'Email of Contact (Required)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::email('contact_email', null, ['class'=> 'form-control']) !!}
@@ -123,7 +123,7 @@
 						</div>
 						
 						<div class="form-group">
-							{!! Form::label('date', 'Tryout Date/Event Date/Players Needed By This Date (Must Be filled Out In The 07/04/1776 Format)', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('date', 'Tryout Date/Event Date/Players Needed By This Date (Must Be filled Out In The 07/04/1776 Format Required)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::input('date', 'date', null, ['class'=> 'form-control', 'placeholder' => '07/04/1776']) !!}
@@ -137,7 +137,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							{!! Form::label('location_name', 'Location Name', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('location_name', 'Location Name (Required)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::text('location_name', null, ['class'=> 'form-control', 'placeholder' => 'Enter Park or Field Name']) !!}
@@ -145,7 +145,7 @@
 						</div>
 
 						<div class="form-group">
-							{!! Form::label('address', 'Address', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('address', 'Address (Required)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::text('address', null, ['class'=> 'form-control', 'placeholder' => 'Enter Street Address']) !!}
@@ -153,7 +153,7 @@
 						</div>
 
 						<div class="form-group">
-							{!! Form::label('city', 'City', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('city', 'City (Required)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::text('city', null, ['class'=> 'form-control']) !!}

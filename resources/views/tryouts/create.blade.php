@@ -130,7 +130,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							{!! Form::label('time', 'Tryout Time (Eg. 10:00 AM', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('time', 'Tryout Time (Eg. 10:00 AM)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::input('time', 'time', null, ['class'=> 'form-control']) !!}

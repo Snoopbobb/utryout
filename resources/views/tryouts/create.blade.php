@@ -38,7 +38,7 @@
 						</div>
 
 						<div class="form-group">
-							{!! Form::label('website', 'Organization Website', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('website', 'Organization Website (Exclude http:// From Web Address)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::text('website', null, ['class'=> 'form-control', 'placeholder' => 'www.example or example.com']) !!}
@@ -123,14 +123,14 @@
 						</div>
 						
 						<div class="form-group">
-							{!! Form::label('date', 'Tryout Date', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('date', 'Tryout Date/Event Date/Players Needed By This Date (Must Be filled Out In The 07/04/1776 Format)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
-								{!! Form::input('date', 'date', null, ['class'=> 'form-control']) !!}
+								{!! Form::input('date', 'date', null, ['class'=> 'form-control', 'placeholder' => '07/04/1776']) !!}
 							</div>
 						</div>
 						<div class="form-group">
-							{!! Form::label('time', 'Tryout Time', ['class'=> 'col-md-4 control-label']) !!}
+							{!! Form::label('time', 'Tryout Time (Eg. 10:00 AM', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
 								{!! Form::input('time', 'time', null, ['class'=> 'form-control']) !!}

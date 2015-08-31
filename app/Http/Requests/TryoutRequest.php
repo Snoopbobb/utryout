@@ -30,7 +30,6 @@ class TryoutRequest extends Request {
         	'sport' => 'required',
         	'age' => 'required',
         	'date' => 'required|date|after:'.$date,
-        	'time' => 'required',
         	'location_name' => 'required',
         	'address' => 'required',
         	'city' => 'required',

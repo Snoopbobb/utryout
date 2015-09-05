@@ -116,9 +116,9 @@
 	<!-- Scripts -->
 	
 	<!-- cdn for modernizr, if you haven't included it already -->
-	<script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+	<script src="//cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
 	<!-- polyfiller file to detect and load polyfills -->
-	<script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+	<script src="//cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
 	<script>
 	  webshims.setOptions('waitReady', false);
 	  webshims.setOptions('forms-ext', {types: 'date'});
@@ -126,7 +126,7 @@
 	</script>
 
 	<script src="{{ asset('/adm/js/admin.js') }}"></script>
-	<script src="https://js.stripe.com/v2/"></script>
+	<script src="//js.stripe.com/v2/"></script>
 	<script src="{{ asset('/adm/js/main.js') }}"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

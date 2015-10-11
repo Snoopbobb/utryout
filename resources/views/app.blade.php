@@ -39,6 +39,7 @@
 	<link href="{{ asset('adm/css/animate.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('adm/css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('adm/css/main.css') }}" rel="stylesheet">
+	<script src="//cdn.optimizely.com/js/3551381270.js"></script>
 </head>
 <body>
 	<!-- Google Tag Manager -->

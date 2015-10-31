@@ -41,7 +41,7 @@
 			
 			<a href="{{ url('/alerts') }}" class="btn btn-lg">Sign up for alerts</a>
 	@endif
-			<a href="/tryouts/past" class="btn btn-lg">Show Past Tryouts</a>
+			<a href="/completed" class="btn btn-lg">Show Completed Tryouts</a>
 	</div>
 
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>	

@@ -89,7 +89,7 @@ class TryoutsController extends Controller {
 
 			$date = date('Y-m-d');
 			
-			$tryouts = Tryout::orderBy('date')->where('user_id', $user_id)->get();
+			$tryouts = Tryout::orderBy('date', 'desc')->where('user_id', $user_id)->get();
 
 			$count = count($tryouts);
 
@@ -168,7 +168,7 @@ class TryoutsController extends Controller {
 	{
 		$date = date('Y-m-d');
 
-		$tryouts = Tryout::orderBy('date')->where('date', '<', $date)->get();
+		$tryouts = Tryout::orderBy('date', 'desc')->where('date', '<', $date)->get();
 
 		$count = count($tryouts);
 

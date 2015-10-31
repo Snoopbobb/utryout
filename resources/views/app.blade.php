@@ -66,9 +66,10 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('tryouts') }}">Sports<span class="caret"></span></a>
+	          		<li><a href="{{ url('/search') }}">Browse Tryouts</a></li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('tryouts') }}">Upcoming Tryouts<span class="caret"></span></a>
 	          			<ul class="dropdown-menu">
-	          				<li><a href="{{ url('tryouts') }}">All Tryouts</a></li>
+	          				<li><a href="{{ url('tryouts') }}">All</a></li>
 	            			<li><a href="{{ url('tryouts/baseball') }}">Baseball</a></li>
 	            			<li><a href="{{ url('tryouts/basketball') }}">Basketball</a></li>
 	            			<li><a href="{{ url('tryouts/football') }}">Football</a></li>
@@ -78,7 +79,18 @@
 	            			<li><a href="{{ url('tryouts/softball') }}">Softball</a></li>
 	          			</ul>
 	          		</li>
-	          		<li><a href="{{ url('/search') }}">Browse Tryouts</a></li>
+	          		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('tryouts') }}">Completed Tryouts<span class="caret"></span></a>
+	          			<ul class="dropdown-menu">
+	          				<li><a href="{{ url('completed') }}">All</a></li>
+	            			<li><a href="{{ url('completed/baseball') }}">Baseball</a></li>
+	            			<li><a href="{{ url('completed/basketball') }}">Basketball</a></li>
+	            			<li><a href="{{ url('completed/football') }}">Football</a></li>
+	            			<li><a href="{{ url('completed/hockey') }}">Hockey</a></li>
+	            			<li><a href="{{ url('completed/lacrosse') }}">Lacrosse</a></li>
+	            			<li><a href="{{ url('completed/soccer') }}">Soccer</a></li>
+	            			<li><a href="{{ url('completed/softball') }}">Softball</a></li>
+	          			</ul>
+	          		</li>
 					<li><a href="{{ url('/how-it-works') }}" id="about">How It Works</a></li>
 					<li><a href="{{ url('/contact') }}" id="contact">Contact Us</a></li>
 					@if(Auth::user())

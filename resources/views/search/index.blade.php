@@ -109,7 +109,7 @@
 
 						<div class="form-group">
 							<div class="">
-								{!! Form::submit('Find Tryout', ['class'=> 'btn']) !!}
+								{!! Form::submit('Find Upcoming Tryout', ['class'=> 'btn']) !!}
 							</div>
 						</div>
 

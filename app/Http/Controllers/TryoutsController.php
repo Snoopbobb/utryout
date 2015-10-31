@@ -89,11 +89,11 @@ class TryoutsController extends Controller {
 
 			$date = date('Y-m-d');
 			
-			$tryouts = Tryout::orderBy('date')->where('user_id', $user_id)->where('date', '>=', $date)->get();
+			$tryouts = Tryout::orderBy('date')->where('user_id', $user_id)->get();
 
 			$count = count($tryouts);
 
-			$title = $username . "'s Upcoming Tryouts";
+			$title = $username . "'s Posted Tryouts";
 
 			return view('tryouts.profile', compact('tryouts', 'count', 'title'));
 			
@@ -157,6 +157,43 @@ class TryoutsController extends Controller {
 		$title = "All Upcoming Youth Sports Tryouts";
 
 		return view('tryouts.index', compact('tryouts', 'count', 'title'));
+	}
+
+	/**
+	 * Display all tryouts including past tryouts
+	 *
+	 * @return Response
+	 */
+	public function completed()
+	{
+		$date = date('Y-m-d');
+
+		$tryouts = Tryout::orderBy('date')->where('date', '<', $date)->get();
+
+		$count = count($tryouts);
+
+		$title = "All Past Youth Sports Tryouts";
+
+		return view('tryouts.completed', compact('tryouts', 'count', 'title'));
+	}
+
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function showCompleted($sport)
+	{
+		$date = date('Y-m-d');
+
+		$tryouts = Tryout::orderBy('date')->where('date', '<', $date)->where('sport', '=', $sport)->get();
+
+		$count = count($tryouts);
+
+		$title = "Upcoming Youth " . ucwords($sport) . " Tryouts";
+
+		return view('tryouts.completed', compact('tryouts', 'sport', 'count', 'title'));
 	}
 
 

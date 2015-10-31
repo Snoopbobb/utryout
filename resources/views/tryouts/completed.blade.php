@@ -15,9 +15,9 @@
 		<div id="map-canvas"></div>
 
 		@if($count > 1)
-			<h2>{{ $count }} Upcoming Tryouts Found</h2>
+			<h2>{{ $count }} Completed Tryouts Found</h2>
 		@else
-			<h2>{{ $count }} Upcoming Tryout Found</h2>
+			<h2>{{ $count }} Completed Tryout Found</h2>
 		@endif
 
 		@foreach ($tryouts as $tryout)
@@ -28,9 +28,9 @@
 		@endforeach
 	@else
 			@if(!empty($sport))
-				<h1>We're Sorry There Are No Upcoming {{ ucwords($sport) }} Tryouts
+				<h1>We're Sorry There Are No Completed {{ ucwords($sport) }} Tryouts
 			@else
-				<h1>We're Sorry There Are No Upcoming Tryouts
+				<h1>We're Sorry There Are No Completed Tryouts
 			@endif 
 
 			@if(!empty($state))
@@ -41,7 +41,7 @@
 			
 			<a href="{{ url('/alerts') }}" class="btn btn-lg">Sign up for alerts</a>
 	@endif
-			<a href="/tryouts/past" class="btn btn-lg">Show Past Tryouts</a>
+			<a href="/tryouts" class="btn btn-lg">Show Upcoming Tryouts</a>
 	</div>
 
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>	

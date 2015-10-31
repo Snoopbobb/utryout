@@ -44,17 +44,22 @@ Route::get('tryouts/create', 'TryoutsController@create');
 
 Route::get('tryouts/{sport}', 'TryoutsController@show');
 
-Route::get('tryouts/{id}/delete', 'TryoutsController@destroy');
-Route::get('tryouts/{id}/edit', 'TryoutsController@edit');
-Route::post('tryouts/{id}/rsvp', 'TryoutsController@rsvp');
-
 Route::get('tryouts/{sport}/{state}', 'TryoutsController@showState');
 Route::get('tryouts/{sport}/{state}/{city}', 'TryoutsController@showCity');
 Route::get('tryouts/{sport}/{state}/{city}/{id}/', 'TryoutsController@showId');
 Route::get('tryouts/{sport}/{state}/{city}/{id}/{organization}/', 'TryoutsController@showId');
 
-Route::get('search', 'SearchController@index');
+// Completed Tryout Routes
+Route::get('completed', 'TryoutsController@completed');
+Route::get('completed/{sport}', 'TryoutsController@showCompleted');
 
+// User Routes
+Route::get('tryouts/{id}/delete', 'TryoutsController@destroy');
+Route::get('tryouts/{id}/edit', 'TryoutsController@edit');
+Route::post('tryouts/{id}/rsvp', 'TryoutsController@rsvp');
+
+// Search or Browse for Tryouts
+Route::get('search', 'SearchController@index');
 Route::post('browse', 'SearchController@browse');
 
 Route::get('alerts', 'AlertsController@index');

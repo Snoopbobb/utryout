@@ -79,7 +79,7 @@
 	            			<li><a href="{{ url('tryouts/softball') }}">Softball</a></li>
 	          			</ul>
 	          		</li>
-	          		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('tryouts') }}">Completed Tryouts<span class="caret"></span></a>
+	          		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('completed') }}">Completed Tryouts<span class="caret"></span></a>
 	          			<ul class="dropdown-menu">
 	          				<li><a href="{{ url('completed') }}">All</a></li>
 	            			<li><a href="{{ url('completed/baseball') }}">Baseball</a></li>

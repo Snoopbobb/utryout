@@ -18,14 +18,15 @@
 			<form id="filterForm">
 			<h2><span id="tryoutCount">{{ $count }}</span> Completed Tryouts Found</h2>
 				<label for="filter"><h3>Filter Tryouts</h3></label>
-				<input type="search" id="filter" placeholder="Enter Filter Term" style="">
+				<input type="search" id="filter" placeholder="Enter Filter Term">
 			</form>
 		@else
 			<h2>{{ $count }} Upcoming Tryout Found</h2>
 		@endif
 
+		<?php $idCount = 0; ?>
 		@foreach ($tryouts as $tryout)
-			<div class="tryout .col-xs-6 .col-md-4">
+			<div class="tryout .col-xs-6 .col-md-4"  id="tryout<?php echo $idCount++; ?>">
 				<span class="sport"><a href="{{ url('/tryouts/') . '/' . $tryout->sport }}">{{ $tryout->sport }}</a></span> <h3>{{ $tryout->organization }} | Ages: {{ $tryout->age }}U | {{ date('D F d, Y', strtotime($tryout->date)) }}, {{ date('g:i A', strtotime($tryout->time)) }} | {{ ucwords($tryout->city) }}, {{ $tryout->state }}</h3>
 				<a href="{{ url('/tryouts/') . '/' . $tryout->sport . '/' . strtolower($tryout->state) . '/' . seoUrl(strtolower($tryout->city)) . '/'  .   $tryout->id . '/' . seoUrl(strtolower($tryout->organization))}}" class="btn btn-content">Additional Information</a>
 			</div>

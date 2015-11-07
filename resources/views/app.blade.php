@@ -91,6 +91,7 @@
 	            			<li><a href="{{ url('completed/softball') }}">Softball</a></li>
 	          			</ul>
 	          		</li>
+	          		<li><a href="{{ url('/alerts') }}" id="about">Sign Up For Alerts</a></li>
 					<li><a href="{{ url('/how-it-works') }}" id="about">How It Works</a></li>
 					<li><a href="{{ url('/contact') }}" id="contact">Contact Us</a></li>
 					@if(Auth::user())

@@ -18,7 +18,7 @@
 			<form id="filterForm">
 			<h2><span id="tryoutCount">{{ $count }}</span> Completed Tryouts Found</h2>
 				<label for="filter"><h3>Filter Tryouts</h3></label>
-				<input type="search" id="filter" placeholder="Enter Any Term To Filter Tryouts By, Example: Dallas" style="">
+				<input type="search" id="filter" placeholder="Enter Filter Term" style="">
 			</form>
 		@else
 			<h2>{{ $count }} Upcoming Tryout Found</h2>

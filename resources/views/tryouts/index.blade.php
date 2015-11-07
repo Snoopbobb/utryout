@@ -16,7 +16,7 @@
 
 		@if($count > 1)
 			<form id="filterForm">
-			<h2><span id="tryoutCount">{{ $count }}</span> Completed Tryouts Found</h2>
+			<h2><span id="tryoutCount">{{ $count }}</span> Upcoming Tryouts Found</h2>
 				<label for="filter"><h3>Filter Tryouts</h3></label>
 				<input type="search" id="filter" placeholder="Enter Filter Term">
 			</form>

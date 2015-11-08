@@ -416,11 +416,7 @@ footer h6 {
 }
 
 
-@media(max-width:600px){
-	.tryout.individual-tryout h1, .tryout.individual-tryout a, .content {
-		margin-right: 80px;
-	}
-	
+@media(max-width:600px){	
 	.video-wrapper {
 		width: 100%;
 	}

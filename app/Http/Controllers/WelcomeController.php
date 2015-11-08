@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+use App\Tryout;
 
 class WelcomeController extends Controller {
 
@@ -30,7 +31,9 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		$tryouts = Tryout::get();
+		$count = count($tryouts);
+		return view('welcome', compact('count'));
 	}
 
 }

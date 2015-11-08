@@ -4,10 +4,11 @@
 		<div class="container">
 			<div class="content">
 				<div class="title">Utryout</div>
-				<h2>Youth Sports Tryouts In Your Area</h2>
 				<div class="quote">{{ Inspiring::quote() }}</div>
+				<h1><?php echo $count; ?> Youth Sports Tryouts Currently Posted</h1>
+				<h2>Search for tryouts happening in your area, or post yours today!</h2>
 				<a href="search" class="btn btn-lg">Player/Parent</a>
-				@if (Auth::guest())					
+				@if (Auth::guest())						
 					<a href="{{ url('/auth/register') }}" class="btn btn-lg">Coach/Organization</a></li>
 				@else
 					<a href="{{ url('/tryouts/create') }}" class="btn btn-lg">View Posts</a></li>

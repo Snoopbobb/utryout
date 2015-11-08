@@ -2,7 +2,7 @@
 
 @section('content')
 		<div class="container">
-			<div class="content animated fadeIn">
+			<div class="content">
 				<div class="title">Utryout</div>
 				<h2>Youth Sports Tryouts In Your Area</h2>
 				<div class="quote">{{ Inspiring::quote() }}</div>

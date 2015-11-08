@@ -339,6 +339,11 @@ footer h6 {
 				Media Queries
 **************************************************/
 @media (max-width: 1050px) {
+	.tryout.individual-tryout {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
     .navbar-header {
         float: none;
     }
@@ -403,9 +408,15 @@ footer h6 {
 
 
 @media(max-width:600px){
+	.tryout.individual-tryout h1, .tryout.individual-tryout a, .content {
+		margin-right: 80px;
+	}
 	
 	.video-wrapper {
 		width: 100%;
+	}
+	.fb_iframe_widget {
+		left: 40%;
 	}
 	
 }

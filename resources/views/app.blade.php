@@ -58,7 +58,7 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-	          		<li><a href="{{ url('/search') }}">Browse Tryouts</a></li>
+	          		<li><a href="{{ url('/search') }}">Search Tryouts</a></li>
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('tryouts') }}">Upcoming Tryouts<span class="caret"></span></a>
 	          			<ul class="dropdown-menu">
 	          				<li><a href="{{ url('tryouts') }}">All</a></li>

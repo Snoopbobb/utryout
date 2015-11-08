@@ -35,6 +35,12 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 .utryout {
 	font-family: 'Lobster', cursive;
+	color: red;
+}
+
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand .utryout {
+	font-family: 'Lobster', cursive;
+	color: white;
 }
 
 .btn {

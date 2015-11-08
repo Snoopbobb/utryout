@@ -16,24 +16,25 @@
 			</div>
 
 			@if (!empty($tryout->website))
-				<h1><a href="http://{{ ucwords($tryout->website) }}" class="btn btn-content">Visit {{ $tryout->organization }} Website</a></h1>
+				<h2><a href="http://{{ ucwords($tryout->website) }}" class="btn btn-content">Visit {{ $tryout->organization }} Website</a></h2>
 			@endif
-
-			<h1><span class="tryout-title">Sport:</span> {{ ucwords($tryout->sport) }}</h1>
-			<h1><span class="tryout-title">Age:</span> {{ $tryout->age . 'U' }}</h1>
-			<h1><span class="tryout-title">Date:</span> {{ date('D F d, Y', strtotime($tryout->date)) }}</h1>
-			<h1><span class="tryout-title">Time:</span> {{ date('g:i A', strtotime($tryout->time)) }}</h1>
-			<h1><span class="tryout-title">Location:</span> {{ ucwords($tryout->location_name) }}</h1>
-			<h1><span class="tryout-title">Address:</span> {{ ucwords($tryout->address) }}</h1>
-			<h1><span class="tryout-title">City:</span> {{ ucwords($tryout->city) }}, {{ ucwords(stateName($tryout->state)) }}</h1>
-			<h1><span class="tryout-title">Contact Name:</span> {{ ucwords($tryout->contact_name) }}</h1>
-			<h1><span class="tryout-title">Contact Email:</span> {{ $tryout->contact_email }}</h1>
+			<div class="content">
+				<h2><span class="tryout-title">Age:</span> {{ $tryout->age . 'U' }}</h2>
+				<h2><span class="tryout-title">Sport:</span> {{ ucwords($tryout->sport) }}</h2>
+				<h2><span class="tryout-title">Date:</span> {{ date('D F d, Y', strtotime($tryout->date)) }}</h2>
+				<h2><span class="tryout-title">Time:</span> {{ date('g:i A', strtotime($tryout->time)) }}</h2>
+				<h2><span class="tryout-title">Location:</span> {{ ucwords($tryout->location_name) }}</h2>
+				<h2><span class="tryout-title">Address:</span> {{ ucwords($tryout->address) }}</h2>
+				<h2><span class="tryout-title">City:</span> {{ ucwords($tryout->city) }}, {{ ucwords(stateName($tryout->state)) }}</h2>
+				<h2><span class="tryout-title">Contact Name:</span> {{ ucwords($tryout->contact_name) }}</h2>
+				<h2><span class="tryout-title">Contact Email:</span> {{ $tryout->contact_email }}</h2>
 			
-			@if ($tryout->description)
-				<h1 class="tryout-description"><span class="tryout-title">Description:</span> {{ $tryout->description }}</h1>
-			@else
-				<h1><span class="tryout-title">Description:</span> No Additional Information Has Been Provided</h1>
-			@endif
+				@if ($tryout->description)
+					<h2 class="tryout-description"><span class="tryout-title">Description:</span> {{ $tryout->description }}</h2>
+				@else
+					<h2><span class="tryout-title">Description:</span> No Additional Information Has Been Provided</h2>
+				@endif
+			</div>
 	@endforeach
 		<?php $date = date('Y-m-d'); ?>
 		@if(Auth::user())

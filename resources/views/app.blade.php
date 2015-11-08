@@ -39,6 +39,7 @@
 	<link href="{{ asset('adm/css/animate.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('adm/css/app.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Lobster|Ubuntu' rel='stylesheet' type='text/css'>
 	<link href="{{ asset('adm/css/main.css') }}" rel="stylesheet">
 	<script src="//cdn.optimizely.com/js/3551381270.js"></script>
 </head>
@@ -52,7 +53,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ url('/') }}">Utryout</a>
+				<a class="navbar-brand" href="{{ url('/') }}"><span class="utryout">U</span>tryout</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

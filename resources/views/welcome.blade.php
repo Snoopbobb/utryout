@@ -3,7 +3,7 @@
 @section('content')
 		<div class="container">
 			<div class="content">
-				<div class="title">Utryout</div>
+				<div class="title"><span class="utryout">U</span>tryout</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
 				<h1><?php echo $count; ?> Youth Sports Tryouts Currently Posted</h1>
 				<h2>Search for tryouts happening in your area, or post yours today!</h2>

@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 use App\Tryout;
+use App\Alert;
+use App\Search;
 
 class WelcomeController extends Controller {
 
@@ -32,8 +34,12 @@ class WelcomeController extends Controller {
 	public function index()
 	{
 		$tryouts = Tryout::get();
-		$count = count($tryouts);
-		return view('welcome', compact('count'));
+		$alerts = Alert::get();
+		$searches = Search::get();
+		$tryoutsCount = count($tryouts);
+		$alertsCount = count($alerts);
+		$searchCount = count($searches);
+		return view('welcome', compact('tryoutsCount', 'alertsCount', 'searchCount'));
 	}
 
 }

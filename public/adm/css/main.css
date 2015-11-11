@@ -426,6 +426,9 @@ footer h6 {
 
 
 @media(max-width:600px){
+	body {
+		max-width: 100%;
+	}
 	.tryout.individual-tryout h1, .tryout.individual-tryout a, .content {
 		margin: 0 30px;
 	}

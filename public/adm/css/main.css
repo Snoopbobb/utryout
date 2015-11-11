@@ -436,8 +436,9 @@ footer h6 {
 	.video-wrapper {
 		width: 100%;
 	}
-	.fb-like {
+	.fb_iframe_widget  {
 		display: block;
+		margin: o auto;
 		padding: o;
 	}
 }

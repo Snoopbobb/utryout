@@ -427,7 +427,6 @@ footer h6 {
 
 @media(max-width:600px){
 	.content {
-		max-width: 100%;
 		margin: 0;
 	}
 	.tryout.individual-tryout h1, .tryout.individual-tryout a, .content {
@@ -437,7 +436,10 @@ footer h6 {
 	.video-wrapper {
 		width: 100%;
 	}
-	
+	.fb-like {
+		display: block;
+		padding: o;
+	}
 }
 
 @media(min-width:768px){}

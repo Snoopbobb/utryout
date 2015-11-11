@@ -58,8 +58,8 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-	          		<li><a href="{{ url('/search') }}">Search Tryouts</a></li>
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('tryouts') }}">Upcoming Tryouts<span class="caret"></span></a>
+	          		<li><a href="{{ url('/search') }}"><i class="fa fa-search"></i>Search Tryouts</a></li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('tryouts') }}"><i class="fa fa-hourglass-start"></i>Upcoming Tryouts<span class="caret"></span></a>
 	          			<ul class="dropdown-menu">
 	          				<li><a href="{{ url('tryouts') }}">All</a></li>
 	            			<li><a href="{{ url('tryouts/baseball') }}">Baseball</a></li>
@@ -71,7 +71,7 @@
 	            			<li><a href="{{ url('tryouts/softball') }}">Softball</a></li>
 	          			</ul>
 	          		</li>
-	          		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('completed') }}">Completed Tryouts<span class="caret"></span></a>
+	          		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ url('completed') }}"><i class="fa fa-hourglass-end"></i>Completed Tryouts<span class="caret"></span></a>
 	          			<ul class="dropdown-menu">
 	          				<li><a href="{{ url('completed') }}">All</a></li>
 	            			<li><a href="{{ url('completed/baseball') }}">Baseball</a></li>
@@ -83,25 +83,25 @@
 	            			<li><a href="{{ url('completed/softball') }}">Softball</a></li>
 	          			</ul>
 	          		</li>
-	          		<li><a href="{{ url('/alerts') }}" id="about">Sign Up For Alerts</a></li>
-					<li><a href="{{ url('/how-it-works') }}" id="about">How It Works</a></li>
-					<li><a href="{{ url('/contact') }}" id="contact">Contact Us</a></li>
+	          		<li><a href="{{ url('/alerts') }}" id="about"><i class="fa fa-exclamation"></i>Sign Up For Alerts</a></li>
+					<li><a href="{{ url('/how-it-works') }}" id="about"><i class="fa fa-question"></i>How It Works</a></li>
+					<li><a href="{{ url('/contact') }}" id="contact"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
 					@if(Auth::user())
-						<li><a href="{{ url('tryouts/create') }}" id="create">Post Tryout</a></li>
-						<li><a href="{{ url('/profile') }}" id="profile">Your Tryouts</a></li>
+						<li><a href="{{ url('tryouts/create') }}" id="create"><i class="fa fa-clipboard"></i>Post Tryout</a></li>
+						<li><a href="{{ url('/profile') }}" id="profile"><i class="fa fa-user"></i>Your Tryouts</a></li>
 					@endif
           		</ul>			
 				
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}" class="">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}" class="">Register</a></li>
+						<li><a href="{{ url('/auth/login') }}" class=""><i class="fa fa-sign-in"></i>Login</a></li>
+						<li><a href="{{ url('/auth/register') }}" class=""><i class="fa fa-pencil-square-o"></i>Register</a></li>
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+								<li><a href="{{ url('/auth/logout') }}"><i class="fa fa-sign-out"></i>Logout</a></li>
 							</ul>
 						</li>
 					@endif

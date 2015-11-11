@@ -360,7 +360,7 @@ footer h6 {
 /*************************************************
 				Media Queries
 **************************************************/
-@media (max-width: 1050px) {
+@media (max-width: 1170px) {
 	.tryout.individual-tryout {
 		margin: 0;
 		padding: 0;

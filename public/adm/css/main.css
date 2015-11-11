@@ -426,7 +426,7 @@ footer h6 {
 
 
 @media(max-width:600px){
-	.container {
+	.content {
 		max-width: 100%;
 		margin: 0;
 	}

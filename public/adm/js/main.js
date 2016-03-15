@@ -20,7 +20,7 @@ $(function(){
 		var coupon = $(".coupon").val();
 
 		if (coupon == "softball") {
-			$(".post").attr('type', 'submit')
+			$(".post").attr('type', 'submit');
 		}	 	
 	});
 
@@ -37,7 +37,7 @@ $(function(){
 		var tryoutCount = 0;
 		for (i = 0; i < count; i++) {
 			console.log(i);
-			if(contents[i]['data'].toLowerCase().indexOf(filter) != -1) {
+			if(contents[i].data.toLowerCase().indexOf(filter) != -1) {
 				$('#tryout' + i).removeClass('hidden');
 				tryoutCount++;
 
@@ -45,7 +45,7 @@ $(function(){
 				$('#tryout' + i).addClass('hidden');
 			}
 		}
-		if(filter == '') {
+		if(filter === '') {
 			$('.tryout').removeClass('hidden');
 		}
 
@@ -62,7 +62,7 @@ var docWidth = document.documentElement.offsetWidth;
   document.querySelectorAll('*'),
   function(el) {
     if (el.offsetWidth > docWidth) {
-      console.log(el);
+      //console.log(el);
     }
   }
 );

@@ -49,12 +49,12 @@ class Sitemap {
                     $changefreq = 'always';
                 }
             }
-            $aSiteMap[$request->fullUrl()] = [
-                'added' => time(),
-                'lastmod' => Carbon::now()->toIso8601String(),
-                'priority' => 1 - substr_count($request->getPathInfo(), '/') / 10,
-                'changefreq' => $changefreq
-            ];
+            $aSiteMap = 'http://utryout.com/'; //[
+            //     'added' => time(),
+            //     'lastmod' => Carbon::now()->toIso8601String(),
+            //     'priority' => 1 - substr_count($request->getPathInfo(), '/') / 10,
+            //     'changefreq' => $changefreq
+            // ];
             \Cache::put('sitemap', $aSiteMap, 2880);
         }
         return $next($request);

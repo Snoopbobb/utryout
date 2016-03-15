@@ -132,7 +132,7 @@
 	</script>
 
 	<script src="{{ asset('/adm/js/admin.js') }}"></script>
-	<script src="//js.stripe.com/v2/"></script>
+	<!-- <script src="//js.stripe.com/v2/"></script> -->
 	<script src="{{ asset('/adm/js/main.js') }}"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

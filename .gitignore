@@ -7,6 +7,7 @@ public/.htaccess
 /config
 /storage
 error.log
+requests.log
 gd_bundle-g2-g1.crt
 utryout.csr
 utryout.key

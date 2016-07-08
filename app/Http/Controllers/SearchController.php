@@ -24,7 +24,7 @@ class SearchController extends Controller {
 	public function browse(Request $request) {
 
 	  $this->validate($request, [
-        'zip' => 'digits:5|integer',
+        'zip' => 'required|regex:/\b\d{5}\b/'
       ]);
 
       $input = $request->all();

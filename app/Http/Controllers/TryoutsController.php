@@ -109,7 +109,7 @@ class TryoutsController extends Controller {
 	/****************************************************************************************
 									 Add RSVPs to Tryout
 	****************************************************************************************/
-	public function rsvp($id, Request $request){
+	public function rsvp($id){
 		$tryout = Tryout::findOrFail($id);
 
 		$tryout->rsvp++;

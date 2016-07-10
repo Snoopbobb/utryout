@@ -109,9 +109,9 @@ class TryoutsController extends Controller {
 	/****************************************************************************************
 									 Add RSVPs to Tryout
 	****************************************************************************************/
-	public function rsvp($id, Request $request){
+	public function rsvp($id){
 		$tryout->contact_email = 'bobtabor@q.com';
-		
+
 		$tryout = Tryout::findOrFail($id);
 
 		$tryout->rsvp++;
@@ -122,7 +122,7 @@ class TryoutsController extends Controller {
 
 		$email = $tryout->contact_email;
 
-		$attendee_name = $request->attendee_name;
+		//$attendee_name = $request->attendee_name;
 
 		$link = 'https://utryout.com/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 
             				'/' . seoUrl(strtolower($tryout->city)) . '/'  .   $tryout->id . '/' . 

@@ -6,11 +6,7 @@ Version:; 1.1
 /*****************************************
 			Global Seettings
 ******************************************/
-html {
-	width: 100%;
-}
-
-body {
+html, body {
 	background-color: #3D3838;
 	font-family: 'Ubuntu', sans-serif;
 	margin: 0;
@@ -318,7 +314,7 @@ a.btn {
     width: 50%;
     top: 10%;
     left: 25%;
-    max-height: 500px;
+    max-height: 550px;
     overflow: auto;
 }
 
@@ -407,7 +403,7 @@ footer h6 {
 				Media Queries
 **************************************************/
 @media (max-width: 1170px) {
-	.tryout.individual-tryout {
+	.tryout, .individual-tryout {
 		margin: 0;
 		padding: 0;
 		width: 100%;
@@ -450,13 +446,20 @@ footer h6 {
 		margin: 50px 0 0 0;
 		padding: 0;
 	}
-
-	.tryout {
-		width: 95%;
-		padding: 20px;
+	h1, h2, h3, h6, p, .content a, div.form-group {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
 	}
-
+	div.fb-like.center.fb_iframe_widget {
+		margin-left: auto;
+		margin-right: auto;
+	}
 	#map-canvas {
+		margin-left: 0;
+		margin-right: 0;
 		width: 95%;
 	}
 
@@ -464,9 +467,10 @@ footer h6 {
     	color: white;
   	}
 
-
 	footer h6 {
 		display: block;
+		margin-left: 0;
+		margin-right: 0;
 	}
 }
 
@@ -483,17 +487,16 @@ footer h6 {
 	.content {
 		margin: 0;
 	}
-	.tryout.individual-tryout h1, .tryout.individual-tryout a, .content {
-		margin: 0 30px;
+	#map-canvas {
+		width: 90%;
 	}
-	
 	.video-wrapper {
 		width: 100%;
 	}
-	.fb_iframe_widget. .fb-like  {
+	div.fb-like.center.fb_iframe_widget  {
 		display: block;
-		margin: o auto;
-		padding: o;
+		margin: 0 auto;
+		padding: 0;
 	}
 }
 

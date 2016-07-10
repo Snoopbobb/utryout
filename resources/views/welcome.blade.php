@@ -13,7 +13,8 @@
 				<h1><?php echo $tryoutsCount; ?> Tryouts Posted</h1>
 				<!-- <h2><?php echo $alertsCount; ?> People Waiting For Tryouts In Their Area</h2> -->
 				<h2><?php echo $searchCount; ?> Searching For Tryouts</h2>
-				<h2>Search for tryouts happening in your area, or post yours today!</h2>
+				<h2>Parents, find youth sports teams looking for players in your area!</h2>
+				<h2>Coaches, let parents know you're looking for players today!</h2>
 				<a href="search" class="btn btn-lg">Player/Parent</a>
 				@if (Auth::guest())						
 					<a href="{{ url('/auth/register') }}" class="btn btn-lg">Coach/Organization</a></li>

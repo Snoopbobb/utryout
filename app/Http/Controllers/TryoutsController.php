@@ -110,7 +110,6 @@ class TryoutsController extends Controller {
 									 Add RSVPs to Tryout
 	****************************************************************************************/
 	public function rsvp($id){
-		$tryout->contact_email = 'bobtabor@q.com';
 
 		$tryout = Tryout::findOrFail($id);
 

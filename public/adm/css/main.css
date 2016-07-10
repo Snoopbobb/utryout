@@ -446,7 +446,7 @@ footer h6 {
 		margin: 50px 0 0 0;
 		padding: 0;
 	}
-	h1, h2, h3, h6, p, .content a, div.form-group {
+	h1, h2, h3, h6, p, div.form-group {
 		margin-left: 0;
 		margin-right: 0;
 		padding-left: 0;

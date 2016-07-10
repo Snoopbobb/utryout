@@ -135,7 +135,7 @@ class TryoutsController extends Controller {
 			$attendee_description = null;
 		}
 
-		if ( count($rsvp) > 1 ) {
+		if ( $rsvp > 1 ) {
 			$players = 'players';
 		}
 		

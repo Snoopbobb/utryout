@@ -318,6 +318,7 @@ a.btn {
     width: 50%;
     top: 10%;
     left: 25%;
+    max-height: 500px;
     overflow: auto;
 }
 

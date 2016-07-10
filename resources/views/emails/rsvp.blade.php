@@ -4,7 +4,7 @@
 
 You now have {{$rsvp}} {{$players}} planning to attend your tryout.</p>
 
-<p>The contact name of the latest attendee is: {{$attendee_name}}</p>
+<p>The contact name for the latest attendee is: {{$attendee_name}}</p>
 
 <p>Their email address is: {{$attendee_email}}</p>
 

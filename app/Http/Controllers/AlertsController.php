@@ -133,9 +133,14 @@ class AlertsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($email)
 	{
-		//
+		$alerts = Alert::where('email', $email)->delete();
+
+		$message = "Success! You're alerts have been removed.";
+
+		return redirect('/')->with('status', $message);
+
 	}
 
 }

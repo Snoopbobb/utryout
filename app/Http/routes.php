@@ -67,3 +67,6 @@ Route::post('browse', 'SearchController@browse');
 Route::get('alerts', 'AlertsController@index');
 Route::post('alerts', 'AlertsController@store');
 
+// Delete alerts
+Route::get('unsubscribe/{email}', 'AlertsController@destroy');
+

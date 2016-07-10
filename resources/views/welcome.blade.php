@@ -3,6 +3,11 @@
 @section('content')
 		<div class="container">
 			<div class="content">
+			@if (session('status'))
+			    <div class="alert alert-success">
+			        {{ session('status') }}
+			    </div>
+			@endif
 				<div class="title"><span class="utryout">U</span>tryout</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
 				<h1><?php echo $tryoutsCount; ?> Youth Sports Tryouts Currently Posted</h1>

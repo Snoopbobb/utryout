@@ -358,7 +358,7 @@ class TryoutsController extends Controller {
 
 		            $email = $alerts[$i]->email;
 		          
-					Mail::later(10, 'emails.alert', array('link' => $link ), function($message) use ($email)
+					Mail::later(10, 'emails.alert', array('link' => $link, 'email' => $email ), function($message) use ($email)
 					{	
 						$message->from('alerts@utryout.com');
     					$message->to($email)->subject('Good news from Utryout.com!');

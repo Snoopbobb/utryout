@@ -16,5 +16,5 @@
 <p>The Utryout team</p>
 
 
-<p>If you would like to unsubscribe to this alert, email us at admin@utryout.com and ask to be removed.</p>
+<p>Click <a href="https://utryout.com/unsubscribe/{{$email}}">here</a> to cancel your alerts from Utryout.com.</p>
 <p>If this alert no longer meets your requirements, be sure to visit us at http://utryout.com/alerts to add a new one.</p>

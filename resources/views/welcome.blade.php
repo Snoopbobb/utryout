@@ -10,9 +10,9 @@
 			@endif
 				<div class="title"><span class="utryout">U</span>tryout</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
-				<h1><?php echo $tryoutsCount; ?> Youth Sports Tryouts Currently Posted</h1>
+				<h1><?php echo $tryoutsCount; ?> Tryouts Posted</h1>
 				<!-- <h2><?php echo $alertsCount; ?> People Waiting For Tryouts In Their Area</h2> -->
-				<h2><?php echo $searchCount; ?> Visitors Seeking A Tryout In Their Area</h2>
+				<h2><?php echo $searchCount; ?> Searching For Tryouts</h2>
 				<h2>Search for tryouts happening in your area, or post yours today!</h2>
 				<a href="search" class="btn btn-lg">Player/Parent</a>
 				@if (Auth::guest())						

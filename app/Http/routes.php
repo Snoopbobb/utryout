@@ -36,11 +36,17 @@ Route::post('contact', 'PagesController@contactSend');
 
 Route::resource('tryouts', 'TryoutsController');
 
+
 // Tryout Pages Routes
 Route::get('tryouts', 'TryoutsController@index');
 Route::post('tryouts', 'TryoutsController@store');
 
 Route::get('tryouts/create', 'TryoutsController@create');
+
+// User Routes
+Route::get('tryouts/{id}/delete', 'TryoutsController@destroy');
+Route::get('tryouts/{id}/edit', 'TryoutsController@edit');
+Route::post('tryouts/rsvp', 'TryoutsController@rsvp');
 
 Route::get('tryouts/{sport}', 'TryoutsController@show');
 
@@ -53,10 +59,6 @@ Route::get('tryouts/{sport}/{state}/{city}/{id}/{organization}/', 'TryoutsContro
 Route::get('completed', 'TryoutsController@completed');
 Route::get('completed/{sport}', 'TryoutsController@showCompleted');
 
-// User Routes
-Route::get('tryouts/{id}/delete', 'TryoutsController@destroy');
-Route::get('tryouts/{id}/edit', 'TryoutsController@edit');
-Route::post('tryouts/rsvp', 'TryoutsController@rsvp');
 
 // Search or Browse for Tryouts
 Route::get('search', 'SearchController@index');

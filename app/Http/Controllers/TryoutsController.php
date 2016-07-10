@@ -448,11 +448,15 @@ class TryoutsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$tryout = Tryout::findOrFail($id);
+		if(Auth::user()){
+			$tryout = Tryout::findOrFail($id);
 
-		$tryout->delete();
+			$tryout->delete();
 
-		return redirect('profile');
+			return redirect('profile');
+		} else {
+			return redirect('home');
+		}
 	}
 
 }

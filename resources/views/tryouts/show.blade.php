@@ -90,7 +90,7 @@
 							{!! Form::label('attendee_name', 'Your Name (Required)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
-								{!! Form::text('attendee_name', null, ['class'=> 'form-control']) !!}
+								{!! Form::text('attendee_name', null, ['class'=> 'form-control', 'pattern'=>'[a-zA-Z]{2,}', 'title'=>'Minimum 2 letters', 'required']) !!}
 							</div>
 						</div>
 
@@ -98,7 +98,7 @@
 							{!! Form::label('attendee_email', 'Your Email (Required)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
-								{!! Form::email('attendee_email', null, ['class'=> 'form-control']) !!}
+								{!! Form::email('attendee_email', null, ['class'=> 'form-control', 'required']) !!}
 							</div>
 						</div>
 						<div class="form-group">

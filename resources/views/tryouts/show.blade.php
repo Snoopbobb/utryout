@@ -79,7 +79,44 @@
 		</div>
 		<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
 		<div>
-	</div>
+
+		<!-- Popup Form for RSVP -->
+			<div class="form-popup" style="display: none;">
+				<a href="" id="close-popup">X</a>
+				<h2>Enter Your Information To Reserve Your Place</h2>
+				<div class="form-content">
+					{!! Form::open(['class' => 'form-horizontal', 'action' => 'TryoutsController@rsvp', 'id'=> 'rsvp-form']) !!}
+						<div class="form-group">
+							{!! Form::label('attendee_name', 'Your Name (Required)', ['class'=> 'col-md-4 control-label']) !!}
+
+							<div class="col-md-6">
+								{!! Form::text('attende_name', null, ['class'=> 'form-control']) !!}
+							</div>
+						</div>
+
+						<div class="form-group">
+							{!! Form::label('attendee_email', 'Your Email (Required)', ['class'=> 'col-md-4 control-label']) !!}
+
+							<div class="col-md-6">
+								{!! Form::email('attendee_email', null, ['class'=> 'form-control']) !!}
+							</div>
+						</div>
+						<div class="form-group">
+							{!! Form::label('attendee_description', 'Additional Information', ['class'=> 'col-md-4 control-label']) !!}
+							<div class="col-md-6">
+								{!! Form::textarea('attendee_description', null, ['class'=> 'form-control', 'placeholder' => 'List any other additional details that you would like to provide.']) !!}
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-6 col-md-offset-4">
+								{!! Form::button('Attend Tryout', ['class'=> 'btn post', 'data-toggle'=> 'modal', 'data-target'=> '.bs-example-modal-sm', 'type' => 'submit']) !!}
+							</div>
+						</div>
+					{!! Form::close() !!}
+				</div>
+			</div>
+
+	</div> <!-- End of container div -->
 
 @endsection
 

@@ -53,8 +53,28 @@ $(function(){
 
 	});
 
+	// RSVP popup form
+	$('#rsvp.btn').on('click', function(e) {
+		e.preventDefault();
+		$('.form-popup').show(500);
+	});
 
-});
+	// close popup when 'X' is clicked
+	$('#close-popup').on('click', function(e) {
+		e.preventDefault();
+		$('.form-popup').hide(500);
+	});
+
+	// closes popup when clicked outside of popup box
+	$(document).mouseup(function (e) {
+     	var popup = $(".form-popup");
+     		if (!$('#rsvp.btn').is(e.target) && !popup.is(e.target) && popup.has(e.target).length == 0) {
+         popup.hide(500);
+     	}
+ 	});
+
+
+}); // End of document ready
 
 var docWidth = document.documentElement.offsetWidth;
 

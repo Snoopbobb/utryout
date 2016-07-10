@@ -85,12 +85,12 @@
 				<a href="" id="close-popup">X</a>
 				<h2>Enter Your Information To Reserve Your Place</h2>
 				<div class="form-content">
-					{!! Form::open(['class' => 'form-horizontal', 'action' => 'TryoutsController@rsvp', 'id'=> 'rsvp-form']) !!}
+					{!! Form::open(['class' => 'form-horizontal', 'method' => 'POST', 'action' => 'TryoutsController@rsvp']) !!}
 						<div class="form-group">
 							{!! Form::label('attendee_name', 'Your Name (Required)', ['class'=> 'col-md-4 control-label']) !!}
 
 							<div class="col-md-6">
-								{!! Form::text('attende_name', null, ['class'=> 'form-control']) !!}
+								{!! Form::text('attendee_name', null, ['class'=> 'form-control']) !!}
 							</div>
 						</div>
 
@@ -112,6 +112,7 @@
 								{!! Form::button('Attend Tryout', ['class'=> 'btn post', 'data-toggle'=> 'modal', 'data-target'=> '.bs-example-modal-sm', 'type' => 'submit']) !!}
 							</div>
 						</div>
+						{!! Form::hidden('id', $tryout->id) !!}
 					{!! Form::close() !!}
 				</div>
 			</div>

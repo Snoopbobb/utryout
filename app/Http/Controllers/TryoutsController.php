@@ -109,19 +109,36 @@ class TryoutsController extends Controller {
 	/****************************************************************************************
 									 Add RSVPs to Tryout
 	****************************************************************************************/
-	public function rsvp($id){
-
+	public function rsvp(Request $request){
+		$id = $request->id;
+		// var_dump($id);
+		// die();
 		$tryout = Tryout::findOrFail($id);
 
 		$tryout->rsvp++;
 
 		$rsvp = $tryout->rsvp;
 
+		$players = 'player';
+
 		$name = $tryout->contact_name;
 
 		$email = $tryout->contact_email;
 
-		//$attendee_name = $request->attendee_name;
+		$attendee_name = $request->attendee_name;
+
+		$attendee_email = $request->attendee_email;
+
+		if ( $request->attendee_description ) {
+			$attendee_description = 'Here is some additional information they wanted to pass along: ' . $request->attendee_description;
+		} else {
+			$attendee_description = null;
+		}
+
+		if ( count($rsvp) > 1 ) {
+			$players = 'players';
+		}
+		
 
 		$link = 'https://utryout.com/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 
             				'/' . seoUrl(strtolower($tryout->city)) . '/'  .   $tryout->id . '/' . 
@@ -133,10 +150,14 @@ class TryoutsController extends Controller {
 
         Mail::send('emails.rsvp',
         array(
-            'name' => $attendee_name,
+            'name' => $name,
             'link' => $link,
             'rsvp' => $rsvp,
-            'email' => $email
+            'players' => $players,
+            'email' => $email,
+            'attendee_name' => $attendee_name,
+            'attendee_email' => $attendee_email,
+            'attendee_description' => $attendee_description
         ), function($message) use ($tryout)
 	    {
 	        $message->from('rsvp@utryout.com');

@@ -56,7 +56,7 @@ Route::get('completed/{sport}', 'TryoutsController@showCompleted');
 // User Routes
 Route::get('tryouts/{id}/delete', 'TryoutsController@destroy');
 Route::get('tryouts/{id}/edit', 'TryoutsController@edit');
-Route::post('tryouts/{id}/rsvp', 'TryoutsController@rsvp');
+Route::post('tryouts/rsvp', 'TryoutsController@rsvp');
 
 // Search or Browse for Tryouts
 Route::get('search', 'SearchController@index');

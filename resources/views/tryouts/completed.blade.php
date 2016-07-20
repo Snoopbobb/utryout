@@ -6,9 +6,9 @@
 	@if( count($tryouts) > 0 )
 		<div class="seperator">
 			@if(!empty($sport))
-				<h1>{{ ucwords($sport) }} Tryouts</h1>
+				<h1>Completed Youth {{ ucwords($sport) }} Tryouts</h1>
 			@else
-				<h1>All Tryouts</h1>
+				<h1>All Completed Youth Sports Tryouts</h1>
 			@endif
 		</div>
 		

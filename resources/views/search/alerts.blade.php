@@ -59,6 +59,7 @@
 																'any' => 'Any',
 																'baseball' => 'Baseball',
 																'basketball' => 'Basketball',
+																'cheer' => 'Cheer',
 																'football' => 'Football',
 																'hockey' => 'Hockey',
 																'lacrosse' => 'Lacrosse',

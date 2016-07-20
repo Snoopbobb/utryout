@@ -64,6 +64,7 @@
 	          				<li><a href="{{ url('tryouts') }}">All</a></li>
 	            			<li><a href="{{ url('tryouts/baseball') }}">Baseball</a></li>
 	            			<li><a href="{{ url('tryouts/basketball') }}">Basketball</a></li>
+	            			<li><a href="{{ url('tryouts/cheer') }}">Cheer</a></li>
 	            			<li><a href="{{ url('tryouts/football') }}">Football</a></li>
 	            			<li><a href="{{ url('tryouts/hockey') }}">Hockey</a></li>
 	            			<li><a href="{{ url('tryouts/lacrosse') }}">Lacrosse</a></li>
@@ -76,6 +77,7 @@
 	          				<li><a href="{{ url('completed') }}">All</a></li>
 	            			<li><a href="{{ url('completed/baseball') }}">Baseball</a></li>
 	            			<li><a href="{{ url('completed/basketball') }}">Basketball</a></li>
+	            			<li><a href="{{ url('completed/cheer') }}">Cheer</a></li>
 	            			<li><a href="{{ url('completed/football') }}">Football</a></li>
 	            			<li><a href="{{ url('completed/hockey') }}">Hockey</a></li>
 	            			<li><a href="{{ url('completed/lacrosse') }}">Lacrosse</a></li>

@@ -6,9 +6,9 @@
 	@if( count($tryouts) > 0 )
 		<div class="seperator">
 			@if(!empty($sport))
-				<h1>{{ ucwords($sport) }} Tryouts</h1>
+				<h1>Youth {{ ucwords($sport) }} Tryouts</h1>
 			@else
-				<h1>All Tryouts</h1>
+				<h1>All Youth Sports Tryouts</h1>
 			@endif
 		</div>
 		
@@ -16,12 +16,12 @@
 
 		@if($count > 1)
 			<form id="filterForm">
-			<h2><span id="tryoutCount">{{ $count }}</span> Upcoming Tryouts Found</h2>
+			<h2><span id="tryoutCount">{{ $count }}</span> Upcoming {{ ucwords($sport) }} Tryouts Found</h2>
 				<label for="filter"><h3>Filter Tryouts</h3></label>
 				<input type="search" id="filter" placeholder="Type In Filter Term">
 			</form>
 		@else
-			<h2>{{ $count }} Upcoming Tryout Found</h2>
+			<h2>{{ $count }} Upcoming {{ ucwords($sport) }} Tryout Found</h2>
 		@endif
 
 		<?php $idCount = 0; ?>

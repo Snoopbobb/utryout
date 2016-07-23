@@ -16,7 +16,7 @@
 			</div>
 
 			@if (!empty($tryout->website))
-				<h2><a href="http://{{ ucwords($tryout->website) }}" class="btn btn-content">Visit {{ $tryout->organization }} Website</a></h2>
+				<h2><a href="http://{{ ucwords($tryout->website) }}" class="btn btn-content" target="_blank">Visit {{ $tryout->organization }} Website</a></h2>
 			@endif
 			<div class="content">
 				<h2><span class="tryout-title">Age:</span> {{ $tryout->age . 'U' }}</h2>

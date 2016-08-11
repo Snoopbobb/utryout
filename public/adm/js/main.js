@@ -87,6 +87,7 @@ var docWidth = document.documentElement.offsetWidth;
   }
 );
 
+// Scroll fix for fixed background for IE
 if(navigator.userAgent.match(/Trident\/7\./)) {
     $('body').on("mousewheel", function () {
         event.preventDefault();

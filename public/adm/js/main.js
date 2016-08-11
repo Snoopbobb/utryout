@@ -86,3 +86,33 @@ var docWidth = document.documentElement.offsetWidth;
     }
   }
 );
+
+// Scroll fix for fixed background for IE
+if(navigator.userAgent.match(/Trident\/7\./)) {
+    $('body').on("mousewheel", function () {
+        event.preventDefault();
+
+        var wheelDelta = event.wheelDelta;
+
+        var currentScrollPosition = window.pageYOffset;
+        window.scrollTo(0, currentScrollPosition - wheelDelta);
+    });
+
+    $('body').keydown(function (e) {
+        var currentScrollPosition = window.pageYOffset;
+
+        switch (e.which) {
+        	e.preventDefault(); // prevent the default action (scroll / move caret)
+
+            case 38: // up
+                window.scrollTo(0, currentScrollPosition - 120);
+                break;
+
+            case 40: // down
+                window.scrollTo(0, currentScrollPosition + 120);
+                break;
+
+            default: return; // exit this handler for other keys
+        } 
+    });
+}

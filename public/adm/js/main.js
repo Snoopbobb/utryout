@@ -1,3 +1,4 @@
+'use strict';
 $(function(){
 
 	$(".radio").click(function(){
@@ -87,8 +88,7 @@ var docWidth = document.documentElement.offsetWidth;
   }
 );
 
-// Scroll fix for fixed background for IE
-if(navigator.userAgent.match(/Trident\/7\./)) {
+ if(navigator.userAgent.match(/Trident\/7\./)) {
     $('body').on("mousewheel", function () {
         event.preventDefault();
 
@@ -99,10 +99,10 @@ if(navigator.userAgent.match(/Trident\/7\./)) {
     });
 
     $('body').keydown(function (e) {
+        e.preventDefault(); // prevent the default action (scroll / move caret)
         var currentScrollPosition = window.pageYOffset;
 
         switch (e.which) {
-        	e.preventDefault(); // prevent the default action (scroll / move caret)
 
             case 38: // up
                 window.scrollTo(0, currentScrollPosition - 120);

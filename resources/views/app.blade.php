@@ -154,8 +154,9 @@
 	  webshims.setOptions('forms-ext', {types: 'date'});
 	  webshims.polyfill('forms forms-ext');
 	</script>
-
-	<script src="{{ asset('/adm/js/snowstorm.js') }}"></script>
+	
+	{{-- Turn this on for snowflakes at Christmas --}}
+	{{-- <script src="{{ asset('/adm/js/snowstorm.js') }}"></script> --}}
 
 	@yield('scripts')
 </body>

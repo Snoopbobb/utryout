@@ -320,7 +320,7 @@ class TryoutsController extends Controller {
 
 		$state = urlencode($request->state);
 		
-		$gmap = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . ',+' . $city . ',+' . $state . '&key=AIzaSyAJMBpWUA3EtmSMeZPOMdLYlHhGbyQ5Er4');
+		$gmap = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . ',+' . $city . ',+' . $state . '&key=AIzaSyDCCEMmPMDaUPmLOfjXN6E2qxngZ0KiND4');
 
 		$obj = json_decode($gmap);
 		$lat = $obj->{'results'}[0]->{'geometry'}->{'location'}->{'lat'};
@@ -425,7 +425,7 @@ class TryoutsController extends Controller {
 
 		$state = urlencode($request->state);
 		
-		$gmap = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . ',+' . $city . ',+' . $state . '&key=AIzaSyAJMBpWUA3EtmSMeZPOMdLYlHhGbyQ5Er4');
+		$gmap = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . ',+' . $city . ',+' . $state . '&key=AIzaSyDCCEMmPMDaUPmLOfjXN6E2qxngZ0KiND4');
 
 		$obj = json_decode($gmap);
 		$lat = $obj->{'results'}[0]->{'geometry'}->{'location'}->{'lat'};

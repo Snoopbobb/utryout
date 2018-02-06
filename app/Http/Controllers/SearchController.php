@@ -64,7 +64,7 @@ class SearchController extends Controller {
 	  	$zip = $request->zip;
 	  	$rad = $request->radius;
 
-	  	$gmap = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $zip. '&key=AIzaSyAJMBpWUA3EtmSMeZPOMdLYlHhGbyQ5Er4');
+	  	$gmap = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $zip. '&key=AIzaSyDCCEMmPMDaUPmLOfjXN6E2qxngZ0KiND4');
 	  	
 	  	$obj = json_decode($gmap);
 		$lat = $obj->{'results'}[0]->{'geometry'}->{'location'}->{'lat'};

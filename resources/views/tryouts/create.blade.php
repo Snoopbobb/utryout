@@ -12,7 +12,7 @@
 				
 				{{-- Credit Card payments turned off --}}
 				{{-- <h5>Get your tryout information seen by people in your area for only $5!</h5>
-				<a href="https://stripe.com/" target="_blank"><img width="150px" height="80px" src="/img/stripe.jpg"></a> --}}
+				<a href="/stripe.com/" target="_blank"><img width="150px" height="80px" src="utryout/img/stripe.jpg"></a> --}}
 
 				<div class="panel-body">
 					@if (count($errors) > 0)
@@ -291,7 +291,7 @@
 					<div class="">
 						{!! Form::submit('Buy Now', ['class'=>'btn btn-primary']) !!}
 					</div>
-					<a href="https://stripe.com/" target="_blank"><img width="150px" height="80px" src="/img/stripe.jpg"></a>
+					<a href="//stripe.com/" target="_blank"><img width="150px" height="80px" src="utryout/img/stripe.jpg"></a>
 				</div>
 				<div class="payment-errors">
 					
@@ -306,6 +306,6 @@
 
 @section('scripts')
 
-	<script src="{{ asset('/adm/js/billing.js') }}"></script>
+	<script src="{{ asset('utryout/adm/js/billing.js') }}"></script>
 
 @endsection

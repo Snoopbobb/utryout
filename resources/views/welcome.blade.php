@@ -17,12 +17,12 @@
 				<h2>Coaches, let parents know you're looking for players today!</h2>
 				<a href="search" class="btn btn-lg">Player/Parent</a>
 				@if (Auth::guest())						
-					<a href="{{ url('/auth/register') }}" class="btn btn-lg">Coach/Organization</a></li>
+					<a href="{{ url('/utryout/auth/register') }}" class="btn btn-lg">Coach/Organization</a></li>
 				@else
-					<a href="{{ url('/tryouts/create') }}" class="btn btn-lg">View Posts</a></li>
+					<a href="{{ url('/utryout/tryouts/create') }}" class="btn btn-lg">View Posts</a></li>
 				@endif
 				<div class="center">
-					<a href="{{url('/how-it-works') }}" class="btn">How It Works</a>
+					<a href="{{url('/utryout/how-it-works') }}" class="btn">How It Works</a>
 				</div>
 			</div>
 		</div> 

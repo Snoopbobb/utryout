@@ -7,7 +7,7 @@
 			<!-- 4:3 aspect ratio -->
 			<div class="embed-responsive embed-responsive-4by3">
 			  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wwJXkx_s-yM?rel=0"></iframe>
-			  <video controls="controls" name="UTryout Video" src="/video/utryout_coaches.mp4"></video>
+			  <video controls="controls" name="UTryout Video" src="utryout/video/utryout_coaches.mp4"></video>
 			</div>
 		</div>
 		<div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
@@ -27,7 +27,7 @@
 		    		</ol>
 		    	</div>
 				<div class="center">
-					<a href="{{ url('/auth/login') }}" class="btn btn-lg">Already A Member? Login Here</a>
+					<a href="{{ url('utryout/auth/login') }}" class="btn btn-lg">Already A Member? Login Here</a>
 				</div>
 		    </div>
 	    </div>

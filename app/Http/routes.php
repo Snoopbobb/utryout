@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/utryout/', 'WelcomeController@index');
 
-Route::get('home', function(){
+Route::get('utryout/home', function(){
 	return redirect('profile');
 });
 
@@ -30,34 +30,34 @@ Route::controllers([
 ]);
 
 // Static Pages Routes
-Route::get('how-it-works', 'PagesController@how');
-Route::get('contact', 'PagesController@contact');
-Route::post('contact', 'PagesController@contactSend');
+Route::get('utryout/how-it-works', 'PagesController@how');
+Route::get('utryout/contact', 'PagesController@contact');
+Route::post('utryout/contact', 'PagesController@contactSend');
 
-Route::resource('tryouts', 'TryoutsController');
+Route::resource('utryout/tryouts', 'TryoutsController');
 
 
 // Tryout Pages Routes
-Route::get('tryouts', 'TryoutsController@index');
-Route::post('tryouts', 'TryoutsController@store');
+Route::get('utryout/tryouts', 'TryoutsController@index');
+Route::post('utryout/tryouts', 'TryoutsController@store');
 
-Route::get('tryouts/create', 'TryoutsController@create');
+Route::get('utryout/tryouts/create', 'TryoutsController@create');
 
 // User Routes
-Route::get('tryouts/{id}/delete', 'TryoutsController@destroy');
-Route::get('tryouts/{id}/edit', 'TryoutsController@edit');
-Route::post('tryouts/rsvp', 'TryoutsController@rsvp');
+Route::get('utryout/tryouts/{id}/delete', 'TryoutsController@destroy');
+Route::get('utryout/tryouts/{id}/edit', 'TryoutsController@edit');
+Route::post('utryout/tryouts/rsvp', 'TryoutsController@rsvp');
 
-Route::get('tryouts/{sport}', 'TryoutsController@show');
+Route::get('utryout/tryouts/{sport}', 'TryoutsController@show');
 
-Route::get('tryouts/{sport}/{state}', 'TryoutsController@showState');
-Route::get('tryouts/{sport}/{state}/{city}', 'TryoutsController@showCity');
-Route::get('tryouts/{sport}/{state}/{city}/{id}/', 'TryoutsController@showId');
-Route::get('tryouts/{sport}/{state}/{city}/{id}/{organization}/', 'TryoutsController@showId');
+Route::get('utryout/tryouts/{sport}/{state}', 'TryoutsController@showState');
+Route::get('utryout/tryouts/{sport}/{state}/{city}', 'TryoutsController@showCity');
+Route::get('utryout/tryouts/{sport}/{state}/{city}/{id}/', 'TryoutsController@showId');
+Route::get('utryout/tryouts/{sport}/{state}/{city}/{id}/{organization}/', 'TryoutsController@showId');
 
 // Completed Tryout Routes
-Route::get('completed', 'TryoutsController@completed');
-Route::get('completed/{sport}', 'TryoutsController@showCompleted');
+Route::get('utryout/completed', 'TryoutsController@completed');
+Route::get('utryout/completed/{sport}', 'TryoutsController@showCompleted');
 
 
 // Search or Browse for Tryouts

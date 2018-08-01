@@ -7,7 +7,11 @@
 			<!-- 4:3 aspect ratio -->
 			<div class="embed-responsive embed-responsive-4by3">
 			  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wwJXkx_s-yM?rel=0"></iframe>
+<<<<<<< HEAD
+			  <video controls="controls" name="UTryout Video" src="/utryout/video/utryout.mp4"></video>
+=======
 			  <video controls="controls" name="UTryout Video" src="utryout/video/utryout.mp4"></video>
+>>>>>>> fbe2f5f0c8428c38c154351b9ed44dbc11b6af53
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-6">
@@ -22,11 +26,11 @@
 		    			<li>Select the sport, age, and enter your location to find upcoming tryouts in your area.</li>
 		    			<li>Find something you like?  Click on “additional information” to see all the details of the team/organization and their upcoming tryouts.</li>
 		    			<li>Let coaches know that you plan on attending by clicking “yes” to attend!</li>
-		    			<li>Not finding what you want? <a href="{{ url('/alerts') }}">Sign up</a> and receive automatic alerts for upcoming tryouts in your area.</li>
+		    			<li>Not finding what you want? <a href="{{ url('/utryout/alerts') }}">Sign up</a> and receive automatic alerts for upcoming tryouts in your area.</li>
 		    		</ol>
 		    	</div>
 				<div class="center">
-					<a href="{{ url('/search') }}" class="btn btn-lg">Browse Tryouts</a>
+					<a href="{{ url('/utryout/search') }}" class="btn btn-lg">Browse Tryouts</a>
 				</div>
 		    </div>
 	    </div>
@@ -45,7 +49,7 @@
 		    		</ol>
 				</div>
 				<div class="center">
-					<a href="/auth/register" class="btn btn-lg">Create Your Utryout Profile</a>
+					<a href="/utryout/auth/register" class="btn btn-lg">Create Your Utryout Profile</a>
 				</div>	
 			</div>
 		</div>

@@ -72,7 +72,7 @@ class AlertsController extends Controller {
 					|| ($alert->sport== 'any' && $alert->age == $tryouts[$i]->age) 
 					|| ($alert->sport == $tryouts[$i]->sport && $alert->age == null)) {
 					
-					$link = 'https://utryout.com/tryouts/' . $tryouts[$i]->sport . '/' . strtolower($tryouts[$i]->state) . 
+					$link = 'https://snoopbobb.com/utryout/tryouts/' . $tryouts[$i]->sport . '/' . strtolower($tryouts[$i]->state) . 
 		            				'/' . seoUrl(strtolower($tryouts[$i]->city)) . '/'  .   $tryouts[$i]->id . '/' . 
 		            				seoUrl(strtolower($tryouts[$i]->organization));
 
@@ -83,7 +83,7 @@ class AlertsController extends Controller {
 					Mail::later(10, 'emails.coach', array('contact_name' => $contact_name, 'link' => $link ), function($message) use ($email)
 					{	
 						$message->from('alerts@utryout.com');
-    					$message->to($email)->subject('Good news from Utryout.com!');
+    					$message->to($email)->subject('Good news from Utryout!');
 					});
 				}
 			}

@@ -140,7 +140,7 @@ class TryoutsController extends Controller {
 		}
 		
 
-		$link = 'https://utryout.com/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 
+		$link = 'https://snoopbobb.com/utryout/tryouts/' . $tryout->sport . '/' . strtolower($tryout->state) . 
             				'/' . seoUrl(strtolower($tryout->city)) . '/'  .   $tryout->id . '/' . 
             				seoUrl(strtolower($tryout->organization));
 

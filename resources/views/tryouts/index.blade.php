@@ -28,8 +28,8 @@
 		@foreach ($tryouts as $tryout)
 			<div class="row">
 				<div class="tryout"  id="tryout<?php echo $idCount++; ?>">
-					<span class="sport"><a href="{{ url('utryout/tryouts/') . '/' . $tryout->sport }}">{{ $tryout->sport }}</a></span> <h3>{{ $tryout->organization }} | Ages: {{ $tryout->age }}U | {{ date('D F d, Y', strtotime($tryout->date)) }}, {{ date('g:i A', strtotime($tryout->time)) }} | {{ ucwords($tryout->city) }}, {{ $tryout->state }}</h3>
-					<a href="{{ url('utryout/tryouts/') . '/' . $tryout->sport . '/' . strtolower($tryout->state) . '/' . seoUrl(strtolower($tryout->city)) . '/'  .   $tryout->id . '/' . seoUrl(strtolower($tryout->organization))}}" class="btn btn-content">Additional Information</a>
+					<span class="sport"><a href="{{ url('/tryouts/') . '/' . $tryout->sport }}">{{ $tryout->sport }}</a></span> <h3>{{ $tryout->organization }} | Ages: {{ $tryout->age }}U | {{ date('D F d, Y', strtotime($tryout->date)) }}, {{ date('g:i A', strtotime($tryout->time)) }} | {{ ucwords($tryout->city) }}, {{ $tryout->state }}</h3>
+					<a href="{{ url('/tryouts/') . '/' . $tryout->sport . '/' . strtolower($tryout->state) . '/' . seoUrl(strtolower($tryout->city)) . '/'  .   $tryout->id . '/' . seoUrl(strtolower($tryout->organization))}}" class="btn btn-content">Additional Information</a>
 				</div>
 			</div>
 		@endforeach
@@ -46,9 +46,9 @@
 
 			Posted, Please Check Back Soon!</h1>
 			
-			<a href="{{ url('utryout/alerts') }}" class="btn btn-lg">Sign up for alerts</a>
+			<a href="{{ url('/alerts') }}" class="btn btn-lg">Sign up for alerts</a>
 	@endif
-			<a href="utryout/completed" class="btn btn-lg">Show Completed Tryouts</a>
+			<a href="/completed" class="btn btn-lg">Show Completed Tryouts</a>
 	</div>
 
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>	
@@ -87,9 +87,9 @@
 				        map: map,
 				    });
 
-		    		var url = locations[i].sport + '/utryout/' + locations[i].state.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].city.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].id + '/' + locations[i].organization.replace(/\s+/g, '-').toLowerCase();
+		    		var url = locations[i].sport + '/' + locations[i].state.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].city.replace(/\s+/g, '-').toLowerCase() + '/' + locations[i].id + '/' + locations[i].organization.replace(/\s+/g, '-').toLowerCase();
 
-				    var content = 'Sport: ' + locations[i].sport + ' ' + 'Age: ' + locations[i].age + 'U ' + 'City: ' + locations[i].city + ' ' +  '<a href="{{ url(\'/utryout/tryouts\') }}/' + url + '">' + 'View Tryout' + '</a>';
+				    var content = 'Sport: ' + locations[i].sport + ' ' + 'Age: ' + locations[i].age + 'U ' + 'City: ' + locations[i].city + ' ' +  '<a href="{{ url('/tryouts') }}/' + url + '">' + 'View Tryout' + '</a>';
 
 				    var infoWindow = new google.maps.InfoWindow;
 

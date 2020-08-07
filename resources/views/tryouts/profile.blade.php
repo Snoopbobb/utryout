@@ -18,14 +18,14 @@
 		@if ( count($tryouts) > 0 )
 			@foreach ($tryouts as $tryout)
 				<div class="tryout">
-					<span class="sport"><a href="utryout/tryouts/{{ $tryout->sport }}">{{ $tryout->sport }}</a></span> <h3>{{ $tryout->organization }} | Ages: {{ $tryout->age }}U | {{ date('D F d, Y', strtotime($tryout->date)) }}, {{ date('g:i A', strtotime($tryout->time)) }} | {{ $tryout->city }}, {{ $tryout->state }}</h3>
-					<a class="btn btn-content" href="{{ url('utryout/tryouts/') . '/' . $tryout->sport . '/' . strtolower($tryout->state) . '/' . seoUrl(strtolower($tryout->city)) . '/' . $tryout->id . '/' . seoUrl(strtolower($tryout->organization)) }}">Review The Tryout</a>
-					<a class="btn btn-content" href="utryout/tryouts/{{$tryout->id}}/edit">Edit Information</a>
+					<span class="sport"><a href="/tryouts/{{ $tryout->sport }}">{{ $tryout->sport }}</a></span> <h3>{{ $tryout->organization }} | Ages: {{ $tryout->age }}U | {{ date('D F d, Y', strtotime($tryout->date)) }}, {{ date('g:i A', strtotime($tryout->time)) }} | {{ $tryout->city }}, {{ $tryout->state }}</h3>
+					<a class="btn btn-content" href="{{ url('/tryouts/') . '/' . $tryout->sport . '/' . strtolower($tryout->state) . '/' . seoUrl(strtolower($tryout->city)) . '/' . $tryout->id . '/' . seoUrl(strtolower($tryout->organization)) }}">Review The Tryout</a>
+					<a class="btn btn-content" href="/tryouts/{{$tryout->id}}/edit">Edit Information</a>
 				</div>
 			@endforeach
-				<a href="utryout/tryouts/create" class="btn">Post Another Tryout</a>
+				<a href="tryouts/create" class="btn">Post Another Tryout</a>
 		@else
-			<a href="utryout/tryouts/create" class="btn">Post A Tryout</a>
+			<a href="tryouts/create" class="btn">Post A Tryout</a>
 		@endif
 	</div>
 @endsection
